@@ -7,11 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --mckinsey-blue-dark: #15357A; /* Deep Navy Blue */
+            --mckinsey-blue-dark: #15357A; /* Deep Navy Blue for header/footer/accents */
             --mckinsey-blue-text: #1E3755; /* Slightly lighter Navy for main text */
             --mckinsey-gold: #FFCD00; /* Accent Gold */
             --background-white: #ffffff;
-            --background-light-blue: #f7f9fb; /* Very light background for body */
+            --background-light-blue: #f7f9fb; /* Primary background color (~60% of screen) */
             --border-crisp: 1px solid #e0e0e0;
             --font-main: 'Poppins', sans-serif;
             --content-width: 1000px;
@@ -21,13 +21,13 @@
             font-family: var(--font-main);
             margin: 0;
             padding: 0;
-            line-height: 1.7; 
+            line-height: 1.7;
             color: var(--mckinsey-blue-text); 
-            background-color: var(--background-light-blue); 
+            background-color: var(--background-light-blue); /* Primary background color */
             font-size: 15px;
         }
 
-        /* Full width header bar with NO margin/padding */
+        /* Full width header bar with no margin/padding */
         .header-bar {
             background-color: var(--mckinsey-blue-dark);
             color: #ffffff;
@@ -45,11 +45,11 @@
             padding: 30px 40px; 
         }
 
-        /* --- Header & Title (Inside Header Bar) --- */
+        /* --- Header & Title --- */
         h1 {
             color: #ffffff;
             font-size: 2.5em;
-            font-weight: 500; /* Reduced weight for less "bold" appearance */
+            font-weight: 500; 
             margin: 0;
         }
         
@@ -63,14 +63,14 @@
 
         /* --- Main Body Content Area --- */
         .main-content {
-            padding: 40px 0 60px 0;
+            padding: 60px 0; /* Increased top/bottom padding to expose more light blue background */
         }
         
         .content-block {
             background-color: var(--background-white);
             padding: 40px;
             border: var(--border-crisp);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Slightly deeper shadow for contrast */
         }
 
         /* Introduction paragraph styling */
@@ -89,7 +89,7 @@
             margin: 15px 25px 15px 0;
             padding: 14px 30px;
             font-size: 0.95em;
-            font-weight: 500; /* Reduced weight */
+            font-weight: 500; 
             color: #ffffff;
             background-color: var(--mckinsey-blue-dark);
             border: none;
@@ -133,10 +133,6 @@
             margin-top: 30px;
         }
 
-        .feature-item {
-            padding: 0;
-        }
-
         .feature-item p {
             margin: 0;
             color: var(--mckinsey-blue-text); 
@@ -154,6 +150,24 @@
             font-size: 1.7em;
             margin-right: 10px;
             color: var(--mckinsey-gold);
+        }
+
+        /* --- Footer: Adds a large block of dark blue at the bottom --- */
+        .footer-bar {
+            background-color: var(--mckinsey-blue-dark);
+            color: #c4c4c4;
+            padding: 40px 0; /* Significant vertical space for blue coverage */
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .footer-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+        .footer-bar a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -174,7 +188,7 @@
                 </p>
                 
                 <div>
-                    <a href="[YOUR_REPOSITORY_URL]" class="cta-button" target="_blank">
+                    <a href="https://github.com/lukeclarksf/leetcode" class="cta-button" target="_blank">
                         View Source Code
                     </a>
                     <a href="#features-section" class="cta-button secondary">
@@ -208,5 +222,7 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+
+    <div class="footer-bar">
+        <div class="container">
+            © 2025 LeetCode Mastery
