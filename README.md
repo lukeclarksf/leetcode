@@ -7,6 +7,5 @@ A personal collection of LeetCode problem solutions implemented in Python, with 
 * **Structured Explanations:** Each solution is contained within a dedicated Jupyter Notebook (`.ipynb`), featuring a long-form Markdown explanation of the chosen approach, intuition, and complexity analysis.
 * **Interactive Code:** Solutions are written in Python and are executable directly within the notebooks.
 * **VS Code Ready:** Optimized for an integrated workflow using VS Code's native Jupyter support.
-* **Organized by Problem:** Solutions are grouped into folders named after the problem (e.g., `0001-Two-Sum/`).
 
 ## 📁 Repository Structure
