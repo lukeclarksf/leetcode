@@ -46,7 +46,7 @@
 
         h1 {
             color: #ffffff;
-            font-size: 2.5em;
+            font-size: 2.0em; 
             font-weight: 400;
             margin: 0;
         }
@@ -83,7 +83,8 @@
         .introduction-text {
             padding: 40px; 
             margin: 0; 
-            font-size: 1.3em; 
+            /* CHANGE: Reduced font size from 1.3em to 1.1em */
+            font-size: 1.1em; 
             line-height: 1.8;
             color: #ffffff; 
             font-weight: 400;
@@ -119,14 +120,12 @@
             background-color: #e8e8e8;
         }
 
-        /* --- Features Section (Vertical List Changes Here) --- */
+        /* --- Features Section (Vertical List Changes) --- */
         h2 {
             color: var(--mckinsey-blue-dark);
             font-size: 2em;
             font-weight: 400;
-            /* CHANGE: Increased top margin for more padding above the heading */
             margin-top: 70px; 
-            /* CHANGE: Increased bottom margin for more padding below the heading */
             margin-bottom: 35px; 
             padding-bottom: 10px;
             border-bottom: var(--border-crisp);
@@ -137,17 +136,16 @@
             padding: 0;
             gap: 0; 
             margin-top: 30px;
-            /* CHANGE: Added a little margin at the bottom of the list for visual separation */
             margin-bottom: 30px;
         }
 
         .feature-item {
             background-color: var(--background-white);
-            padding: 25px;
+            padding: 35px 25px; 
             border: var(--border-crisp);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            margin-bottom: 15px; 
+            margin-bottom: 40px; 
             width: 100%; 
             box-sizing: border-box; 
         }
