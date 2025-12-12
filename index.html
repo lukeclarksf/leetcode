@@ -70,17 +70,25 @@
             box-shadow: none;
         }
 
-        /* Introduction paragraph styling */
+        /* Introduction Block Styling */
+        .introduction-wrapper {
+            background-color: var(--mckinsey-blue-dark); 
+            margin-bottom: 40px; 
+        }
+        
+        .introduction-wrapper .container {
+            padding: 0 40px; 
+        }
+        
         .introduction-text {
-            border-left: 4px solid var(--mckinsey-gold);
-            padding-left: 20px;
-            margin-bottom: 40px;
-            font-size: 1.3em; /* FONT SIZE INCREASED */
+            padding: 40px; 
+            margin: 0; 
+            font-size: 1.3em; 
             line-height: 1.8;
-            color: var(--mckinsey-blue-text);
+            color: #ffffff; 
             font-weight: 400;
         }
-
+        
         /* --- Buttons (Corporate Style) --- */
         .cta-button {
             display: inline-block;
@@ -111,13 +119,15 @@
             background-color: #e8e8e8;
         }
 
-        /* --- Features Section --- */
+        /* --- Features Section (Vertical List Changes Here) --- */
         h2 {
             color: var(--mckinsey-blue-dark);
             font-size: 2em;
             font-weight: 400;
-            margin-top: 50px; 
-            margin-bottom: 25px;
+            /* CHANGE: Increased top margin for more padding above the heading */
+            margin-top: 70px; 
+            /* CHANGE: Increased bottom margin for more padding below the heading */
+            margin-bottom: 35px; 
             padding-bottom: 10px;
             border-bottom: var(--border-crisp);
         }
@@ -125,23 +135,26 @@
         .feature-list {
             list-style: none;
             padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 0; 
             margin-top: 30px;
+            /* CHANGE: Added a little margin at the bottom of the list for visual separation */
+            margin-bottom: 30px;
         }
 
         .feature-item {
             background-color: var(--background-white);
             padding: 25px;
             border: var(--border-crisp);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 15px; 
+            width: 100%; 
+            box-sizing: border-box; 
         }
         
         .feature-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transform: none; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
 
         .feature-item p {
@@ -184,7 +197,19 @@
             text-decoration: underline;
         }
     </style>
-</head>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+        MathJax = {
+            tex: {
+                // Configures MathJax to recognize \(...\) for inline math
+                inlineMath: [['\\(', '\\)']], 
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    </head>
 <body>
     <div class="header-bar">
         <div class="container">
@@ -193,46 +218,50 @@
     </div>
     
     <div class="main-content">
-        <div class="container">
-            <div class="content-block">
-
-                <p class="introduction-text">
-                    A personal collection of LeetCode problem solutions implemented in Python, with detailed algorithmic explanations and complexity analysis stored in organized Jupyter Notebooks. This repository is designed to document my journey in mastering data structures and algorithms.
-                </p>
-                
-                <div>
-                    <a href="https://github.com/lukeclarksf/leetcode" class="cta-button">
-                        View Source Code
-                    </a>
-                    <a href="#features-section" class="cta-button secondary">
-                        Explore Key Features
-                    </a>
+        <div class="introduction-wrapper">
+            <div class="container">
+                <div class="content-block">
+                    <p class="introduction-text">
+                        A personal collection of LeetCode problem solutions implemented in Python, with detailed algorithmic explanations and complexity analysis stored in organized Jupyter Notebooks. This repository is designed to document my journey in mastering data structures and algorithms.
+                    </p>
                 </div>
-                <h2 id="features-section">Core Features</h2>
-                
-                <ul class="feature-list">
-                    <li class="feature-item">
-                        <p><span class="icon">📝</span> 
-                        <span class="title">Structured Explanations</span>
-                        Each solution is housed within a dedicated Jupyter Notebook, featuring long-form Markdown covering the chosen approach, core intuition, and strategic rationale.</p>
-                    </li>
-                    <li class="feature-item">
-                        <p><span class="icon">⏱️</span> 
-                        <span class="title">Rigorous Complexity Analysis</span>
-                        Every solution includes a detailed breakdown of the time complexity ($O(n)$) and space complexity ($O(1)$) to assess performance and resource utilization.</p>
-                    </li>
-                    <li class="feature-item">
-                        <p><span class="icon">▶️</span> 
-                        <span class="title">Interactive Code</span>
-                        Solutions are written purely in Python and are fully executable directly within the notebooks, allowing for immediate testing and verification.</p>
-                    </li>
-                    <li class="feature-item">
-                        <p><span class="icon">🚀</span> 
-                        <span class="title">VS Code Optimized Workflow</span>
-                        The entire repository structure is optimized for seamless integration using VS Code's native support for Jupyter Notebooks, ensuring an efficient development environment.</p>
-                    </li>
-                </ul>
             </div>
+        </div>
+        
+        <div class="container">
+            <div>
+                <a href="https://github.com/lukeclarksf/leetcode" class="cta-button">
+                    View Source Code
+                </a>
+                <a href="#features-section" class="cta-button secondary">
+                    Explore Key Features
+                </a>
+            </div>
+            
+            <h2 id="features-section">Core Features</h2>
+            
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <p><span class="icon">📝</span> 
+                    <span class="title">Structured Explanations</span>
+                    Each solution is housed within a dedicated Jupyter Notebook, featuring long-form Markdown covering the chosen approach, core intuition, and strategic rationale.</p>
+                </li>
+                <li class="feature-item">
+                    <p><span class="icon">⏱️</span> 
+                    <span class="title">Rigorous Complexity Analysis</span>
+                    Every solution includes a detailed breakdown of the time complexity \(\text{O}(n)\) and space complexity \(\text{O}(1)\) to assess performance and resource utilization.</p>
+                </li>
+                <li class="feature-item">
+                    <p><span class="icon">▶️</span> 
+                    <span class="title">Interactive Code</span>
+                    Solutions are written purely in Python and are fully executable directly within the notebooks, allowing for immediate testing and verification.</p>
+                </li>
+                <li class="feature-item">
+                    <p><span class="icon">🚀</span> 
+                    <span class="title">VS Code Optimized Workflow</span>
+                    The entire repository structure is optimized for seamless integration using VS Code's native support for Jupyter Notebooks, ensuring an efficient development environment.</p>
+                </li>
+            </ul>
         </div>
     </div>
 
