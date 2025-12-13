@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2-add-two-numbers" class="md-skip">
+        <a href="#output" class="md-skip">
           Skip to content
         </a>
       
@@ -197,6 +197,25 @@
   
   
   
+  
+    <li class="md-tabs__item">
+      <a href="https://lukeclarksf.com" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Luke CV
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
     
   
   
@@ -264,6 +283,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="https://lukeclarksf.com" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Luke CV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -283,10 +329,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -304,8 +350,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -432,6 +478,17 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#2-add-two-numbers" class="md-nav__link">
@@ -9439,6 +9496,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2-add-two-numbers" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9548,7 +9616,44 @@
             <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">l2</span> <span class="k">else</span> <span class="kc">None</span>
 
         <span class="k">return</span> <span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span>
+
+<span class="c1"># Helper function to convert a list of digits to a linked list (in reverse order)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_linked_list</span><span class="p">(</span><span class="n">digits</span><span class="p">):</span>
+    <span class="n">dummy_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">dummy_head</span>
+    <span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">digits</span><span class="p">:</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span>
+
+<span class="c1"># Helper function to convert a linked list to a list of digits</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">linked_list_to_list</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">node</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Example 1: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4) -&gt; (7 -&gt; 0 -&gt; 8)</span>
+    <span class="n">l1_ex1</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+    <span class="n">l2_ex1</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">linked_list_to_list</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">addTwoNumbers</span><span class="p">(</span><span class="n">l1_ex1</span><span class="p">,</span> <span class="n">l2_ex1</span><span class="p">)),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Example 2: (0) + (0) -&gt; (0)</span>
+    <span class="n">l1_ex2</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">l2_ex2</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">linked_list_to_list</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">addTwoNumbers</span><span class="p">(</span><span class="n">l1_ex2</span><span class="p">,</span> <span class="n">l2_ex2</span><span class="p">)),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Example 3: (9 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 9) + (9 -&gt; 9 -&gt; 9 -&gt; 9) -&gt; (8 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 0 -&gt; 0 -&gt; 0 -&gt; 1)</span>
+    <span class="n">l1_ex3</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+    <span class="n">l2_ex3</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">linked_list_to_list</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">addTwoNumbers</span><span class="p">(</span><span class="n">l1_ex3</span><span class="p">,</span> <span class="n">l2_ex3</span><span class="p">)))</span>
 </code></pre></div>
+<h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
+<p>[7, 0, 8] </p>
+<p>[0] </p>
+<p>[8, 9, 9, 9, 0, 0, 0, 1]</p>
 <h2 id="2-add-two-numbers">2. Add Two Numbers<a class="headerlink" href="#2-add-two-numbers" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-representation">Problem Statement and Representation<a class="headerlink" href="#problem-statement-and-representation" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 2, "Add Two Numbers," requires the simulation of adding two non-negative integers that are represented in a rather unusual format: as <strong>linked lists</strong>. Specifically, each digit of the number is stored in a separate node of the linked list, and the digits are stored in <strong>reverse order</strong>. For example, the number 342 would be represented by a linked list <span class="arithmatex">\(2 \rightarrow 4 \rightarrow 3\)</span>. The task is to take two such linked lists, <span class="arithmatex">\(l1\)</span> and <span class="arithmatex">\(l2\)</span>, add the numbers they represent, and return the sum as a new linked list in the same reverse-digit format.</p>
@@ -9611,7 +9716,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "search.suggest", "search.highlight", "content.code.copy", "content.code.select"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
