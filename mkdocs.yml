@@ -44,14 +44,15 @@ markdown_extensions:
 plugins:
   - search
   - include-markdown # <--- Add the plugin here
+  - execute
 
 # Inside mkdocs.yml
 
 # ... (other sections like theme, extensions, and plugins) ...
 
 nav:
-  - Home: 'index.md'
-  - Solutions:
+  - LeetCode Python:
+    - About: 'index.md'
     - Problem 1: '1.md'
     - Problem 2: '2.md'
     - Problem 3: '3.md'
