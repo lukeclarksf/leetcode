@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#15-3sum" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -718,6 +723,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 15
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -734,6 +757,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#15-3sum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. 3Sum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. 3Sum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-the-uniqueness-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and The Uniqueness Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal-approach-sorting-and-two-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimal Approach: Sorting and Two Pointers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-inner-two-pointer-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Inner Two-Pointer Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-elimination-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicate Elimination Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1465,6 +1566,75 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#15-3sum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. 3Sum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. 3Sum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-the-uniqueness-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and The Uniqueness Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal-approach-sorting-and-two-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimal Approach: Sorting and Two Pointers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-inner-two-pointer-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Inner Two-Pointer Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-elimination-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicate Elimination Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1522,6 +1692,41 @@
 
         <span class="k">return</span> <span class="n">result</span>
 </code></pre></div>
+<h2 id="15-3sum">15. 3Sum<a class="headerlink" href="#15-3sum" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-the-uniqueness-constraint">Problem Statement and The Uniqueness Constraint<a class="headerlink" href="#problem-statement-and-the-uniqueness-constraint" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 15, "3Sum," asks us to find all unique triplets <span class="arithmatex">\([a, b, c]\)</span> within a given array of <span class="arithmatex">\(n\)</span> integers, <span class="arithmatex">\(nums\)</span>, such that their sum is zero: <span class="arithmatex">\(a + b + c = 0\)</span>. This problem is an extension of the classic Two Sum problem but adds significant complexity due to the requirement of finding three numbers and, most importantly, ensuring that the resulting set of triplets contains <strong>no duplicates</strong>.</p>
+<p>A brute force approach would involve three nested loops, checking every combination of three distinct indices <span class="arithmatex">\((i, j, k)\)</span>. This would result in an <span class="arithmatex">\(O(n^3)\)</span> time complexity, which is far too slow for practical purposes, necessitating a more optimized technique. The primary optimization must come from fixing one number and then efficiently searching for the remaining two, while also managing the uniqueness requirement.</p>
+<h3 id="optimal-approach-sorting-and-two-pointers">Optimal Approach: Sorting and Two Pointers<a class="headerlink" href="#optimal-approach-sorting-and-two-pointers" title="Permanent link">&para;</a></h3>
+<p>The most efficient and standard solution leverages a combination of two powerful techniques: <strong>Sorting</strong> and the <strong>Two-Pointer</strong> method.</p>
+<ol>
+<li>
+<p><strong>Sorting:</strong> First, the input array <span class="arithmatex">\(nums\)</span> must be sorted in <span class="arithmatex">\(O(n \log n)\)</span> time. Sorting is indispensable for two reasons:</p>
+<ul>
+<li>It allows us to easily <strong>skip duplicates</strong> during iteration.</li>
+<li>It enables the <strong>Two-Pointer</strong> technique to efficiently search for the remaining two numbers in <span class="arithmatex">\(O(n)\)</span> time.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fixing the First Number:</strong> After sorting, we iterate through the array with a primary pointer <span class="arithmatex">\(i\)</span>. The value <span class="arithmatex">\(nums[i]\)</span> is fixed as our first number, <span class="arithmatex">\(a\)</span>. Since we need <span class="arithmatex">\(a + b + c = 0\)</span>, the remaining two numbers, <span class="arithmatex">\(b\)</span> and <span class="arithmatex">\(c\)</span>, must satisfy <span class="arithmatex">\(b + c = -nums[i]\)</span>. We treat <span class="arithmatex">\(-nums[i]\)</span> as the new "target sum" for the remaining subarray.</p>
+</li>
+</ol>
+<h3 id="the-inner-two-pointer-search">The Inner Two-Pointer Search<a class="headerlink" href="#the-inner-two-pointer-search" title="Permanent link">&para;</a></h3>
+<p>For each fixed <span class="arithmatex">\(a = nums[i]\)</span>, we use the two-pointer approach on the remainder of the array, starting from index <span class="arithmatex">\(i+1\)</span>. We initialize a left pointer <span class="arithmatex">\(L\)</span> at <span class="arithmatex">\(i+1\)</span> and a right pointer <span class="arithmatex">\(R\)</span> at the end of the array (<span class="arithmatex">\(n-1\)</span>). The goal is to find pairs <span class="arithmatex">\((nums[L], nums[R])\)</span> that sum to the target <span class="arithmatex">\(-nums[i]\)</span>.</p>
+<p>The pointers <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(R\)</span> move towards each other, shrinking the search space:
+1.  <strong>Case 1: Sum is Too Small:</strong> If <span class="arithmatex">\(nums[L] + nums[R] &lt; -nums[i]\)</span>, the sum needs to be larger. Since the array is sorted, we achieve a larger sum by moving <span class="arithmatex">\(L\)</span> one step to the right (<span class="arithmatex">\(\text{increment } L\)</span>).
+2.  <strong>Case 2: Sum is Too Large:</strong> If <span class="arithmatex">\(nums[L] + nums[R] &gt; -nums[i]\)</span>, the sum needs to be smaller. We achieve a smaller sum by moving <span class="arithmatex">\(R\)</span> one step to the left (<span class="arithmatex">\(\text{decrement } R\)</span>).
+3.  <strong>Case 3: Match Found:</strong> If <span class="arithmatex">\(nums[L] + nums[R] = -nums[i]\)</span>, a valid triplet <span class="arithmatex">\([nums[i], nums[L], nums[R]]\)</span> has been found. This triplet is added to the result list.</p>
+<h3 id="duplicate-elimination-logic">Duplicate Elimination Logic<a class="headerlink" href="#duplicate-elimination-logic" title="Permanent link">&para;</a></h3>
+<p>The problem requires finding <em>unique</em> triplets, which necessitates careful handling of duplicates in both the outer loop (for <span class="arithmatex">\(a\)</span>) and the inner two-pointer movement (for <span class="arithmatex">\(b\)</span> and <span class="arithmatex">\(c\)</span>).</p>
+<ol>
+<li>
+<p><strong>Outer Loop Duplicates (for <span class="arithmatex">\(a\)</span>):</strong> We must ensure that we don't process the same value for <span class="arithmatex">\(a\)</span> multiple times consecutively. Before starting the inner two-pointer search, we check: if <span class="arithmatex">\(i &gt; 0\)</span> and <span class="arithmatex">\(nums[i] == nums[i-1]\)</span>, we skip the current iteration using a <code>continue</code> statement. This prevents identical triplets from being generated due to using the same value for <span class="arithmatex">\(a\)</span>.</p>
+</li>
+<li>
+<p><strong>Inner Loop Duplicates (for <span class="arithmatex">\(b\)</span> and <span class="arithmatex">\(c\)</span>):</strong> After finding a valid triplet (Case 3), we immediately move <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(R\)</span> inward, but we must also skip duplicates that follow <span class="arithmatex">\(L\)</span> and precede <span class="arithmatex">\(R\)</span>. We advance <span class="arithmatex">\(L\)</span> forward while <span class="arithmatex">\(L &lt; R\)</span> and <span class="arithmatex">\(nums[L] == nums[L+1]\)</span>, and we retreat <span class="arithmatex">\(R\)</span> backward while <span class="arithmatex">\(L &lt; R\)</span> and <span class="arithmatex">\(nums[R] == nums[R-1]\)</span>. Only after skipping all duplicates do we perform the final move: <span class="arithmatex">\(\text{increment } L\)</span> and <span class="arithmatex">\(\text{decrement } R\)</span>.</p>
+</li>
+</ol>
+<p>By incorporating the initial <span class="arithmatex">\(O(n \log n)\)</span> sort with the subsequent <span class="arithmatex">\(O(n^2)\)</span> search (the outer loop is <span class="arithmatex">\(O(n)\)</span> and the inner two-pointer loop is <span class="arithmatex">\(O(n)\)</span>), the total time complexity is dominated by the search, resulting in an optimal <span class="arithmatex">\(O(n^2)\)</span> time complexity for the entire solution.</p>
 
 
 
