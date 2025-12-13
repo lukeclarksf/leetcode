@@ -17,6 +17,7 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+    - content.code.select
 
 markdown_extensions:
   # Standard Extensions
@@ -56,6 +57,7 @@ plugins:
 # ... (other sections like theme, extensions, and plugins) ...
 
 nav:
+  - Luke CV: 'https://lukeclarksf.com'
   - Python:
     - About: 'index.md'
     - 1. (Easy) Two Sum: '1.md'
