@@ -24,7 +24,7 @@ def create_python_files(start_num, end_num):
     print(f"✅ Finished! Created {end_num - start_num + 1} files.")
     print("Files were created in the current working directory.")
 
-START_NUMBER = 0
-END_NUMBER = 3772
+START_NUMBER = 1
+END_NUMBER = 1000 #3772
 
 create_python_files(START_NUMBER, END_NUMBER)

@@ -39,8 +39,8 @@ def create_md_files(start_num, end_num, content=None):
 
     print("File creation complete!")
 
-START_NUMBER = 0
-END_NUMBER = 3772
+START_NUMBER = 1
+END_NUMBER = 1000 #3772
 FILE_CONTENT = None
 
 create_md_files(START_NUMBER, END_NUMBER, FILE_CONTENT)
