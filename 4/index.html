@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#4-median-of-two-sorted-arrays" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -410,6 +415,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 4
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -426,6 +449,95 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4-median-of-two-sorted-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Median of Two Sorted Arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Median of Two Sorted Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-efficiency-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Efficiency Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-partitioning-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Partitioning Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-binary-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying Binary Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-and-adjustment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification and Adjustment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determining-the-median" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Determining the Median
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1465,6 +1577,86 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4-median-of-two-sorted-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Median of Two Sorted Arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Median of Two Sorted Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-efficiency-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Efficiency Constraint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-partitioning-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Partitioning Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-binary-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying Binary Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-and-adjustment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification and Adjustment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determining-the-median" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Determining the Median
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1520,6 +1712,31 @@
 
         <span class="k">return</span> <span class="mf">0.0</span>
 </code></pre></div>
+<h2 id="4-median-of-two-sorted-arrays">4. Median of Two Sorted Arrays<a class="headerlink" href="#4-median-of-two-sorted-arrays" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-efficiency-constraint">Problem Statement and Efficiency Constraint<a class="headerlink" href="#problem-statement-and-efficiency-constraint" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 4, "Median of Two Sorted Arrays," presents a significant challenge: given two already sorted arrays, <span class="arithmatex">\(nums1\)</span> of size <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(nums2\)</span> of size <span class="arithmatex">\(n\)</span>, find the median of the single sorted array that would result from merging both inputs. Crucially, the problem imposes a stringent constraint on the required time complexity, demanding an <span class="arithmatex">\(O(\log(m+n))\)</span> solution. This logarithmic complexity immediately rules out simple merging of the arrays (<span class="arithmatex">\(O(m+n)\)</span>) or any <span class="arithmatex">\(O(n^2)\)</span> approaches, strongly suggesting the use of a <strong>Binary Search</strong> technique.</p>
+<p>The median is defined as the middle element of a sorted list. If the total number of elements <span class="arithmatex">\((m+n)\)</span> is odd, the median is the single middle element. If the total number of elements is even, the median is the average of the two middle elements. The core difficulty lies in finding this median without explicitly merging the entire arrays.</p>
+<h3 id="the-partitioning-principle">The Partitioning Principle<a class="headerlink" href="#the-partitioning-principle" title="Permanent link">&para;</a></h3>
+<p>The solution hinges on the concept of <strong>partitioning</strong> the two arrays. The goal is to find a "cut" in <span class="arithmatex">\(nums1\)</span> and a corresponding "cut" in <span class="arithmatex">\(nums2\)</span> such that two conditions are simultaneously met:</p>
+<ol>
+<li><strong>Equal-Sized Halves:</strong> The total number of elements in the left partitions (combined) must equal the total number of elements in the right partitions (combined). If the total length <span class="arithmatex">\((m+n)\)</span> is odd, the left side can have one more element than the right. We aim for <span class="arithmatex">\(\text{length}(\text{Left}) = \lfloor(m+n+1)/2\rfloor\)</span>.</li>
+<li><strong>Order Preservation:</strong> Every element in the combined left partition must be less than or equal to every element in the combined right partition. That is, <span class="arithmatex">\(\text{max}(\text{Left}) \le \text{min}(\text{Right})\)</span>.</li>
+</ol>
+<h3 id="applying-binary-search">Applying Binary Search<a class="headerlink" href="#applying-binary-search" title="Permanent link">&para;</a></h3>
+<p>To efficiently find these ideal cuts, we apply binary search on the smaller of the two arrays (let's assume <span class="arithmatex">\(nums1\)</span> is the smaller one, ensuring the search space is minimized, <span class="arithmatex">\(O(\log(\min(m, n)))\)</span>). We search for the optimal partition index, <span class="arithmatex">\(i\)</span>, in <span class="arithmatex">\(nums1\)</span>.</p>
+<p>The partition index <span class="arithmatex">\(i\)</span> divides <span class="arithmatex">\(nums1\)</span> into a left part of size <span class="arithmatex">\(i\)</span> and a right part of size <span class="arithmatex">\(m-i\)</span>. The corresponding partition index <span class="arithmatex">\(j\)</span> in <span class="arithmatex">\(nums2\)</span> is automatically determined by the total required size of the left half: <span class="arithmatex">\(j = \lfloor(m+n+1)/2\rfloor - i\)</span>.  This fixed relationship ensures the first condition (equal sizes) is always satisfied.</p>
+<h3 id="verification-and-adjustment">Verification and Adjustment<a class="headerlink" href="#verification-and-adjustment" title="Permanent link">&para;</a></h3>
+<p>With the cuts defined by <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span>, we identify the four key boundary elements: <span class="arithmatex">\(\text{L1} = nums1[i-1]\)</span>, <span class="arithmatex">\(\text{R1} = nums1[i]\)</span>, <span class="arithmatex">\(\text{L2} = nums2[j-1]\)</span>, and <span class="arithmatex">\(\text{R2} = nums2[j]\)</span>. (Edge cases, where <span class="arithmatex">\(i=0, i=m, j=0,\)</span> or <span class="arithmatex">\(j=n\)</span>, must be handled by assigning <span class="arithmatex">\(L\)</span> boundary values of <span class="arithmatex">\(-\infty\)</span> and <span class="arithmatex">\(R\)</span> boundary values of <span class="arithmatex">\(+\infty\)</span>).</p>
+<p>The second condition, order preservation, requires that the largest element on the left side is less than or equal to the smallest element on the right side: <span class="arithmatex">\(\max(\text{L1}, \text{L2}) \le \min(\text{R1}, \text{R2})\)</span>. This breaks down into two separate checks:
+1.  <span class="arithmatex">\(\text{L1} \le \text{R2}\)</span>
+2.  <span class="arithmatex">\(\text{L2} \le \text{R1}\)</span></p>
+<h3 id="determining-the-median">Determining the Median<a class="headerlink" href="#determining-the-median" title="Permanent link">&para;</a></h3>
+<p>The binary search loop continues by adjusting the search range for <span class="arithmatex">\(i\)</span>:
+* If <span class="arithmatex">\(\text{L1} &gt; \text{R2}\)</span> (i.e., <span class="arithmatex">\(nums1\)</span>'s cut is too far to the right), we move the binary search right boundary for <span class="arithmatex">\(i\)</span> to <span class="arithmatex">\(i-1\)</span>.
+* If <span class="arithmatex">\(\text{L2} &gt; \text{R1}\)</span> (i.e., <span class="arithmatex">\(nums1\)</span>'s cut is too far to the left), we move the binary search left boundary for <span class="arithmatex">\(i\)</span> to <span class="arithmatex">\(i+1\)</span>.</p>
+<p>Once the optimal partition is found (when both <span class="arithmatex">\(\text{L1} \le \text{R2}\)</span> and <span class="arithmatex">\(\text{L2} \le \text{R1}\)</span> hold), the median can be calculated:
+* <strong>If <span class="arithmatex">\((m+n)\)</span> is odd:</strong> The median is the largest element in the left half, <span class="arithmatex">\(\text{Median} = \max(\text{L1}, \text{L2})\)</span>.
+* <strong>If <span class="arithmatex">\((m+n)\)</span> is even:</strong> The median is the average of the largest element in the left half and the smallest element in the right half, <span class="arithmatex">\(\text{Median} = (\max(\text{L1}, \text{L2}) + \min(\text{R1}, \text{R2})) / 2\)</span>. This logarithmic approach successfully meets the strict <span class="arithmatex">\(O(\log(m+n))\)</span> time complexity requirement.</p>
 
 
 

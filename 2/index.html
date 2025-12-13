@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#leetcode-problem-2-add-two-numbers" class="md-skip">
+        <a href="#2-add-two-numbers" class="md-skip">
           Skip to content
         </a>
       
@@ -408,22 +408,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#leetcode-problem-2-add-two-numbers" class="md-nav__link">
+  <a href="#2-add-two-numbers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⛓️ LeetCode Problem 2: Add Two Numbers
+        2. Add Two Numbers
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⛓️ LeetCode Problem 2: Add Two Numbers">
+    <nav class="md-nav" aria-label="2. Add Two Numbers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problem-description" class="md-nav__link">
+  <a href="#problem-statement-and-representation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem Description
+        Problem Statement and Representation
       
     </span>
   </a>
@@ -431,10 +431,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#the-iterative-addition-process" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        The Iterative Addition Process
       
     </span>
   </a>
@@ -442,22 +442,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#optimal-approach-iteration-with-carry" class="md-nav__link">
+  <a href="#calculating-the-sum-and-carry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Optimal Approach: Iteration with Carry
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Optimal Approach: Iteration with Carry">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Idea
+        Calculating the Sum and Carry
       
     </span>
   </a>
@@ -465,18 +453,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#handling-the-final-carry" class="md-nav__link">
+  <a href="#building-the-result-list-and-complexity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Handling the Final Carry
+        Building the Result List and Complexity
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1590,22 +1573,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#leetcode-problem-2-add-two-numbers" class="md-nav__link">
+  <a href="#2-add-two-numbers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⛓️ LeetCode Problem 2: Add Two Numbers
+        2. Add Two Numbers
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⛓️ LeetCode Problem 2: Add Two Numbers">
+    <nav class="md-nav" aria-label="2. Add Two Numbers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problem-description" class="md-nav__link">
+  <a href="#problem-statement-and-representation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem Description
+        Problem Statement and Representation
       
     </span>
   </a>
@@ -1613,10 +1596,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#the-iterative-addition-process" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        The Iterative Addition Process
       
     </span>
   </a>
@@ -1624,22 +1607,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#optimal-approach-iteration-with-carry" class="md-nav__link">
+  <a href="#calculating-the-sum-and-carry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Optimal Approach: Iteration with Carry
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Optimal Approach: Iteration with Carry">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Idea
+        Calculating the Sum and Carry
       
     </span>
   </a>
@@ -1647,18 +1618,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#handling-the-final-carry" class="md-nav__link">
+  <a href="#building-the-result-list-and-complexity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Handling the Final Carry
+        Building the Result List and Complexity
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1714,59 +1680,19 @@
 
         <span class="k">return</span> <span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span>
 </code></pre></div>
-<h2 id="leetcode-problem-2-add-two-numbers">⛓️ LeetCode Problem 2: Add Two Numbers<a class="headerlink" href="#leetcode-problem-2-add-two-numbers" title="Permanent link">&para;</a></h2>
-<h3 id="problem-description">Problem Description<a class="headerlink" href="#problem-description" title="Permanent link">&para;</a></h3>
-<p>You are given two <strong>non-empty linked lists</strong> representing two non-negative integers. The digits are stored in <strong>reverse order</strong>, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Input:</strong> <code>l1 = [2, 4, 3]</code>, <code>l2 = [5, 6, 4]</code></li>
-<li><strong>Interpretation:</strong> <code>l1</code> represents the number 342, and <code>l2</code> represents the number 465.</li>
-<li><strong>Calculation:</strong> 342 + 465 = 807</li>
-<li><strong>Output:</strong> <code>[7, 0, 8]</code> (representing the number 807)</li>
-</ul>
-<hr />
-<h3 id="optimal-approach-iteration-with-carry">Optimal Approach: Iteration with Carry<a class="headerlink" href="#optimal-approach-iteration-with-carry" title="Permanent link">&para;</a></h3>
-<p>The most efficient solution is a single-pass iteration that simulates the manual process of adding numbers column by column, keeping track of any "carry."</p>
-<h4 id="core-idea"><strong>Core Idea</strong><a class="headerlink" href="#core-idea" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>Initialize:</strong> Create a dummy head node for the result list and a pointer (<code>current</code>) to build the list. Initialize a <code>carry</code> variable to 0.</li>
-<li><strong>Iterate:</strong> Loop while there are still digits in either list (<code>l1</code> or <code>l2</code>) or the <code>carry</code> is greater than 0.</li>
-<li><strong>Sum Digits:</strong><ul>
-<li>Get the value of the current node from <code>l1</code> (or 0 if <code>l1</code> is exhausted).</li>
-<li>Get the value of the current node from <code>l2</code> (or 0 if <code>l2</code> is exhausted).</li>
-<li>Calculate the <code>total_sum = val1 + val2 + carry</code>.</li>
-</ul>
-</li>
-<li><strong>Update Carry and Digit:</strong><ul>
-<li>The new <code>carry</code> is the integer division of the <code>total_sum</code> by 10 (e.g., <span class="arithmatex">\(15 / 10 = 1\)</span>).</li>
-<li>The new digit is the remainder of the <code>total_sum</code> divided by 10 (e.g., <span class="arithmatex">\(15 \pmod{10} = 5\)</span>).</li>
-</ul>
-</li>
-<li><strong>Build List:</strong> Create a new node with the calculated digit and append it to the <code>current</code> pointer in the result list. Move the <code>current</code> pointer forward.</li>
-<li><strong>Advance Pointers:</strong> Move <code>l1</code> and <code>l2</code> to their next nodes (if they exist).</li>
-</ol>
-<h4 id="handling-the-final-carry"><strong>Handling the Final Carry</strong><a class="headerlink" href="#handling-the-final-carry" title="Permanent link">&para;</a></h4>
-<p>The loop must continue as long as a carry exists. If, after processing the last digits of <code>l1</code> and <code>l2</code>, the <code>carry</code> is 1 (e.g., adding <span class="arithmatex">\(99+1\)</span>), you must create one final node to hold that carry.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Complexity</th>
-<th style="text-align: left;">Time</th>
-<th style="text-align: left;">Space</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Worst-Case</strong></td>
-<td style="text-align: left;"><span class="arithmatex">\(O(\max(m, n))\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(O(\max(m, n))\)</span></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Where <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(n\)</span> are the lengths</li>
-</ul>
+<h2 id="2-add-two-numbers">2. Add Two Numbers<a class="headerlink" href="#2-add-two-numbers" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-representation">Problem Statement and Representation<a class="headerlink" href="#problem-statement-and-representation" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 2, "Add Two Numbers," requires the simulation of adding two non-negative integers that are represented in a rather unusual format: as <strong>linked lists</strong>. Specifically, each digit of the number is stored in a separate node of the linked list, and the digits are stored in <strong>reverse order</strong>. For example, the number 342 would be represented by a linked list <span class="arithmatex">\(2 \rightarrow 4 \rightarrow 3\)</span>. The task is to take two such linked lists, <span class="arithmatex">\(l1\)</span> and <span class="arithmatex">\(l2\)</span>, add the numbers they represent, and return the sum as a new linked list in the same reverse-digit format.</p>
+<p>The reversed storage order is a crucial design choice that greatly simplifies the addition process. It allows us to start adding from the least significant digit (the ones place, which is the head of the list) without needing to traverse the lists to find the end first, as would be necessary if the digits were stored in forward order. This structure inherently facilitates the standard, elementary-school method of addition, working from right to left.</p>
+<h3 id="the-iterative-addition-process">The Iterative Addition Process<a class="headerlink" href="#the-iterative-addition-process" title="Permanent link">&para;</a></h3>
+<p>The most efficient and common solution to this problem is an <strong>iterative simulation</strong> of manual column addition, which naturally involves a concept known as the <em>carry</em>. We initialize a dummy head node for the resulting sum list, which simplifies the process of appending new nodes, and we maintain a current pointer to build the list. A crucial variable, <code>carry</code>, is initialized to 0.</p>
+<p>We traverse both input linked lists, <span class="arithmatex">\(l1\)</span> and <span class="arithmatex">\(l2\)</span>, simultaneously. The iteration continues as long as there are remaining nodes in <span class="arithmatex">\(l1\)</span> or <span class="arithmatex">\(l2\)</span>, or if the <code>carry</code> variable is still greater than zero. This third condition is vital, as it ensures that any final carry digit generated by the last sum is correctly included as the final node of the result list.</p>
+<h3 id="calculating-the-sum-and-carry">Calculating the Sum and Carry<a class="headerlink" href="#calculating-the-sum-and-carry" title="Permanent link">&para;</a></h3>
+<p>In each step of the iteration, we calculate the total sum for the current "column" of digits. This sum includes the value of the current node from <span class="arithmatex">\(l1\)</span> (if it exists), the value of the current node from <span class="arithmatex">\(l2\)</span> (if it exists), and the value of the <code>carry</code> from the previous step. If a list pointer has already reached the end, its value for that step is considered 0.</p>
+<p>Once the total sum (<span class="arithmatex">\(\text{sum}\)</span>) is computed, we determine the two components required for the next step: the digit for the current node and the new carry. The digit that should be placed in the new node of the result list is the <span class="arithmatex">\(\text{sum}\)</span> modulo 10, or <span class="arithmatex">\(\text{digit} = \text{sum} \pmod{10}\)</span>. This calculation correctly isolates the single digit for the current place value. The new <code>carry</code> value that must be transferred to the next (more significant) place value is calculated by integer division: <span class="arithmatex">\(\text{carry} = \text{sum} / 10\)</span>. </p>
+<h3 id="building-the-result-list-and-complexity">Building the Result List and Complexity<a class="headerlink" href="#building-the-result-list-and-complexity" title="Permanent link">&para;</a></h3>
+<p>A new node containing the calculated <span class="arithmatex">\(\text{digit}\)</span> is created and appended to the result linked list using the current pointer. We then advance the pointers for <span class="arithmatex">\(l1\)</span> and <span class="arithmatex">\(l2\)</span> to their next respective nodes (if they exist) and move the result list's current pointer to the newly created node, preparing it for the next iteration.</p>
+<p>This iterative process guarantees that the resulting sum list is built correctly, digit by digit, from the least significant to the most significant. The time complexity of this solution is <span class="arithmatex">\(O(\max(m, n))\)</span>, where <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(n\)</span> are the lengths of the two input linked lists. This is an optimal linear time complexity, as we must process every node at least once. The space complexity is also <span class="arithmatex">\(O(\max(m, n))\)</span> because a new linked list of up to that length must be created to store the result.</p>
 
 
 

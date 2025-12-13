@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#8-string-to-integer-atoi" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -522,6 +527,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 8
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -538,6 +561,95 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#8-string-to-integer-atoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. String to Integer (atoi)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. String to Integer (atoi)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-ambiguity-of-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Ambiguity of Parsing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-discarding-leading-whitespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Discarding Leading Whitespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-handling-the-optional-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Handling the Optional Sign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-reading-and-accumulating-digits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Reading and Accumulating Digits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-overflow-and-underflow-clamping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Overflow and Underflow Clamping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1465,6 +1577,86 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#8-string-to-integer-atoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. String to Integer (atoi)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. String to Integer (atoi)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-ambiguity-of-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Ambiguity of Parsing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-discarding-leading-whitespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Discarding Leading Whitespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-handling-the-optional-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Handling the Optional Sign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-reading-and-accumulating-digits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Reading and Accumulating Digits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-overflow-and-underflow-clamping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Overflow and Underflow Clamping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1517,6 +1709,22 @@
 
         <span class="k">return</span> <span class="n">result</span> <span class="o">*</span> <span class="n">sign</span>
 </code></pre></div>
+<h2 id="8-string-to-integer-atoi">8. String to Integer (atoi)<a class="headerlink" href="#8-string-to-integer-atoi" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-ambiguity-of-parsing">Problem Statement and Ambiguity of Parsing<a class="headerlink" href="#problem-statement-and-ambiguity-of-parsing" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 8, "String to Integer (atoi)," asks for the implementation of the <span class="arithmatex">\(myAtoi(string s)\)</span> function, which converts a string into a 32-bit signed integer, mirroring the behavior of the C/C++ <code>atoi</code> function. This seemingly simple task is complicated by several strict parsing rules and edge cases that must be handled sequentially and correctly. The process is not a single conversion but a series of state transitions.</p>
+<p>The core difficulty lies in managing the strict sequence of parsing steps: first, ignoring leading whitespace; second, identifying and processing the optional sign; third, accumulating valid digits; and finally, handling potential overflow or underflow against the 32-bit integer limits. Any character encountered that does not fit the current expected state (e.g., a letter after a digit) must immediately terminate the parsing process, regardless of how many digits were successfully processed beforehand.</p>
+<h3 id="step-1-discarding-leading-whitespace">Step 1: Discarding Leading Whitespace<a class="headerlink" href="#step-1-discarding-leading-whitespace" title="Permanent link">&para;</a></h3>
+<p>The conversion process must begin by reading and discarding any leading whitespace characters (' ') until the first non-whitespace character is found. This stage requires a simple loop that increments an index past all spaces. If the entire string consists only of spaces, the result is 0.</p>
+<p>Once a non-whitespace character is hit, the algorithm must transition immediately to the next stage. It is crucial to remember that whitespace is only permissible at the very start of the string. Any space encountered after the sign or after the first digit is considered an invalid character and terminates parsing.</p>
+<h3 id="step-2-handling-the-optional-sign">Step 2: Handling the Optional Sign<a class="headerlink" href="#step-2-handling-the-optional-sign" title="Permanent link">&para;</a></h3>
+<p>After skipping initial whitespace, the next character must be evaluated to determine the sign of the number. The sign is optional. If the character is a plus sign ('+'), the number is positive. If it is a minus sign ('-'), the number is negative. If the character is neither a '+' nor a '-' (and is a digit), the number is implicitly positive.</p>
+<p>A sign multiplier variable (e.g., <code>sign</code>, initialized to 1) is set to 1 or -1 accordingly. If a sign character is found, the index is advanced to the next character. A critical rule here is that if any character other than a '+' or '-' appears immediately after the whitespace, the parsing must jump straight to Step 3 (reading digits). If two signs, or a sign followed by a non-digit, or the end of the string is encountered, the conversion stops, and 0 is returned.</p>
+<h3 id="step-3-reading-and-accumulating-digits">Step 3: Reading and Accumulating Digits<a class="headerlink" href="#step-3-reading-and-accumulating-digits" title="Permanent link">&para;</a></h3>
+<p>This is the core numerical processing stage. We iterate through the string starting from the character following the sign (or the first non-whitespace character). The loop continues only as long as the current character is a valid digit ('0' through '9').</p>
+<p>In each iteration, the character is converted into its numerical value, <span class="arithmatex">\(\text{digit}\)</span>. The running result, <span class="arithmatex">\(\text{result}\)</span>, is updated by multiplying the current result by 10 and adding the new digit: <span class="arithmatex">\(\text{result} = \text{result} \times 10 + \text{digit}\)</span>. [Diagram illustrating State Transitions for atoi] The first non-digit character encountered will immediately stop this accumulation phase.</p>
+<h3 id="step-4-overflow-and-underflow-clamping">Step 4: Overflow and Underflow Clamping<a class="headerlink" href="#step-4-overflow-and-underflow-clamping" title="Permanent link">&para;</a></h3>
+<p>The most challenging aspect, similar to the Reverse Integer problem, is the requirement to prevent and handle numerical overflow or underflow. The result must fit within the 32-bit signed integer range, which is <span class="arithmatex">\(\text{INT\_MIN} = -2^{31}\)</span> and <span class="arithmatex">\(\text{INT\_MAX} = 2^{31}-1\)</span>.</p>
+<p>The <strong>overflow check</strong> must be performed <em>inside</em> the digit accumulation loop, <em>before</em> the multiplication and addition, to ensure that the intermediate calculation does not exceed the limits. If the current positive <span class="arithmatex">\(\text{result}\)</span> is already greater than <span class="arithmatex">\(\text{INT\_MAX} / 10\)</span>, or if it is equal to <span class="arithmatex">\(\text{INT\_MAX} / 10\)</span> and the new <span class="arithmatex">\(\text{digit}\)</span> is greater than 7, then the final result would overflow. Symmetrical checks apply to the negative result against <span class="arithmatex">\(\text{INT\_MIN}\)</span>. If an overflow or underflow condition is met at any point, the algorithm must immediately stop and clamp the final value to <span class="arithmatex">\(\text{INT\_MAX}\)</span> or <span class="arithmatex">\(\text{INT\_MIN}\)</span> before returning. This careful sequence of state-dependent parsing and boundary checks ensures compliance with all <span class="arithmatex">\(myAtoi\)</span> rules.</p>
 
 
 
