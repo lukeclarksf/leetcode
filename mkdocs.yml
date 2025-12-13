@@ -35,9 +35,7 @@ plugins:
 # ... (other sections like theme, extensions, and plugins) ...
 
 nav:
-nav:
-  - Home: 'index.md'
-  - 📚 LeetCode Solutions:
+  - LeetCode Solutions:
     - Problem 1: '1.md'
     - Problem 2: '2.md'
     - Problem 3: '3.md'
