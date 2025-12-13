@@ -25,7 +25,21 @@ markdown_extensions:
   - toc:
       permalink: true # Creates a link anchor for every heading
 
-# 4. Navigation (The most important part)
-# This maps the menu items to the .md files in your docs/ folder
+# 3.1 Plugins
+plugins:
+  - search
+  - include-markdown # <--- Add the plugin here
+
+# Inside mkdocs.yml
+
+# ... (other sections like theme, extensions, and plugins) ...
+
 nav:
-  - Introduction: 'index.md'
+nav:
+  - Home: 'index.md'
+  - 📚 LeetCode Solutions:
+    - Problem 1: '1.md'
+    - Problem 2: '2.md'
+    - Problem 3: '3.md'
+    - Problem 4: '4.md'
+    - Problem 5: '5.md'
