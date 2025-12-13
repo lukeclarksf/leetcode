@@ -1706,11 +1706,11 @@
 <p><strong>Fixing the First Two Numbers:</strong> We use two nested loops to fix the first two numbers, <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span>.</p>
 <ul>
 <li>The outer loop iterates with index <span class="arithmatex">\(i\)</span> for the first number <span class="arithmatex">\(a = \text{nums}[i]\)</span>.</li>
-<li>The inner loop iterates with index <span class="arithmatex">\(j\)</span> for the second number <span class="arithmatex">\(b = \text{nums}[j]\)</span>, starting from <span class="arithmatex">\(i+1\)</span>.</li>
+<li>The inner loop iterates with index <span class="arithmatex">\(j\)</span> for the second number <span class="arithmatex">\(b = \text{nums}[j]\)</span>, starting from <span class="arithmatex">\(i+1\)</span>. [Image illustrating the 4Sum Two-Pointer structure]</li>
 </ul>
 </li>
 <li>
-<p><strong>Target Reduction:</strong> With <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> fixed, the problem is reduced to finding two remaining numbers, <span class="arithmatex">\(c\)</span> and <span class="arithmatex">\(d\)</span>, in the rest of the array such that <span class="arithmatex">\(c + d = \text{target} - \text{nums}[i] - \text{nums}[j}\)</span>. We calculate this remaining value as <span class="arithmatex">\(\text{new\_target} = \text{target} - \text{nums}[i] - \text{nums}[j]\)</span>.</p>
+<p><strong>Target Reduction:</strong> With <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> fixed, the problem is reduced to finding two remaining numbers, <span class="arithmatex">\(c\)</span> and <span class="arithmatex">\(d\)</span>, in the rest of the array such that <span class="arithmatex">\(c + d = \text{target} - \text{nums}[i] - \text{nums}[j]\)</span>. We calculate this remaining value as <span class="arithmatex">\(\text{new\_target} = \text{target} - \text{nums}[i] - \text{nums}[j]\)</span>.</p>
 </li>
 </ol>
 <h3 id="the-inner-two-pointer-search">The Inner Two-Pointer Search<a class="headerlink" href="#the-inner-two-pointer-search" title="Permanent link">&para;</a></h3>
@@ -1738,7 +1738,7 @@
 </ul>
 </li>
 </ol>
-<p>By correctly implementing these three checks, the solution ensures that every returned quadruplet is unique. The overall complexity is dominated by the nested loops and the two-pointer search, resulting in the desired <span class="arithmatex">\(O(n^3)\)</span> time complexity. [Image illustrating the 4Sum Two-Pointer structure]</p>
+<p>By correctly implementing these three checks, the solution ensures that every returned quadruplet is unique. The overall complexity is dominated by the nested loops and the two-pointer search, resulting in the desired <span class="arithmatex">\(O(n^3)\)</span> time complexity.</p>
 
 
 
@@ -1788,7 +1788,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
