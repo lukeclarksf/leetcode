@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://lukeclarksf.github.io/leetcode/40/">
+        <link rel="canonical" href="https://lukeclarksf.github.io/leetcode/41/">
       
       
-        <link rel="prev" href="../39/">
+        <link rel="prev" href="../40/">
       
       
-        <link rel="next" href="../41/">
+        <link rel="next" href="../42/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>40. (Medium) Combination Sum II - LeetCode Python</title>
+        <title>41. (Hard) First Missing Positive - LeetCode Python</title>
       
     
     
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              40. (Medium) Combination Sum II
+              41. (Hard) First Missing Positive
             
           </span>
         </div>
@@ -1472,6 +1472,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    40. (Medium) Combination Sum II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1489,35 +1517,6 @@
   <span class="md-ellipsis">
     
   
-    40. (Medium) Combination Sum II
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../41/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
     41. (Hard) First Missing Positive
   
 
@@ -1527,6 +1526,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -9441,33 +9441,9 @@
   
 
 
-  <h1>40. (Medium) Combination Sum II</h1>
+  <h1>41. (Hard) First Missing Positive</h1>
 
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">combinationSum2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidates</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
 
-        <span class="n">candidates</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-
-        <span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">(</span><span class="n">remainder</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">remainder</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">combination</span><span class="p">))</span>
-                <span class="k">return</span>
-            <span class="k">if</span> <span class="n">remainder</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">return</span>
-
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)):</span>
-                <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-                    <span class="k">continue</span>
-
-                <span class="n">candidate</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-                <span class="n">combination</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
-                <span class="n">backtrack</span><span class="p">(</span><span class="n">remainder</span> <span class="o">-</span> <span class="n">candidate</span><span class="p">,</span> <span class="n">combination</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-                <span class="n">combination</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-
-        <span class="n">backtrack</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result</span>
-</code></pre></div>
 
 
 
