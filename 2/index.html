@@ -467,17 +467,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#python-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        💻 Python Implementation
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -530,6 +519,174 @@
     
   
     Problem 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 10
   
 
     
@@ -632,17 +789,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#python-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        💻 Python Implementation
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -660,6 +806,34 @@
 
 
 
+<div class="highlight"><pre><span></span><code><span class="c1"># Definition for singly-linked list.</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ListNode</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">addTwoNumbers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">):</span>
+        <span class="n">dummy_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">dummy_head</span>
+        <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">while</span> <span class="n">l1</span> <span class="ow">or</span> <span class="n">l2</span> <span class="ow">or</span> <span class="n">carry</span><span class="p">:</span>
+            <span class="n">val1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">val</span> <span class="k">if</span> <span class="n">l1</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="n">val2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span> <span class="k">if</span> <span class="n">l2</span> <span class="k">else</span> <span class="mi">0</span>
+
+            <span class="n">total_sum</span> <span class="o">=</span> <span class="n">val1</span> <span class="o">+</span> <span class="n">val2</span> <span class="o">+</span> <span class="n">carry</span>
+            <span class="n">carry</span> <span class="o">=</span> <span class="n">total_sum</span> <span class="o">//</span> <span class="mi">10</span>
+            <span class="n">new_digit</span> <span class="o">=</span> <span class="n">total_sum</span> <span class="o">%</span> <span class="mi">10</span>
+
+            <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">new_digit</span><span class="p">)</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+
+            <span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">l1</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">l2</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span>
+</code></pre></div>
 <h1 id="leetcode-problem-2-add-two-numbers">LeetCode Problem 2: Add Two Numbers<a class="headerlink" href="#leetcode-problem-2-add-two-numbers" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
@@ -694,68 +868,24 @@
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <p><strong>Input:</strong> <code>l1 = [2,4,3]</code>, <code>l2 = [5,6,4]</code>
 <strong>Output:</strong> <code>[7,0,8]</code>
-<strong>Explanation:</strong> $342 + 465 = 807$. The output list represents $807$ in reverse.</p>
+<strong>Explanation:</strong> <span class="arithmatex">\(342 + 465 = 807\)</span>. The output list represents <span class="arithmatex">\(807\)</span> in reverse.</p>
 <hr />
 <h2 id="solution-approach-simulation-of-grade-school-addition">💡 Solution Approach: Simulation of Grade-School Addition<a class="headerlink" href="#solution-approach-simulation-of-grade-school-addition" title="Permanent link">&para;</a></h2>
 <p>The structure of the input—digits in <strong>reverse order</strong>—is key. It means the head of the list corresponds to the ones place, allowing us to perform long addition by traversing the lists simultaneously from head to tail.</p>
 <h3 id="the-iterative-process">The Iterative Process<a class="headerlink" href="#the-iterative-process" title="Permanent link">&para;</a></h3>
-<p>We use an iterative approach, maintaining a <strong><code>carry</code></strong> variable to handle overflow whenever the sum of the digits exceeds $9$.</p>
+<p>We use an iterative approach, maintaining a <strong><code>carry</code></strong> variable to handle overflow whenever the sum of the digits exceeds <span class="arithmatex">\(9\)</span>.</p>
 <ol>
-<li><strong>Initialize:</strong> A <code>dummy</code> node is created to anchor the result list, and a <code>current</code> pointer tracks the tail of the sum list. <code>carry</code> is set to $0$.</li>
-<li><strong>Iterate:</strong> We loop until <strong>both</strong> lists are exhausted <strong>AND</strong> the <code>carry</code> is $0$.</li>
-<li><strong>Summation:</strong> In each step, we calculate the sum of the current digits from $l1$ and $l2$ (using $0$ if a list is exhausted) plus the incoming <code>carry</code>.</li>
+<li><strong>Initialize:</strong> A <code>dummy</code> node is created to anchor the result list, and a <code>current</code> pointer tracks the tail of the sum list. <code>carry</code> is set to <span class="arithmatex">\(0\)</span>.</li>
+<li><strong>Iterate:</strong> We loop until <strong>both</strong> lists are exhausted <strong>AND</strong> the <code>carry</code> is <span class="arithmatex">\(0\)</span>.</li>
+<li><strong>Summation:</strong> In each step, we calculate the sum of the current digits from <span class="arithmatex">\(l1\)</span> and <span class="arithmatex">\(l2\)</span> (using <span class="arithmatex">\(0\)</span> if a list is exhausted) plus the incoming <code>carry</code>.</li>
 <li><strong>Result &amp; Carry Update:</strong><ul>
-<li>The digit for the new node is $sum \pmod{10}$.</li>
-<li>The new <code>carry</code> is $sum // 10$.</li>
+<li>The digit for the new node is <span class="arithmatex">\(sum \pmod{10}\)</span>.</li>
+<li>The new <code>carry</code> is <span class="arithmatex">\(sum // 10\)</span>.</li>
 </ul>
 </li>
 <li><strong>List Building:</strong> A new node is created with the result digit and appended to the result list via the <code>current</code> pointer.</li>
 </ol>
 <hr />
-<h2 id="python-implementation">💻 Python Implementation<a class="headerlink" href="#python-implementation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Definition for singly-linked list.</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">ListNode</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Adds two numbers represented by linked lists.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">addTwoNumbers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l1</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">,</span> <span class="n">l2</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span><span class="p">:</span>
-        <span class="c1"># Create a dummy node to simplify list construction</span>
-        <span class="n">dummy</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">current</span> <span class="o">=</span> <span class="n">dummy</span>
-        <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span>
-
-        <span class="c1"># Loop continues if either list has nodes OR there is a remaining carry</span>
-        <span class="k">while</span> <span class="n">l1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">l2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">carry</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-
-            <span class="c1"># Get the values, defaulting to 0 if the list is finished</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">val</span> <span class="k">if</span> <span class="n">l1</span> <span class="k">else</span> <span class="mi">0</span>
-            <span class="n">y</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span> <span class="k">if</span> <span class="n">l2</span> <span class="k">else</span> <span class="mi">0</span>
-
-            <span class="c1"># Calculate the total sum for the current position</span>
-            <span class="n">sum_val</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">carry</span>
-
-            <span class="c1"># Determine the new carry and the digit for the result node</span>
-            <span class="n">carry</span> <span class="o">=</span> <span class="n">sum_val</span> <span class="o">//</span> <span class="mi">10</span>
-            <span class="n">new_digit</span> <span class="o">=</span> <span class="n">sum_val</span> <span class="o">%</span> <span class="mi">10</span>
-
-            <span class="c1"># Create and append the new node</span>
-            <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">new_digit</span><span class="p">)</span>
-
-            <span class="c1"># Move the pointers forward</span>
-            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
-            <span class="k">if</span> <span class="n">l1</span><span class="p">:</span>
-                <span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">next</span>
-            <span class="k">if</span> <span class="n">l2</span><span class="p">:</span>
-                <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">next</span>
-
-        <span class="c1"># The result starts immediately after the dummy node</span>
-        <span class="k">return</span> <span class="n">dummy</span><span class="o">.</span><span class="n">next</span>
-</code></pre></div>
 
 
 
@@ -809,6 +939,10 @@
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
