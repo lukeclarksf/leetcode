@@ -9686,25 +9686,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 </script>
 </p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">longestCommonPrefix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">strs</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
-
-        <span class="n">prefix</span> <span class="o">=</span> <span class="n">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">strs</span><span class="p">)):</span>
-            <span class="n">current_string</span> <span class="o">=</span> <span class="n">strs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-
-            <span class="k">while</span> <span class="n">current_string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">prefix</span><span class="p">:</span>
-                    <span class="k">return</span> <span class="s2">&quot;&quot;</span>
-
-        <span class="k">return</span> <span class="n">prefix</span>
-</code></pre></div>
 <h2 id="14-longest-common-prefix">14. Longest Common Prefix<a class="headerlink" href="#14-longest-common-prefix" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-core-objective">Problem Statement and Core Objective<a class="headerlink" href="#problem-statement-and-core-objective" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 14, "Longest Common Prefix," is a fundamental string processing task. Given an array of strings, <span class="arithmatex">\(\text{strs}\)</span>, the objective is to find the longest string that is a prefix of <em>all</em> strings within the array. If no common prefix exists among the strings (i.e., they all start with different characters), the function must return an empty string, "".</p>

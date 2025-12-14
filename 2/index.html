@@ -9624,9 +9624,9 @@
 
 <div class="pyodide">
 <div class="pyodide-editor-bar">
-<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-7--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
+<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-11--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
 </div>
-<div><pre id="exec-7--editor" class="pyodide-editor"># Definition for singly-linked list.
+<div><pre id="exec-11--editor" class="pyodide-editor"># Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -9687,15 +9687,15 @@ l1_ex3 = create_linked_list([9, 9, 9, 9, 9, 9, 9])
 l2_ex3 = create_linked_list([9, 9, 9, 9])
 print(linked_list_to_list(Solution().addTwoNumbers(l1_ex3, l2_ex3)))</pre></div>
 <div class="pyodide-editor-bar">
-<span class="pyodide-bar-item">Output</span><span id="exec-7--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
+<span class="pyodide-bar-item">Output</span><span id="exec-11--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
-<pre><code id="exec-7--output" class="pyodide-output"></code></pre>
+<pre><code id="exec-11--output" class="pyodide-output"></code></pre>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     setupPyodide(
-        'exec-7--',
+        'exec-11--',
         install=[],
         themeLight='tomorrow',
         themeDark='tomorrow_night',
@@ -9706,67 +9706,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 </script>
 </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Definition for singly-linked list.</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">ListNode</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">addTwoNumbers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">):</span>
-        <span class="n">dummy_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">current</span> <span class="o">=</span> <span class="n">dummy_head</span>
-        <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span>
-
-        <span class="k">while</span> <span class="n">l1</span> <span class="ow">or</span> <span class="n">l2</span> <span class="ow">or</span> <span class="n">carry</span><span class="p">:</span>
-            <span class="n">val1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">val</span> <span class="k">if</span> <span class="n">l1</span> <span class="k">else</span> <span class="mi">0</span>
-            <span class="n">val2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span> <span class="k">if</span> <span class="n">l2</span> <span class="k">else</span> <span class="mi">0</span>
-
-            <span class="n">total_sum</span> <span class="o">=</span> <span class="n">val1</span> <span class="o">+</span> <span class="n">val2</span> <span class="o">+</span> <span class="n">carry</span>
-            <span class="n">carry</span> <span class="o">=</span> <span class="n">total_sum</span> <span class="o">//</span> <span class="mi">10</span>
-            <span class="n">new_digit</span> <span class="o">=</span> <span class="n">total_sum</span> <span class="o">%</span> <span class="mi">10</span>
-
-            <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">new_digit</span><span class="p">)</span>
-            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
-
-            <span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">l1</span> <span class="k">else</span> <span class="kc">None</span>
-            <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">l2</span> <span class="k">else</span> <span class="kc">None</span>
-
-        <span class="k">return</span> <span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span>
-
-<span class="c1"># Helper function to convert a list of digits to a linked list (in reverse order)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">create_linked_list</span><span class="p">(</span><span class="n">digits</span><span class="p">):</span>
-    <span class="n">dummy_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">current</span> <span class="o">=</span> <span class="n">dummy_head</span>
-    <span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">digits</span><span class="p">:</span>
-        <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span>
-        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
-    <span class="k">return</span> <span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span>
-
-<span class="c1"># Helper function to convert a linked list to a list of digits</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">linked_list_to_list</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">while</span> <span class="n">node</span><span class="p">:</span>
-        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-        <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-
-<span class="c1"># Example 1: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4) -&gt; (7 -&gt; 0 -&gt; 8)</span>
-<span class="n">l1_ex1</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">l2_ex1</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">linked_list_to_list</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">addTwoNumbers</span><span class="p">(</span><span class="n">l1_ex1</span><span class="p">,</span> <span class="n">l2_ex1</span><span class="p">)),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Example 2: (0) + (0) -&gt; (0)</span>
-<span class="n">l1_ex2</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">l2_ex2</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">linked_list_to_list</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">addTwoNumbers</span><span class="p">(</span><span class="n">l1_ex2</span><span class="p">,</span> <span class="n">l2_ex2</span><span class="p">)),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Example 3: (9 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 9) + (9 -&gt; 9 -&gt; 9 -&gt; 9) -&gt; (8 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 0 -&gt; 0 -&gt; 0 -&gt; 1)</span>
-<span class="n">l1_ex3</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
-<span class="n">l2_ex3</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">linked_list_to_list</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">addTwoNumbers</span><span class="p">(</span><span class="n">l1_ex3</span><span class="p">,</span> <span class="n">l2_ex3</span><span class="p">)))</span>
-</code></pre></div>
 <h2 id="2-add-two-numbers">2. Add Two Numbers<a class="headerlink" href="#2-add-two-numbers" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-representation">Problem Statement and Representation<a class="headerlink" href="#problem-statement-and-representation" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 2, "Add Two Numbers," requires the simulation of adding two non-negative integers that are represented in a rather unusual format: as <strong>linked lists</strong>. Specifically, each digit of the number is stored in a separate node of the linked list, and the digits are stored in <strong>reverse order</strong>. For example, the number 342 would be represented by a linked list <span class="arithmatex">\(2 \rightarrow 4 \rightarrow 3\)</span>. The task is to take two such linked lists, <span class="arithmatex">\(l1\)</span> and <span class="arithmatex">\(l2\)</span>, add the numbers they represent, and return the sum as a new linked list in the same reverse-digit format.</p>

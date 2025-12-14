@@ -9624,9 +9624,9 @@
 
 <div class="pyodide">
 <div class="pyodide-editor-bar">
-<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-10--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
+<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-14--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
 </div>
-<div><pre id="exec-10--editor" class="pyodide-editor">class Solution:
+<div><pre id="exec-14--editor" class="pyodide-editor">class Solution:
     def longestPalindrome(self, s: str) -> str:
 
         def expand_around_center(left, right):
@@ -9650,15 +9650,15 @@
 
         return longest</pre></div>
 <div class="pyodide-editor-bar">
-<span class="pyodide-bar-item">Output</span><span id="exec-10--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
+<span class="pyodide-bar-item">Output</span><span id="exec-14--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
-<pre><code id="exec-10--output" class="pyodide-output"></code></pre>
+<pre><code id="exec-14--output" class="pyodide-output"></code></pre>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     setupPyodide(
-        'exec-10--',
+        'exec-14--',
         install=[],
         themeLight='tomorrow',
         themeDark='tomorrow_night',
@@ -9669,30 +9669,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 </script>
 </p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-
-        <span class="k">def</span><span class="w"> </span><span class="nf">expand_around_center</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
-            <span class="k">while</span> <span class="n">left</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">]:</span>
-                <span class="n">left</span> <span class="o">-=</span> <span class="mi">1</span>
-                <span class="n">right</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">right</span><span class="p">]</span>
-
-        <span class="n">longest</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-
-            <span class="c1"># Odd length palindromes (center is s[i])</span>
-            <span class="n">palindrome1</span> <span class="o">=</span> <span class="n">expand_around_center</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">palindrome1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span>
-                <span class="n">longest</span> <span class="o">=</span> <span class="n">palindrome1</span>
-
-            <span class="c1"># Even length palindromes (center is s[i] and s[i+1])</span>
-            <span class="n">palindrome2</span> <span class="o">=</span> <span class="n">expand_around_center</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">palindrome2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span>
-                <span class="n">longest</span> <span class="o">=</span> <span class="n">palindrome2</span>
-
-        <span class="k">return</span> <span class="n">longest</span>
-</code></pre></div>
 <h2 id="5-longest-palindromic-substring">5. Longest Palindromic Substring<a class="headerlink" href="#5-longest-palindromic-substring" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-core-challenge">Problem Statement and Core Challenge<a class="headerlink" href="#problem-statement-and-core-challenge" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 5, "Longest Palindromic Substring," requires finding the longest contiguous substring within a given string <span class="arithmatex">\(s\)</span> that reads the same forwards and backwards. A string that exhibits this property is called a <strong>palindrome</strong>. The challenge lies in efficiently identifying this longest palindromic segment among all possible substrings.</p>

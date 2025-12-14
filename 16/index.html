@@ -9615,32 +9615,62 @@
 
   <h1>16. (Medium) 3Sum Closest (Concept Two Pointers / Sorting)</h1>
 
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">threeSumClosest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<p>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.16.0/ace.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<link title="light" rel="alternate stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/tomorrow.min.css" disabled="disabled">
+<link title="dark" rel="alternate stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/tomorrow-night-blue.min.css" disabled="disabled">
 
-        <span class="n">nums</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-        <span class="n">closest_sum</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<div class="pyodide">
+<div class="pyodide-editor-bar">
+<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-8--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
+</div>
+<div><pre id="exec-8--editor" class="pyodide-editor">class Solution:
+    def threeSumClosest(self, nums: list[int], target: int) -> int:
 
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
-            <span class="n">L</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-            <span class="n">R</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+        nums.sort()
+        n = len(nums)
+        closest_sum = nums[0] + nums[1] + nums[2]
 
-            <span class="k">while</span> <span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">:</span>
-                <span class="n">current_sum</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">R</span><span class="p">]</span>
+        for i in range(n - 2):
+            L = i + 1
+            R = n - 1
 
-                <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">current_sum</span> <span class="o">-</span> <span class="n">target</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">closest_sum</span> <span class="o">-</span> <span class="n">target</span><span class="p">):</span>
-                    <span class="n">closest_sum</span> <span class="o">=</span> <span class="n">current_sum</span>
+            while L < R:
+                current_sum = nums[i] + nums[L] + nums[R]
 
-                <span class="k">if</span> <span class="n">current_sum</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
-                    <span class="n">L</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="k">elif</span> <span class="n">current_sum</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
-                    <span class="n">R</span> <span class="o">-=</span> <span class="mi">1</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="k">return</span> <span class="n">current_sum</span>
+                if abs(current_sum - target) < abs(closest_sum - target):
+                    closest_sum = current_sum
 
-        <span class="k">return</span> <span class="n">closest_sum</span>
-</code></pre></div>
+                if current_sum < target:
+                    L += 1
+                elif current_sum > target:
+                    R -= 1
+                else:
+                    return current_sum
+
+        return closest_sum</pre></div>
+<div class="pyodide-editor-bar">
+<span class="pyodide-bar-item">Output</span><span id="exec-8--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
+</div>
+<pre><code id="exec-8--output" class="pyodide-output"></code></pre>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    setupPyodide(
+        'exec-8--',
+        install=[],
+        themeLight='tomorrow',
+        themeDark='tomorrow_night',
+        session='default',
+        minLines=25,
+        maxLines=25,
+    );
+});
+</script>
+</p>
 <h2 id="16-3sum-closest">16. 3Sum Closest<a class="headerlink" href="#16-3sum-closest" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-target-definition">Problem Statement and Target Definition<a class="headerlink" href="#problem-statement-and-target-definition" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 16, "3Sum Closest," is a variation of the classic 3Sum problem (LeetCode 15). Given an array of <span class="arithmatex">\(n\)</span> integers, <span class="arithmatex">\(nums\)</span>, and a specific integer <strong>target</strong>, the objective is to find three integers in <span class="arithmatex">\(nums\)</span> such that their sum is the closest possible value to the target. It is generally guaranteed that there will be exactly one solution, simplifying the task of choosing between sums that are equally close.</p>

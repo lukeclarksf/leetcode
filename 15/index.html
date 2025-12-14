@@ -9615,46 +9615,76 @@
 
   <h1>15. (Medium) 3Sum (Concept Two Pointers / Sorting)</h1>
 
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">threeSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+<p>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.16.0/ace.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<link title="light" rel="alternate stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/tomorrow.min.css" disabled="disabled">
+<link title="dark" rel="alternate stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/tomorrow-night-blue.min.css" disabled="disabled">
 
-        <span class="n">nums</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<div class="pyodide">
+<div class="pyodide-editor-bar">
+<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-7--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
+</div>
+<div><pre id="exec-7--editor" class="pyodide-editor">class Solution:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
 
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">break</span>
+        nums.sort()
+        result = []
+        n = len(nums)
 
-            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-                <span class="k">continue</span>
+        for i in range(n - 2):
+            if nums[i] > 0:
+                break
 
-            <span class="n">target</span> <span class="o">=</span> <span class="o">-</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">L</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-            <span class="n">R</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
 
-            <span class="k">while</span> <span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">:</span>
-                <span class="n">current_sum</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">R</span><span class="p">]</span>
+            target = -nums[i]
+            L = i + 1
+            R = n - 1
 
-                <span class="k">if</span> <span class="n">current_sum</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
-                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">L</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">R</span><span class="p">]])</span>
+            while L < R:
+                current_sum = nums[L] + nums[R]
 
-                    <span class="k">while</span> <span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
-                        <span class="n">L</span> <span class="o">+=</span> <span class="mi">1</span>
-                    <span class="k">while</span> <span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">R</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">R</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-                        <span class="n">R</span> <span class="o">-=</span> <span class="mi">1</span>
+                if current_sum == target:
+                    result.append([nums[i], nums[L], nums[R]])
 
-                    <span class="n">L</span> <span class="o">+=</span> <span class="mi">1</span>
-                    <span class="n">R</span> <span class="o">-=</span> <span class="mi">1</span>
+                    while L < R and nums[L] == nums[L+1]:
+                        L += 1
+                    while L < R and nums[R] == nums[R-1]:
+                        R -= 1
 
-                <span class="k">elif</span> <span class="n">current_sum</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
-                    <span class="n">L</span> <span class="o">+=</span> <span class="mi">1</span>
+                    L += 1
+                    R -= 1
 
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">R</span> <span class="o">-=</span> <span class="mi">1</span>
+                elif current_sum < target:
+                    L += 1
 
-        <span class="k">return</span> <span class="n">result</span>
-</code></pre></div>
+                else:
+                    R -= 1
+
+        return result</pre></div>
+<div class="pyodide-editor-bar">
+<span class="pyodide-bar-item">Output</span><span id="exec-7--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
+</div>
+<pre><code id="exec-7--output" class="pyodide-output"></code></pre>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    setupPyodide(
+        'exec-7--',
+        install=[],
+        themeLight='tomorrow',
+        themeDark='tomorrow_night',
+        session='default',
+        minLines=39,
+        maxLines=39,
+    );
+});
+</script>
+</p>
 <h2 id="15-3sum">15. 3Sum<a class="headerlink" href="#15-3sum" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-the-uniqueness-constraint">Problem Statement and The Uniqueness Constraint<a class="headerlink" href="#problem-statement-and-the-uniqueness-constraint" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 15, "3Sum," asks us to find all unique triplets <span class="arithmatex">\([a, b, c]\)</span> within a given array of <span class="arithmatex">\(n\)</span> integers, <span class="arithmatex">\(nums\)</span>, such that their sum is zero: <span class="arithmatex">\(a + b + c = 0\)</span>. This problem is an extension of the classic Two Sum problem but adds significant complexity due to the requirement of finding three numbers and, most importantly, ensuring that the resulting set of triplets contains <strong>no duplicates</strong>.</p>

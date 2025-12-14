@@ -9615,35 +9615,65 @@
 
   <h1>17. (Medium) Letter Combinations of a Phone Number (Concept Backtracking)</h1>
 
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">letterCombinations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">digits</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<p>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.16.0/ace.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<link title="light" rel="alternate stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/tomorrow.min.css" disabled="disabled">
+<link title="dark" rel="alternate stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/tomorrow-night-blue.min.css" disabled="disabled">
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">digits</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[]</span>
+<div class="pyodide">
+<div class="pyodide-editor-bar">
+<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-9--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
+</div>
+<div><pre id="exec-9--editor" class="pyodide-editor">class Solution:
+    def letterCombinations(self, digits: str) -> list[str]:
 
-        <span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span> <span class="s1">&#39;def&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">:</span> <span class="s1">&#39;ghi&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">:</span> <span class="s1">&#39;jkl&#39;</span><span class="p">,</span> 
-            <span class="s1">&#39;6&#39;</span><span class="p">:</span> <span class="s1">&#39;mno&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">:</span> <span class="s1">&#39;pqrs&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">:</span> <span class="s1">&#39;tuv&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">:</span> <span class="s1">&#39;wxyz&#39;</span>
-        <span class="p">}</span>
+        if not digits:
+            return []
 
-        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        mapping = {
+            '2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', 
+            '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'
+        }
 
-        <span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">digits</span><span class="p">):</span>
-                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
-                <span class="k">return</span>
+        result = []
 
-            <span class="n">digit</span> <span class="o">=</span> <span class="n">digits</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-            <span class="n">letters</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">digit</span><span class="p">]</span>
+        def backtrack(index, path):
+            if index == len(digits):
+                result.append("".join(path))
+                return
 
-            <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">:</span>
-                <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
-                <span class="n">backtrack</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-                <span class="n">path</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            digit = digits[index]
+            letters = mapping[digit]
 
-        <span class="n">backtrack</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[])</span>
-        <span class="k">return</span> <span class="n">result</span>
-</code></pre></div>
+            for letter in letters:
+                path.append(letter)
+                backtrack(index + 1, path)
+                path.pop()
+
+        backtrack(0, [])
+        return result</pre></div>
+<div class="pyodide-editor-bar">
+<span class="pyodide-bar-item">Output</span><span id="exec-9--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
+</div>
+<pre><code id="exec-9--output" class="pyodide-output"></code></pre>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    setupPyodide(
+        'exec-9--',
+        install=[],
+        themeLight='tomorrow',
+        themeDark='tomorrow_night',
+        session='default',
+        minLines=28,
+        maxLines=28,
+    );
+});
+</script>
+</p>
 <h2 id="17-letter-combinations-of-a-phone-number">17. Letter Combinations of a Phone Number<a class="headerlink" href="#17-letter-combinations-of-a-phone-number" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-the-mapping">Problem Statement and The Mapping<a class="headerlink" href="#problem-statement-and-the-mapping" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 17, "Letter Combinations of a Phone Number," requires generating all possible letter combinations that a given digit string can represent, based on the standard telephone keypad mapping. The input is a string of digits, and the output is a list of all possible letter sequences. For example, if the input is "23", the digit '2' maps to "abc" and '3' maps to "def". The resulting combinations are "ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf".</p>
