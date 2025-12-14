@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://lukeclarksf.github.io/leetcode/9/">
+        <link rel="canonical" href="https://lukeclarkca.com/9/">
       
       
         <link rel="prev" href="../8/">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#9-palindrome-number" class="md-skip">
+        <a href="#pyodide" class="md-skip">
           Skip to content
         </a>
       
@@ -752,6 +752,28 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pyodide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pyodide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#9-palindrome-number" class="md-nav__link">
@@ -1938,7 +1960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../41/" class="md-nav__link">
+      <a href="../41.md" class="md-nav__link">
         
   
   
@@ -1966,7 +1988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../42/" class="md-nav__link">
+      <a href="../42.md" class="md-nav__link">
         
   
   
@@ -1994,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../43/" class="md-nav__link">
+      <a href="../43.md" class="md-nav__link">
         
   
   
@@ -2022,7 +2044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../44/" class="md-nav__link">
+      <a href="../44.md" class="md-nav__link">
         
   
   
@@ -2050,7 +2072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../45/" class="md-nav__link">
+      <a href="../45.md" class="md-nav__link">
         
   
   
@@ -2078,7 +2100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../46/" class="md-nav__link">
+      <a href="../46.md" class="md-nav__link">
         
   
   
@@ -2106,7 +2128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../47/" class="md-nav__link">
+      <a href="../47.md" class="md-nav__link">
         
   
   
@@ -2134,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../48/" class="md-nav__link">
+      <a href="../48.md" class="md-nav__link">
         
   
   
@@ -2162,7 +2184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../49/" class="md-nav__link">
+      <a href="../49.md" class="md-nav__link">
         
   
   
@@ -2190,7 +2212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../50/" class="md-nav__link">
+      <a href="../50.md" class="md-nav__link">
         
   
   
@@ -2359,6 +2381,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pyodide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pyodide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#9-palindrome-number" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2441,6 +2485,7 @@
 
   <h1>9. Palindrome Number (Easy)</h1>
 
+<h2 id="pyodide">Pyodide<a class="headerlink" href="#pyodide" title="Permanent link">&para;</a></h2>
 <p>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.16.0/ace.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -2450,9 +2495,9 @@
 
 <div class="pyodide">
 <div class="pyodide-editor-bar">
-<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-90--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
+<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-40--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
 </div>
-<div><pre id="exec-90--editor" class="pyodide-editor">class Solution:
+<div><pre id="exec-40--editor" class="pyodide-editor">class Solution:
     def isPalindrome(self, x: int) -> bool:
 
         if x < 0 or (x % 10 == 0 and x != 0):
@@ -2465,15 +2510,15 @@
 
         return x == reverted_number or x == reverted_number // 10</pre></div>
 <div class="pyodide-editor-bar">
-<span class="pyodide-bar-item">Output</span><span id="exec-90--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
+<span class="pyodide-bar-item">Output</span><span id="exec-40--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
-<pre><code id="exec-90--output" class="pyodide-output"></code></pre>
+<pre><code id="exec-40--output" class="pyodide-output"></code></pre>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     setupPyodide(
-        'exec-90--',
+        'exec-40--',
         install=[],
         themeLight='tomorrow',
         themeDark='tomorrow_night',
@@ -2484,6 +2529,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 </script>
 </p>
+<h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
+<p><a target="__blank" href="https://leetcode.com/problems/two-sum/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">isPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="n">reverted_number</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">reverted_number</span><span class="p">:</span>
+            <span class="n">reverted_number</span> <span class="o">=</span> <span class="n">reverted_number</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">10</span>
+            <span class="n">x</span> <span class="o">//=</span> <span class="mi">10</span>
+
+        <span class="k">return</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="o">//</span> <span class="mi">10</span>
+</code></pre></div>
 <h2 id="9-palindrome-number">9. Palindrome Number<a class="headerlink" href="#9-palindrome-number" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-constraints">Problem Statement and Constraints<a class="headerlink" href="#problem-statement-and-constraints" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 9, "Palindrome Number," asks for a determination of whether a given integer <span class="arithmatex">\(x\)</span> is a palindrome. An integer is defined as a palindrome if it reads the same forwards and backwards. For instance, 121 is a palindrome, but 123 is not. The primary constraint on the solution is the requirement to solve the problem <strong>without converting the integer to a string</strong>. This mandates an approach using only mathematical operations, such as modulo and division.</p>
