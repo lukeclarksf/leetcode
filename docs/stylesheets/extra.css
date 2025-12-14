@@ -2,6 +2,18 @@
   max-width: 100%; /* Stretches to the full available width */
 }
 
+.verify-button {
+  padding: 20px;
+  background: #113768;
+  color: white;
+  cursor: pointer;
+  margin: 10px 0 10px 0;
+}
+
+.verify-button:hover {
+  background: #1956a4;
+}
+
 :root {
   /* Primary color (e.g., a specific shade of red) */
   --md-primary-fg-color: #113768;
