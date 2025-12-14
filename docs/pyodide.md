@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 ```pyodide height="30"
 
 # Leetcode 2 Verbose
