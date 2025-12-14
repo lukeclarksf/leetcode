@@ -2508,7 +2508,48 @@
             reverted_number = reverted_number * 10 + x % 10
             x //= 10
 
-        return x == reverted_number or x == reverted_number // 10</pre></div>
+        return x == reverted_number or x == reverted_number // 10
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Palindrome Number Examples ---")
+
+# Test Case 1: Standard Palindrome (Odd number of digits)
+x1 = 121
+result1 = sol.isPalindrome(x1)
+print(f"Input: {x1}")
+print(f"Output: {result1} (Expected: True)")
+
+# Test Case 2: Standard Palindrome (Even number of digits)
+x2 = 1221
+result2 = sol.isPalindrome(x2)
+print(f"Input: {x2}")
+print(f"Output: {result2} (Expected: True)")
+
+# Test Case 3: Not a Palindrome
+x3 = 10
+result3 = sol.isPalindrome(x3)
+print(f"Input: {x3}")
+print(f"Output: {result3} (Expected: False - Fails condition 2)")
+
+# Test Case 4: Not a Palindrome (Mismatch)
+x4 = 123
+result4 = sol.isPalindrome(x4)
+print(f"Input: {x4}")
+print(f"Output: {result4} (Expected: False)")
+
+# Test Case 5: Negative Number (Fails condition 1)
+x5 = -121
+result5 = sol.isPalindrome(x5)
+print(f"Input: {x5}")
+print(f"Output: {result5} (Expected: False)")
+
+# Test Case 6: Zero (Palindrome)
+x6 = 0
+result6 = sol.isPalindrome(x6)
+print(f"Input: {x6}")
+print(f"Output: {result6} (Expected: True)")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-40--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2523,8 +2564,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=12,
-        maxLines=12,
+        minLines=53,
+        maxLines=53,
     );
 });
 </script>
@@ -2543,6 +2584,47 @@ document.addEventListener('DOMContentLoaded', (event) => {
             <span class="n">x</span> <span class="o">//=</span> <span class="mi">10</span>
 
         <span class="k">return</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="o">//</span> <span class="mi">10</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Palindrome Number Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard Palindrome (Odd number of digits)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">121</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isPalindrome</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2"> (Expected: True)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Standard Palindrome (Even number of digits)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">1221</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isPalindrome</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: True)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Not a Palindrome</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isPalindrome</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2"> (Expected: False - Fails condition 2)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Not a Palindrome (Mismatch)</span>
+<span class="n">x4</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isPalindrome</span><span class="p">(</span><span class="n">x4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2"> (Expected: False)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 5: Negative Number (Fails condition 1)</span>
+<span class="n">x5</span> <span class="o">=</span> <span class="o">-</span><span class="mi">121</span>
+<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isPalindrome</span><span class="p">(</span><span class="n">x5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2"> (Expected: False)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 6: Zero (Palindrome)</span>
+<span class="n">x6</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">result6</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isPalindrome</span><span class="p">(</span><span class="n">x6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x6</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result6</span><span class="si">}</span><span class="s2"> (Expected: True)&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="9-palindrome-number">9. Palindrome Number<a class="headerlink" href="#9-palindrome-number" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-constraints">Problem Statement and Constraints<a class="headerlink" href="#problem-statement-and-constraints" title="Permanent link">&para;</a></h3>
