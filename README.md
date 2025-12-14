@@ -1,5 +1,7 @@
 ## Python LeetCode
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qoQtq1uVRkM?si=x_tVu9k1P5xXXMDi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 This repository holds my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment. LeetCode includes Data Structures and Algorithms to practice.
 
 Browse source code via sidebar on [lukeclarkca.com](https://lukeclarkca.com) or here. Run your code with Pyodide.
