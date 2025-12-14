@@ -2397,7 +2397,80 @@ class Solution:
 
         current.next = list1 if list1 else list2
 
-        return dummy.next</pre></div>
+        return dummy.next
+
+# --- Helper function for list creation and printing ---
+
+def create_linked_list(arr: list[int]) -> ListNode | None:
+    if not arr:
+        return None
+    head = ListNode(arr[0])
+    current = head
+    for val in arr[1:]:
+        current.next = ListNode(val)
+        current = current.next
+    return head
+
+def print_linked_list(head: ListNode | None):
+    if not head:
+        return "[]"
+
+    nodes = []
+    current = head
+    while current:
+        nodes.append(str(current.val))
+        current = current.next
+    return "[" + " -> ".join(nodes) + "]"
+
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Merge Two Sorted Lists Examples ---")
+
+# Test Case 1: Standard merge
+arr1 = [1, 2, 4]
+arr2 = [1, 3, 4]
+list1 = create_linked_list(arr1)
+list2 = create_linked_list(arr2)
+result1 = sol.mergeTwoLists(list1, list2)
+# Expected: [1 -> 1 -> 2 -> 3 -> 4 -> 4]
+print(f"List 1: {print_linked_list(create_linked_list(arr1))}")
+print(f"List 2: {print_linked_list(create_linked_list(arr2))}")
+print(f"Output: {print_linked_list(result1)}")
+
+# Test Case 2: One empty list
+arr3 = []
+arr4 = [0]
+list3 = create_linked_list(arr3)
+list4 = create_linked_list(arr4)
+result2 = sol.mergeTwoLists(list3, list4)
+# Expected: [0]
+print(f"List 1: {print_linked_list(create_linked_list(arr3))}")
+print(f"List 2: {print_linked_list(create_linked_list(arr4))}")
+print(f"Output: {print_linked_list(result2)}")
+
+# Test Case 3: Both empty lists
+arr5 = []
+arr6 = []
+list5 = create_linked_list(arr5)
+list6 = create_linked_list(arr6)
+result3 = sol.mergeTwoLists(list5, list6)
+# Expected: []
+print(f"List 1: {print_linked_list(create_linked_list(arr5))}")
+print(f"List 2: {print_linked_list(create_linked_list(arr6))}")
+print(f"Output: {print_linked_list(result3)}")
+
+# Test Case 4: One list contains all smaller elements
+arr7 = [1, 2, 3]
+arr8 = [4, 5, 6]
+list7 = create_linked_list(arr7)
+list8 = create_linked_list(arr8)
+result4 = sol.mergeTwoLists(list7, list8)
+# Expected: [1 -> 2 -> 3 -> 4 -> 5 -> 6]
+print(f"List 1: {print_linked_list(create_linked_list(arr7))}")
+print(f"List 2: {print_linked_list(create_linked_list(arr8))}")
+print(f"Output: {print_linked_list(result4)}")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-14--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2412,8 +2485,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=23,
-        maxLines=23,
+        minLines=96,
+        maxLines=96,
     );
 });
 </script>
@@ -2443,6 +2516,79 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">list1</span> <span class="k">if</span> <span class="n">list1</span> <span class="k">else</span> <span class="n">list2</span>
 
         <span class="k">return</span> <span class="n">dummy</span><span class="o">.</span><span class="n">next</span>
+
+<span class="c1"># --- Helper function for list creation and printing ---</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_linked_list</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">head</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">head</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">print_linked_list</span><span class="p">(</span><span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">head</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;[]&quot;</span>
+
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">head</span>
+    <span class="k">while</span> <span class="n">current</span><span class="p">:</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">val</span><span class="p">))</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="s2">&quot; -&gt; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span>
+
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Merge Two Sorted Lists Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard merge</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">mergeTwoLists</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">)</span>
+<span class="c1"># Expected: [1 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 4]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List 1: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr1</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List 2: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr2</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">result1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: One empty list</span>
+<span class="n">arr3</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">arr4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">list3</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr3</span><span class="p">)</span>
+<span class="n">list4</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr4</span><span class="p">)</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">mergeTwoLists</span><span class="p">(</span><span class="n">list3</span><span class="p">,</span> <span class="n">list4</span><span class="p">)</span>
+<span class="c1"># Expected: [0]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List 1: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr3</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List 2: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr4</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">result2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Both empty lists</span>
+<span class="n">arr5</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">arr6</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">list5</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr5</span><span class="p">)</span>
+<span class="n">list6</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr6</span><span class="p">)</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">mergeTwoLists</span><span class="p">(</span><span class="n">list5</span><span class="p">,</span> <span class="n">list6</span><span class="p">)</span>
+<span class="c1"># Expected: []</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List 1: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr5</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List 2: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr6</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">result3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: One list contains all smaller elements</span>
+<span class="n">arr7</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">arr8</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">list7</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr7</span><span class="p">)</span>
+<span class="n">list8</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr8</span><span class="p">)</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">mergeTwoLists</span><span class="p">(</span><span class="n">list7</span><span class="p">,</span> <span class="n">list8</span><span class="p">)</span>
+<span class="c1"># Expected: [1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List 1: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr7</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List 2: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr8</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">result4</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
