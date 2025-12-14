@@ -2394,7 +2394,42 @@
             result.append(str(count) + prev_sequence[i])
             i = j
 
-        return "".join(result)</pre></div>
+        return "".join(result)
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Count and Say Sequence Examples ---")
+
+# Test Case 1: n = 1
+n1 = 1
+result1 = sol.countAndSay(n1)
+print(f"Input: n={n1}")
+print(f"Output: '{result1}' (Expected: '1')")
+
+# Test Case 2: n = 4
+n2 = 4
+result2 = sol.countAndSay(n2)
+# n=1: 1
+# n=2: 11
+# n=3: 21
+# n=4: 1211
+print(f"\nInput: n={n2}")
+print(f"Output: '{result2}' (Expected: '1211')")
+
+# Test Case 3: n = 5
+n3 = 5
+result3 = sol.countAndSay(n3)
+# n=5: 111221
+print(f"\nInput: n={n3}")
+print(f"Output: '{result3}' (Expected: '111221')")
+
+# Test Case 4: n = 6
+n4 = 6
+result4 = sol.countAndSay(n4)
+# n=6: 312211
+print(f"\nInput: n={n4}")
+print(f"Output: '{result4}' (Expected: '312211')")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-32--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2409,8 +2444,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=20,
-        maxLines=20,
+        minLines=55,
+        maxLines=55,
     );
 });
 </script>
@@ -2437,6 +2472,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
             <span class="n">i</span> <span class="o">=</span> <span class="n">j</span>
 
         <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Count and Say Sequence Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: n = 1</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">countAndSay</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: n=</span><span class="si">{</span><span class="n">n1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;1&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: n = 4</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">countAndSay</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+<span class="c1"># n=1: 1</span>
+<span class="c1"># n=2: 11</span>
+<span class="c1"># n=3: 21</span>
+<span class="c1"># n=4: 1211</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: n=</span><span class="si">{</span><span class="n">n2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;1211&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: n = 5</span>
+<span class="n">n3</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">countAndSay</span><span class="p">(</span><span class="n">n3</span><span class="p">)</span>
+<span class="c1"># n=5: 111221</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: n=</span><span class="si">{</span><span class="n">n3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;111221&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: n = 6</span>
+<span class="n">n4</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">countAndSay</span><span class="p">(</span><span class="n">n4</span><span class="p">)</span>
+<span class="c1"># n=6: 312211</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: n=</span><span class="si">{</span><span class="n">n4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;312211&#39;)&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
