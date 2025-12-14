@@ -2387,7 +2387,48 @@
                 i += 1
                 nums[i] = nums[j]
 
-        return i + 1</pre></div>
+        return i + 1
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Remove Duplicates from Sorted Array Examples ---")
+
+# Test Case 1: Standard case
+nums1 = [1, 1, 2]
+original_nums1 = list(nums1) # Keep original for printout
+k1 = sol.removeDuplicates(nums1)
+# The first k elements should be [1, 2]
+print(f"Input: {original_nums1}")
+print(f"Output Length (k): {k1} (Expected: 2)")
+print(f"Modified Array (first k elements): {nums1[:k1]}")
+
+# Test Case 2: Many duplicates
+nums2 = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+original_nums2 = list(nums2)
+k2 = sol.removeDuplicates(nums2)
+# The first k elements should be [0, 1, 2, 3, 4]
+print(f"\nInput: {original_nums2}")
+print(f"Output Length (k): {k2} (Expected: 5)")
+print(f"Modified Array (first k elements): {nums2[:k2]}")
+
+# Test Case 3: No duplicates
+nums3 = [10, 20, 30]
+original_nums3 = list(nums3)
+k3 = sol.removeDuplicates(nums3)
+# The first k elements should be [10, 20, 30]
+print(f"\nInput: {original_nums3}")
+print(f"Output Length (k): {k3} (Expected: 3)")
+print(f"Modified Array (first k elements): {nums3[:k3]}")
+
+# Test Case 4: Empty array
+nums4 = []
+original_nums4 = list(nums4)
+k4 = sol.removeDuplicates(nums4)
+# Expected: 0
+print(f"\nInput: {original_nums4}")
+print(f"Output Length (k): {k4} (Expected: 0)")
+print(f"Modified Array (first k elements): {nums4[:k4]}")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-19--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2402,8 +2443,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=13,
-        maxLines=13,
+        minLines=54,
+        maxLines=54,
     );
 });
 </script>
@@ -2423,6 +2464,47 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Remove Duplicates from Sorted Array Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard case</span>
+<span class="n">nums1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">original_nums1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span> <span class="c1"># Keep original for printout</span>
+<span class="n">k1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">removeDuplicates</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span>
+<span class="c1"># The first k elements should be [1, 2]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">original_nums1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output Length (k): </span><span class="si">{</span><span class="n">k1</span><span class="si">}</span><span class="s2"> (Expected: 2)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Modified Array (first k elements): </span><span class="si">{</span><span class="n">nums1</span><span class="p">[:</span><span class="n">k1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Many duplicates</span>
+<span class="n">nums2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">original_nums2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nums2</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">removeDuplicates</span><span class="p">(</span><span class="n">nums2</span><span class="p">)</span>
+<span class="c1"># The first k elements should be [0, 1, 2, 3, 4]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: </span><span class="si">{</span><span class="n">original_nums2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output Length (k): </span><span class="si">{</span><span class="n">k2</span><span class="si">}</span><span class="s2"> (Expected: 5)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Modified Array (first k elements): </span><span class="si">{</span><span class="n">nums2</span><span class="p">[:</span><span class="n">k2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: No duplicates</span>
+<span class="n">nums3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">original_nums3</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nums3</span><span class="p">)</span>
+<span class="n">k3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">removeDuplicates</span><span class="p">(</span><span class="n">nums3</span><span class="p">)</span>
+<span class="c1"># The first k elements should be [10, 20, 30]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: </span><span class="si">{</span><span class="n">original_nums3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output Length (k): </span><span class="si">{</span><span class="n">k3</span><span class="si">}</span><span class="s2"> (Expected: 3)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Modified Array (first k elements): </span><span class="si">{</span><span class="n">nums3</span><span class="p">[:</span><span class="n">k3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Empty array</span>
+<span class="n">nums4</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">original_nums4</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nums4</span><span class="p">)</span>
+<span class="n">k4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">removeDuplicates</span><span class="p">(</span><span class="n">nums4</span><span class="p">)</span>
+<span class="c1"># Expected: 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: </span><span class="si">{</span><span class="n">original_nums4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output Length (k): </span><span class="si">{</span><span class="n">k4</span><span class="si">}</span><span class="s2"> (Expected: 0)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Modified Array (first k elements): </span><span class="si">{</span><span class="n">nums4</span><span class="p">[:</span><span class="n">k4</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
