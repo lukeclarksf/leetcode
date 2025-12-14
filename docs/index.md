@@ -1,8 +1,8 @@
 # Python LeetCode
 
-This repository holds my Python solutions for various LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment.
+Here you will find my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment.
 
-Static site generation is done with Python Make Docs.
+Static site generation is done with Python Make Docs. Run your code with Pyodide.
 
 Browse source code here (sidebar to the left) or visit [GitHub](https://github.com/lukeclarksf/leetcode).
 
