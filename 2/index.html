@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#function-description" class="md-skip">
+        <a href="#pyodide" class="md-skip">
           Skip to content
         </a>
       
@@ -537,6 +537,28 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pyodide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pyodide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#function-description" class="md-nav__link">
@@ -2346,6 +2368,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pyodide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pyodide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#function-description" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2461,6 +2505,7 @@
 
   <h1>2. Add Two Numbers (Medium)</h1>
 
+<h2 id="pyodide">Pyodide<a class="headerlink" href="#pyodide" title="Permanent link">&para;</a></h2>
 <p>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.16.0/ace.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -2552,6 +2597,68 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 </script>
 </p>
+<h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Definition for singly-linked list.</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ListNode</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">addTwoNumbers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">):</span>
+        <span class="n">dummy_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">dummy_head</span>
+        <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">while</span> <span class="n">l1</span> <span class="ow">or</span> <span class="n">l2</span> <span class="ow">or</span> <span class="n">carry</span><span class="p">:</span>
+            <span class="n">val1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">val</span> <span class="k">if</span> <span class="n">l1</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="n">val2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span> <span class="k">if</span> <span class="n">l2</span> <span class="k">else</span> <span class="mi">0</span>
+
+            <span class="n">total_sum</span> <span class="o">=</span> <span class="n">val1</span> <span class="o">+</span> <span class="n">val2</span> <span class="o">+</span> <span class="n">carry</span>
+            <span class="n">carry</span> <span class="o">=</span> <span class="n">total_sum</span> <span class="o">//</span> <span class="mi">10</span>
+            <span class="n">new_digit</span> <span class="o">=</span> <span class="n">total_sum</span> <span class="o">%</span> <span class="mi">10</span>
+
+            <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">new_digit</span><span class="p">)</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+
+            <span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">l1</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">l2</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span>
+
+<span class="c1"># Helper function to convert a list of digits to a linked list (in reverse order)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_linked_list</span><span class="p">(</span><span class="n">digits</span><span class="p">):</span>
+    <span class="n">dummy_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">dummy_head</span>
+    <span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">digits</span><span class="p">:</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span>
+
+<span class="c1"># Helper function to convert a linked list to a list of digits</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">linked_list_to_list</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">node</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="c1"># Example 1: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4) -&gt; (7 -&gt; 0 -&gt; 8)</span>
+<span class="n">l1_ex1</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">l2_ex1</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">linked_list_to_list</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">addTwoNumbers</span><span class="p">(</span><span class="n">l1_ex1</span><span class="p">,</span> <span class="n">l2_ex1</span><span class="p">)),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example 2: (0) + (0) -&gt; (0)</span>
+<span class="n">l1_ex2</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">l2_ex2</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">linked_list_to_list</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">addTwoNumbers</span><span class="p">(</span><span class="n">l1_ex2</span><span class="p">,</span> <span class="n">l2_ex2</span><span class="p">)),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example 3: (9 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 9) + (9 -&gt; 9 -&gt; 9 -&gt; 9) -&gt; (8 -&gt; 9 -&gt; 9 -&gt; 9 -&gt; 0 -&gt; 0 -&gt; 0 -&gt; 1)</span>
+<span class="n">l1_ex3</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="n">l2_ex3</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">linked_list_to_list</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">addTwoNumbers</span><span class="p">(</span><span class="n">l1_ex3</span><span class="p">,</span> <span class="n">l2_ex3</span><span class="p">)))</span>
+</code></pre></div>
 <h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
 
 
