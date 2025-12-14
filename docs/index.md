@@ -4,10 +4,8 @@ This repository holds my Python solutions for various LeetCode problems, typical
 
 Static site generation is done with Python Make Docs.
 
-View source code here or on [GitHub](https://github.com/lukeclarksf/leetcode)
+Browse source code here (sidebar to the left) or visit [GitHub](https://github.com/lukeclarksf/leetcode).
 
 Luke Clark
 
-Contact at me [lukeclarksf@gmail.com](mailto:lukeclarksf@gmail.com)
-
-Look at my [CV](https://lukeclarksf.com)
+Contact at me [lukeclarksf@gmail.com](mailto:lukeclarksf@gmail.com). See my [Resume](https://lukeclarksf.com).
