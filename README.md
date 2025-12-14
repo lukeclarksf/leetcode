@@ -1,8 +1,5 @@
 ## Python LeetCode
 
-[![Video Thumbnail](https://img.youtube.com/vi/qoQtq1uVRkM/0.jpg)](https://www.youtube.com/watch?v=qoQtq1uVRkM)
-
-
 This repository holds my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment. LeetCode includes Data Structures and Algorithms to practice.
 
 Browse source code via sidebar on [lukeclarkca.com](https://lukeclarkca.com) or here. Run your code with Pyodide.
@@ -18,6 +15,8 @@ Luke Clark
 Send me an email at [lukeclarksf@gmail.com](mailto:lukeclarksf@gmail.com). See my [Resume](https://lukeclarksf.com).
 
 ## Learn Data Structures and Algorithms
+
+[![Video Thumbnail](https://img.youtube.com/vi/qoQtq1uVRkM/0.jpg)](https://www.youtube.com/watch?v=qoQtq1uVRkM)
 
 <img src="docs/images/Python.png" width="600" style="margin:10px 0 10px 0">
 
