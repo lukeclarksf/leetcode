@@ -2491,46 +2491,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         <span class="n">last</span> <span class="o">=</span> <span class="n">find_bound</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">]</span>
-
-<span class="c1"># --- Example Usage Code ---</span>
-
-<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Find First and Last Position of Element Examples ---&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 1: Standard case with target found multiple times</span>
-<span class="n">nums1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="n">target1</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">searchRange</span><span class="p">(</span><span class="n">nums1</span><span class="p">,</span> <span class="n">target1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">nums1</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2"> (Expected: [3, 4])&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 2: Target found once</span>
-<span class="n">nums2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">target2</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">searchRange</span><span class="p">(</span><span class="n">nums2</span><span class="p">,</span> <span class="n">target2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: </span><span class="si">{</span><span class="n">nums2</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: [2, 2])&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 3: Target not found</span>
-<span class="n">nums3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="n">target3</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">searchRange</span><span class="p">(</span><span class="n">nums3</span><span class="p">,</span> <span class="n">target3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: </span><span class="si">{</span><span class="n">nums3</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2"> (Expected: [-1, -1])&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 4: Empty array</span>
-<span class="n">nums4</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">target4</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">searchRange</span><span class="p">(</span><span class="n">nums4</span><span class="p">,</span> <span class="n">target4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: </span><span class="si">{</span><span class="n">nums4</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2"> (Expected: [-1, -1])&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 5: Target is the first element</span>
-<span class="n">nums5</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">target5</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">searchRange</span><span class="p">(</span><span class="n">nums5</span><span class="p">,</span> <span class="n">target5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: </span><span class="si">{</span><span class="n">nums5</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2"> (Expected: [0, 2])&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
