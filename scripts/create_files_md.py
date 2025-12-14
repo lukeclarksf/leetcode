@@ -17,9 +17,7 @@ def create_md_files(start_num, end_num, content=None):
     include "../python/'+f"{i}"+'.py" \n\
     preserve-includer-indent=false \n\
 %}\n\
-```\n\
-\n\
-```'
+```\n'
         file_content = content if content is not None else default_content + str(i)
 
         if not os.path.exists(filename):
