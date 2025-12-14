@@ -2394,7 +2394,44 @@
                 combination.pop()
 
         backtrack(target, [], 0)
-        return result</pre></div>
+        return result
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Combination Sum Examples ---")
+
+# Test Case 1: Standard case with reuse
+candidates1 = [2, 3, 6, 7]
+target1 = 7
+result1 = sol.combinationSum(candidates1, target1)
+# Expected: [[2, 2, 3], [7]]
+print(f"Input: candidates={candidates1}, target={target1}")
+print(f"Output: {result1}")
+
+# Test Case 2: Different candidates, multiple solutions
+candidates2 = [2, 3, 5]
+target2 = 8
+result2 = sol.combinationSum(candidates2, target2)
+# Expected: [[2, 2, 2, 2], [2, 3, 3], [3, 5]]
+print(f"\nInput: candidates={candidates2}, target={target2}")
+print(f"Output: {result2}")
+
+# Test Case 3: Target unreachable
+candidates3 = [2, 4]
+target3 = 7
+result3 = sol.combinationSum(candidates3, target3)
+# Expected: []
+print(f"\nInput: candidates={candidates3}, target={target3}")
+print(f"Output: {result3}")
+
+# Test Case 4: Single candidate
+candidates4 = [1]
+target4 = 5
+result4 = sol.combinationSum(candidates4, target4)
+# Expected: [[1, 1, 1, 1, 1]]
+print(f"\nInput: candidates={candidates4}, target={target4}")
+print(f"Output: {result4}")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-33--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2409,8 +2446,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=20,
-        maxLines=20,
+        minLines=57,
+        maxLines=57,
     );
 });
 </script>
@@ -2437,6 +2474,43 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         <span class="n">backtrack</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">0</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Combination Sum Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard case with reuse</span>
+<span class="n">candidates1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">target1</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">combinationSum</span><span class="p">(</span><span class="n">candidates1</span><span class="p">,</span> <span class="n">target1</span><span class="p">)</span>
+<span class="c1"># Expected: [[2, 2, 3], [7]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: candidates=</span><span class="si">{</span><span class="n">candidates1</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Different candidates, multiple solutions</span>
+<span class="n">candidates2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">target2</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">combinationSum</span><span class="p">(</span><span class="n">candidates2</span><span class="p">,</span> <span class="n">target2</span><span class="p">)</span>
+<span class="c1"># Expected: [[2, 2, 2, 2], [2, 3, 3], [3, 5]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: candidates=</span><span class="si">{</span><span class="n">candidates2</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Target unreachable</span>
+<span class="n">candidates3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">target3</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">combinationSum</span><span class="p">(</span><span class="n">candidates3</span><span class="p">,</span> <span class="n">target3</span><span class="p">)</span>
+<span class="c1"># Expected: []</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: candidates=</span><span class="si">{</span><span class="n">candidates3</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Single candidate</span>
+<span class="n">candidates4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">target4</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">combinationSum</span><span class="p">(</span><span class="n">candidates4</span><span class="p">,</span> <span class="n">target4</span><span class="p">)</span>
+<span class="c1"># Expected: [[1, 1, 1, 1, 1]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: candidates=</span><span class="si">{</span><span class="n">candidates4</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 

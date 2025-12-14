@@ -2398,7 +2398,38 @@
                 combination.pop()
 
         backtrack(target, [], 0)
-        return result</pre></div>
+        return result
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Combination Sum II Examples ---")
+
+# Test Case 1: Duplicates in candidates
+candidates1 = [10, 1, 2, 7, 6, 1, 5]
+target1 = 8
+result1 = sol.combinationSum2(candidates1, target1)
+# After sorting: [1, 1, 2, 5, 6, 7, 10]
+# Expected: [[1, 1, 6], [1, 2, 5], [1, 7], [2, 6]]
+print(f"Input: candidates={candidates1}, target={target1}")
+print(f"Output: {result1}")
+
+# Test Case 2: Duplicates in candidates (Simple case)
+candidates2 = [2, 5, 2, 1, 2]
+target2 = 5
+result2 = sol.combinationSum2(candidates2, target2)
+# After sorting: [1, 2, 2, 2, 5]
+# Expected: [[1, 2, 2], [5]]
+print(f"\nInput: candidates={candidates2}, target={target2}")
+print(f"Output: {result2}")
+
+# Test Case 3: No combination found
+candidates3 = [3, 4]
+target3 = 2
+result3 = sol.combinationSum2(candidates3, target3)
+# Expected: []
+print(f"\nInput: candidates={candidates3}, target={target3}")
+print(f"Output: {result3}")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-35--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2413,8 +2444,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=24,
-        maxLines=24,
+        minLines=55,
+        maxLines=55,
     );
 });
 </script>
@@ -2445,6 +2476,37 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         <span class="n">backtrack</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">0</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Combination Sum II Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Duplicates in candidates</span>
+<span class="n">candidates1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">target1</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">combinationSum2</span><span class="p">(</span><span class="n">candidates1</span><span class="p">,</span> <span class="n">target1</span><span class="p">)</span>
+<span class="c1"># After sorting: [1, 1, 2, 5, 6, 7, 10]</span>
+<span class="c1"># Expected: [[1, 1, 6], [1, 2, 5], [1, 7], [2, 6]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: candidates=</span><span class="si">{</span><span class="n">candidates1</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Duplicates in candidates (Simple case)</span>
+<span class="n">candidates2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">target2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">combinationSum2</span><span class="p">(</span><span class="n">candidates2</span><span class="p">,</span> <span class="n">target2</span><span class="p">)</span>
+<span class="c1"># After sorting: [1, 2, 2, 2, 5]</span>
+<span class="c1"># Expected: [[1, 2, 2], [5]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: candidates=</span><span class="si">{</span><span class="n">candidates2</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: No combination found</span>
+<span class="n">candidates3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">target3</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">combinationSum2</span><span class="p">(</span><span class="n">candidates3</span><span class="p">,</span> <span class="n">target3</span><span class="p">)</span>
+<span class="c1"># Expected: []</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Input: candidates=</span><span class="si">{</span><span class="n">candidates3</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
