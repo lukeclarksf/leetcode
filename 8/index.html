@@ -2552,7 +2552,66 @@
             result = result * 10 + digit
             i += 1
 
-        return result * sign</pre></div>
+        return result * sign
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- String to Integer (atoi) Examples ---")
+
+# Test Case 1: Standard positive conversion
+s1 = "42"
+result1 = sol.myAtoi(s1)
+print(f"Input: '{s1}'")
+print(f"Output: {result1} (Expected: 42)")
+
+# Test Case 2: Conversion with leading whitespace and sign
+s2 = "   -42"
+result2 = sol.myAtoi(s2)
+print(f"Input: '{s2}'")
+print(f"Output: {result2} (Expected: -42)")
+
+# Test Case 3: Conversion with non-digit characters after the number
+s3 = "4193 with words"
+result3 = sol.myAtoi(s3)
+print(f"Input: '{s3}'")
+print(f"Output: {result3} (Expected: 4193)")
+
+# Test Case 4: No valid number found
+s4 = "words and 987"
+result4 = sol.myAtoi(s4)
+print(f"Input: '{s4}'")
+print(f"Output: {result4} (Expected: 0)")
+
+# Test Case 5: Positive Overflow (Should return INT_MAX: 2147483647)
+s5 = "91283472332"
+result5 = sol.myAtoi(s5)
+print(f"Input: '{s5}'")
+print(f"Output: {result5} (Expected: 2147483647)")
+
+# Test Case 6: Negative Overflow (Should return INT_MIN: -2147483648)
+s6 = "-91283472332"
+result6 = sol.myAtoi(s6)
+print(f"Input: '{s6}'")
+print(f"Output: {result6} (Expected: -2147483648)")
+
+# Test Case 7: Only sign
+s7 = "+"
+result7 = sol.myAtoi(s7)
+print(f"Input: '{s7}'")
+print(f"Output: {result7} (Expected: 0)")
+
+# Test Case 8: Exact positive boundary
+s8 = "2147483647"
+result8 = sol.myAtoi(s8)
+print(f"Input: '{s8}'")
+print(f"Output: {result8} (Expected: 2147483647)")
+
+# Test Case 9: Exact negative boundary
+s9 = "-2147483648"
+result9 = sol.myAtoi(s9)
+print(f"Input: '{s9}'")
+print(f"Output: {result9} (Expected: -2147483648)")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-39--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2567,8 +2626,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=34,
-        maxLines=34,
+        minLines=93,
+        maxLines=93,
     );
 });
 </script>
@@ -2609,6 +2668,65 @@ document.addEventListener('DOMContentLoaded', (event) => {
             <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 
         <span class="k">return</span> <span class="n">result</span> <span class="o">*</span> <span class="n">sign</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- String to Integer (atoi) Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard positive conversion</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;42&quot;</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">myAtoi</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s1</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2"> (Expected: 42)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Conversion with leading whitespace and sign</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;   -42&quot;</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">myAtoi</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s2</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: -42)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Conversion with non-digit characters after the number</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;4193 with words&quot;</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">myAtoi</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s3</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2"> (Expected: 4193)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: No valid number found</span>
+<span class="n">s4</span> <span class="o">=</span> <span class="s2">&quot;words and 987&quot;</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">myAtoi</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s4</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2"> (Expected: 0)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 5: Positive Overflow (Should return INT_MAX: 2147483647)</span>
+<span class="n">s5</span> <span class="o">=</span> <span class="s2">&quot;91283472332&quot;</span>
+<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">myAtoi</span><span class="p">(</span><span class="n">s5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s5</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2"> (Expected: 2147483647)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 6: Negative Overflow (Should return INT_MIN: -2147483648)</span>
+<span class="n">s6</span> <span class="o">=</span> <span class="s2">&quot;-91283472332&quot;</span>
+<span class="n">result6</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">myAtoi</span><span class="p">(</span><span class="n">s6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s6</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result6</span><span class="si">}</span><span class="s2"> (Expected: -2147483648)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 7: Only sign</span>
+<span class="n">s7</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span>
+<span class="n">result7</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">myAtoi</span><span class="p">(</span><span class="n">s7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s7</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result7</span><span class="si">}</span><span class="s2"> (Expected: 0)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 8: Exact positive boundary</span>
+<span class="n">s8</span> <span class="o">=</span> <span class="s2">&quot;2147483647&quot;</span>
+<span class="n">result8</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">myAtoi</span><span class="p">(</span><span class="n">s8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s8</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result8</span><span class="si">}</span><span class="s2"> (Expected: 2147483647)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 9: Exact negative boundary</span>
+<span class="n">s9</span> <span class="o">=</span> <span class="s2">&quot;-2147483648&quot;</span>
+<span class="n">result9</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">myAtoi</span><span class="p">(</span><span class="n">s9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s9</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result9</span><span class="si">}</span><span class="s2"> (Expected: -2147483648)&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="8-string-to-integer-atoi">8. String to Integer (atoi)<a class="headerlink" href="#8-string-to-integer-atoi" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-ambiguity-of-parsing">Problem Statement and Ambiguity of Parsing<a class="headerlink" href="#problem-statement-and-ambiguity-of-parsing" title="Permanent link">&para;</a></h3>
