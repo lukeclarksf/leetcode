@@ -1,37 +1,74 @@
 class Solution:
     def solveSudoku(self, board: list[list[str]]) -> None:
+        # 1. Initialize constraint sets
+        # row_constraints[r] is a set of digits present in row r
+        row_constraints = [set() for _ in range(9)]
+        # col_constraints[c] is a set of digits present in column c
+        col_constraints = [set() for _ in range(9)]
+        # box_constraints[b] is a set of digits present in box b (where b is 0-8)
+        # The box index b can be calculated as b = (r // 3) * 3 + (c // 3)
+        box_constraints = [set() for _ in range(9)]
         
-        def is_valid(r, c, val):
-            for i in range(9):
-                if board[r][i] == val or board[i][c] == val:
-                    return False
-            
-            start_r, start_c = 3 * (r // 3), 3 * (c // 3)
-            for i in range(3):
-                for j in range(3):
-                    if board[start_r + i][start_c + j] == val:
-                        return False
-            return True
+        # 2. Pre-fill the constraints and collect empty cells
+        empty_cells = []
+        for r in range(9):
+            for c in range(9):
+                val = board[r][c]
+                if val != '.':
+                    box_idx = (r // 3) * 3 + (c // 3)
+                    row_constraints[r].add(val)
+                    col_constraints[c].add(val)
+                    box_constraints[box_idx].add(val)
+                else:
+                    empty_cells.append((r, c))
 
-        def backtrack():
-            for r in range(9):
-                for c in range(9):
-                    if board[r][c] == '.':
-                        for val_char in "123456789":
-                            if is_valid(r, c, val_char):
-                                board[r][c] = val_char
-                                if backtrack():
-                                    return True
-                                board[r][c] = '.'
-                        return False
-            return True
+        # 3. Optimized validity check (O(1))
+        def is_valid_optimized(r, c, val):
+            box_idx = (r // 3) * 3 + (c // 3)
+            return (val not in row_constraints[r] and
+                    val not in col_constraints[c] and
+                    val not in box_constraints[box_idx])
+
+        # 4. Backtracking with constraint updates
+        def backtrack(k):
+            # Base case: All empty cells have been filled
+            if k == len(empty_cells):
+                return True
+
+            r, c = empty_cells[k]
+            box_idx = (r // 3) * 3 + (c // 3)
             
-        backtrack()
+            # Iterate through possible values '1' to '9'
+            for val_char in "123456789":
+                if is_valid_optimized(r, c, val_char):
+                    
+                    # Place the value and update constraints
+                    board[r][c] = val_char
+                    row_constraints[r].add(val_char)
+                    col_constraints[c].add(val_char)
+                    box_constraints[box_idx].add(val_char)
+                    
+                    # Recurse to the next empty cell
+                    if backtrack(k + 1):
+                        return True
+                    
+                    # Backtrack: Reset the cell and constraints
+                    board[r][c] = '.'
+                    row_constraints[r].remove(val_char)
+                    col_constraints[c].remove(val_char)
+                    box_constraints[box_idx].remove(val_char)
+            
+            # If no value works for this cell, return False
+            return False
+
+        # Start backtracking from the first empty cell
+        backtrack(0)
 
 # --- Example Usage Code ---
+# (The usage code remains the same, just replace 'Solution' with 'SolutionOptimized')
 
 sol = Solution()
-print("--- Sudoku Solver Examples ---")
+print("--- Sudoku Solver Examples (Optimized) ---")
 
 # Test Case 1: Standard Sudoku puzzle
 board1 = [
@@ -52,16 +89,6 @@ for row in board1:
 
 sol.solveSudoku(board1)
 
-print("\nOutput Solved Board:")
-# Expected solved board:
-# ['5', '3', '4', '6', '7', '8', '9', '1', '2']
-# ['6', '7', '2', '1', '9', '5', '3', '4', '8']
-# ['1', '9', '8', '3', '4', '2', '5', '6', '7']
-# ['8', '5', '9', '7', '6', '1', '4', '2', '3']
-# ['4', '2', '6', '8', '5', '3', '7', '9', '1']
-# ['7', '1', '3', '9', '2', '4', '8', '5', '6']
-# ['9', '6', '1', '5', '3', '7', '2', '8', '4']
-# ['2', '8', '7', '4', '1', '9', '6', '3', '5']
-# ['3', '4', '5', '2', '8', '6', '1', '7', '9']
+print("\nOutput Solved Board (Optimized):")
 for row in board1:
     print(row)
