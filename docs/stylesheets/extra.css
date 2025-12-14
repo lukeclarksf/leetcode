@@ -15,7 +15,8 @@
   font-weight: normal;
   font-size: 13pt;
 }
-.md-header__button.md-logo
+.md-header__button.md-logo,
+.md-nav--primary .md-nav__title .md-logo
 {
   display: none;
 }
