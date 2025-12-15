@@ -6,30 +6,38 @@ hide:
 
 # Python
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qoQtq1uVRkM?si=x_tVu9k1P5xXXMDi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="intro-video" width="704" height="396" src="https://www.youtube.com/embed/qoQtq1uVRkM?si=x_tVu9k1P5xXXMDi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-##
+<div class="content-paras">
+<p>Here you will find my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment. LeetCode includes Data Structures and Algorithms to practice.</p>
 
-Here you will find my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment. LeetCode includes Data Structures and Algorithms to practice.
+<p>Browse source code here (sidebar to the left) or visit <a href="https://github.com/lukeclarksf/leetcode" target="__blank">GitHub</a>. Run your code with Pyodide.</p>
 
-Browse source code here (sidebar to the left) or visit [GitHub](https://github.com/lukeclarksf/leetcode). Run your code with Pyodide.
+<p>Verify problems directly on <a href="https://leetcode.com/problems/add-two-numbers/" target="__blank">LeetCode</a>.</p>
 
-Verify problems directly on [LeetCode](https://leetcode.com/problems/add-two-numbers/).
+<p>Static site generation is done with Python Make Docs.</p>
 
-Static site generation is done with Python Make Docs. 
+<p>Luke Clark</p>
 
-####
+<p>Send me an email at <a href="mailto:lukeclarksf@gmail.com">lukeclarksf@gmail.com</a>. See my <a href="https://lukeclarksf.com" target="__blank">Resume</a>.</p>
 
-Luke Clark
+</div>
 
-Send me an email at [lukeclarksf@gmail.com](mailto:lukeclarksf@gmail.com). See my [Resume](https://lukeclarksf.com).
 
-##
+<div class="cards">
 
-## Learn Data Structures and Algorithms
+<div class="card">
+<img src="images/Python.png" width="300">
 
-<img src="images/Python.png" width="600" style="margin:10px 0 10px 0">
+<h2>Learn Data Structures and Algorithms</h2>
+<p>Read function source code and documentation.<p>
+</div>
 
-## Submit to LeetCode
+<div class="card">
+<img src="images/Verify.png" width="300" >
 
-<img src="images/Verify.png" width="600" style="margin:10px 0 10px 0">
+<h2>Submit to LeetCode</h2>
+<p>Submit problems easily directly to LeetCode.<p>
+</div>
+
+</div>
