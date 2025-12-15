@@ -5,10 +5,10 @@ def create_python_files(start_num, end_num, directory):
         print("Error: The starting number must be less than or equal to the ending number.")
         return
 
-    print(f"Starting to create files from ../{directory}/{start_num}.py to {end_num}.py...")
+    print(f"Starting to create files from ../{directory}/_{start_num}.py to _{end_num}.py...")
     
     for i in range(start_num, end_num + 1):
-        filename = f"../{directory}/{i}.py"
+        filename = f"../{directory}/_{i}.py"
         content = ""
 
         if not os.path.exists(filename):
