@@ -3,9 +3,17 @@
 }
 
 /* Cards */
+.intro {
+  display: flex;
+}
+.intro p {
+  width: 300px;
+  padding: 40px 0; 
+  margin: 20px 40px;
+}
 .intro-video
 {
-    margin: 20px 200px;
+    margin: 20px 20px;
 }
 
 body {background: #fafafa;}
