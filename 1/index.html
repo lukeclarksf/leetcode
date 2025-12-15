@@ -595,72 +595,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#problem-statement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem Statement
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#concepts-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Concepts used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-structures-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data Structures used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#complexity-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Complexity Analysis
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2495,72 +2429,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#problem-statement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem Statement
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#concepts-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Concepts used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-structures-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data Structures used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#complexity-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Complexity Analysis
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2582,6 +2450,11 @@
 
 
   <h1>1. Two Sum (Easy)</h1>
+
+<!-- Make docstring in 1 paragraph explanation before argument descriptions Google style for leetcode 1. -->
+
+<!-- Give .md snippet -->
+<!-- Give me plain text descripton in .md I can copy of leetcode 1 in 3 paragraphs -->
 
 <h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h2>
 <p>
@@ -2688,20 +2561,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <span class="normal">24</span>
 <span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Finds two numbers in the input list that add up to the target value.</span>
-
-<span class="sd">        This method uses a hash map (dictionary) to efficiently store numbers encountered </span>
-<span class="sd">        and their indices, allowing for an $O(n)$ time complexity solution by checking </span>
-<span class="sd">        if the required complement ($target - current\ number$) already exists in the map </span>
-<span class="sd">        during a single pass through the list.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Finds two unique numbers in the input list that sum up to a specific target </span>
+<span class="sd">        value and returns the 0-based indices of those two numbers. The function </span>
+<span class="sd">        uses a hash map to achieve a time complexity of $O(n)$ by storing each </span>
+<span class="sd">        number and its index as it iterates through the list, then checking if </span>
+<span class="sd">        the required complement (target - current number) already exists in the map.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            nums: A list of integers to search through.</span>
-<span class="sd">            target: The integer target sum.</span>
+<span class="sd">            nums: A list of integers where exactly one valid solution exists.</span>
+<span class="sd">            target: The target integer sum.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            A list containing the indices of the two numbers that sum up to the target. </span>
-<span class="sd">            Returns an empty list if no such pair is found.</span>
+<span class="sd">            A list containing the indices of the two numbers that sum up to the target, </span>
+<span class="sd">            e.g., [index1, index2].</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">num_map</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
@@ -2738,11 +2611,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     <div class="doc doc-contents ">
 
-        <p>Finds two numbers in the input list that add up to the target value.</p>
-<p>This method uses a hash map (dictionary) to efficiently store numbers encountered 
-and their indices, allowing for an <span class="arithmatex">\(O(n)\)</span> time complexity solution by checking 
-if the required complement (<span class="arithmatex">\(target - current\ number\)</span>) already exists in the map 
-during a single pass through the list.</p>
+        <p>Finds two unique numbers in the input list that sum up to a specific target 
+value and returns the 0-based indices of those two numbers. The function 
+uses a hash map to achieve a time complexity of <span class="arithmatex">\(O(n)\)</span> by storing each 
+number and its index as it iterates through the list, then checking if 
+the required complement (target - current number) already exists in the map.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2765,7 +2638,7 @@ during a single pass through the list.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A list of integers to search through.</p>
+                <p>A list of integers where exactly one valid solution exists.</p>
               </div>
             </td>
             <td>
@@ -2781,7 +2654,7 @@ during a single pass through the list.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The integer target sum.</p>
+                <p>The target integer sum.</p>
               </div>
             </td>
             <td>
@@ -2807,7 +2680,7 @@ during a single pass through the list.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A list containing the indices of the two numbers that sum up to the target. </p>
+                <p>A list containing the indices of the two numbers that sum up to the target, </p>
               </div>
             </td>
           </tr>
@@ -2817,7 +2690,7 @@ during a single pass through the list.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Returns an empty list if no such pair is found.</p>
+                <p>e.g., [index1, index2].</p>
               </div>
             </td>
           </tr>
@@ -2851,20 +2724,20 @@ during a single pass through the list.</p>
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Finds two numbers in the input list that add up to the target value.</span>
-
-<span class="sd">    This method uses a hash map (dictionary) to efficiently store numbers encountered </span>
-<span class="sd">    and their indices, allowing for an $O(n)$ time complexity solution by checking </span>
-<span class="sd">    if the required complement ($target - current\ number$) already exists in the map </span>
-<span class="sd">    during a single pass through the list.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Finds two unique numbers in the input list that sum up to a specific target </span>
+<span class="sd">    value and returns the 0-based indices of those two numbers. The function </span>
+<span class="sd">    uses a hash map to achieve a time complexity of $O(n)$ by storing each </span>
+<span class="sd">    number and its index as it iterates through the list, then checking if </span>
+<span class="sd">    the required complement (target - current number) already exists in the map.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        nums: A list of integers to search through.</span>
-<span class="sd">        target: The integer target sum.</span>
+<span class="sd">        nums: A list of integers where exactly one valid solution exists.</span>
+<span class="sd">        target: The target integer sum.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        A list containing the indices of the two numbers that sum up to the target. </span>
-<span class="sd">        Returns an empty list if no such pair is found.</span>
+<span class="sd">        A list containing the indices of the two numbers that sum up to the target, </span>
+<span class="sd">        e.g., [index1, index2].</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">num_map</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
@@ -2887,18 +2760,9 @@ during a single pass through the list.</p>
     </div>
 
 </div><h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
-<h2 id="problem-statement">Problem Statement<a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h2>
-<p>Given an array of integers, <span class="arithmatex">\(nums\)</span>, and an integer target value, the objective is to identify the indices of the two numbers within the array that sum up precisely to the target.  It is guaranteed that exactly one valid solution exists in the input, and it is assumed that the same element cannot be used twice. The function must return an array or list containing the zero-based indices of the two elements that satisfy the condition.</p>
-<h2 id="concepts-used">Concepts used<a class="headerlink" href="#concepts-used" title="Permanent link">&para;</a></h2>
-<p>The most efficient and professional solution for the Two Sum problem leverages the concept of a Hash Map (or Dictionary) to reduce the time complexity from <span class="arithmatex">\(O(n^2)\)</span> to a superior <span class="arithmatex">\(O(n)\)</span>. During a single pass through the input array, we check the Hash Map for the existence of the complement—the difference between the <span class="arithmatex">\(target\)</span> and the current element. If the complement is found, its associated index is immediately returned alongside the current element's index.  If the complement is not present, the current element and its index are added to the Hash Map, enabling a constant-time <span class="arithmatex">\(O(1)\)</span> lookup for subsequent elements, which is the crucial mechanism that achieves the linear overall time complexity.</p>
-<h2 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
-<p>The optimal algorithm for the Two Sum problem employs a Hash Map data structure, which maps array values to their corresponding indices, allowing for efficient <span class="arithmatex">\(O(1)\)</span> average time lookups.  The process involves iterating through the <span class="arithmatex">\(nums\)</span> array exactly once. In each iteration, the algorithm calculates the complement required to reach the target (i.e., <span class="arithmatex">\(complement = target - nums[i]\)</span>). It then immediately checks if this <span class="arithmatex">\(complement\)</span> already exists as a key in the Hash Map. If it does, the current index <span class="arithmatex">\(i\)</span> and the index stored under the <span class="arithmatex">\(complement\)</span> key are returned as the solution. If the <span class="arithmatex">\(complement\)</span> is not found, the algorithm adds the current element, <span class="arithmatex">\(nums[i]\)</span>, and its index, <span class="arithmatex">\(i\)</span>, to the Hash Map before proceeding to the next element. This single-pass method ensures a time complexity of <span class="arithmatex">\(O(n)\)</span> and a space complexity of <span class="arithmatex">\(O(n)\)</span> due to the storage required for the Hash Map.</p>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>Consider the example where <span class="arithmatex">\(nums = [2, 7, 11, 15]\)</span> and the <span class="arithmatex">\(target = 9\)</span>. We initialize an empty Hash Map.  and target 9]Starting at index <span class="arithmatex">\(i=0\)</span> with value <span class="arithmatex">\(2\)</span>, the <span class="arithmatex">\(complement\)</span> needed is <span class="arithmatex">\(9 - 2 = 7\)</span>. Since <span class="arithmatex">\(7\)</span> is not in the Hash Map, we add <span class="arithmatex">\(2\)</span> with index <span class="arithmatex">\(0\)</span> to the map.Next, at index <span class="arithmatex">\(i=1\)</span> with value <span class="arithmatex">\(7\)</span>, the <span class="arithmatex">\(complement\)</span> needed is <span class="arithmatex">\(9 - 7 = 2\)</span>.We check the Hash Map and find that <span class="arithmatex">\(2\)</span> is present, and its stored index is <span class="arithmatex">\(0\)</span>.Since we have found the two numbers, the algorithm immediately terminates and returns the indices <span class="arithmatex">\([0, 1]\)</span>.</p>
-<h2 id="data-structures-used">Data Structures used<a class="headerlink" href="#data-structures-used" title="Permanent link">&para;</a></h2>
-<p>The primary data structure employed for the most efficient solution is the Hash Map (or Hash Table), which is typically implemented as a dictionary in many programming languages.  This structure is indispensable because it facilitates near-constant time <span class="arithmatex">\(O(1)\)</span> average complexity for both insertion (storing the number and its index) and, most critically, lookup (checking for the existence of the required complement). The problem's input itself is an Array (or List) of integers, <span class="arithmatex">\(nums\)</span>. The array serves as the structure that is iterated over, while the Hash Map is the auxiliary structure used to store previously visited elements, dramatically optimizing the search for the pair.</p>
-<h2 id="complexity-analysis">Complexity Analysis<a class="headerlink" href="#complexity-analysis" title="Permanent link">&para;</a></h2>
-<p>The optimal Hash Map-based solution achieves a time complexity of <span class="arithmatex">\(O(n)\)</span> (linear time). This efficiency stems from the fact that the algorithm iterates through the input array, <span class="arithmatex">\(nums\)</span>, exactly once. Crucially, within this loop, the operations—calculating the complement and performing the Hash Map lookup and insertion—all execute in average constant time, <span class="arithmatex">\(O(1)\)</span>.  In terms of space complexity, the solution is <span class="arithmatex">\(O(n)\)</span> (linear space). This is because, in the worst-case scenario (where the solution pair is the last two elements or the array is traversed entirely), the Hash Map will store up to <span class="arithmatex">\(n\)</span> elements, where <span class="arithmatex">\(n\)</span> is the number of elements in the input array.</p>
+<p>The "Two Sum" problem is universally recognized as the introductory problem in algorithmic interviews and a foundational concept for understanding time complexity trade-offs. The requirement is straightforward: given an array of integers, <code>nums</code>, and a specific target integer, identify and return the indices of the two numbers within the array that sum up exactly to the target. The problem is generally constrained by the guarantee that exactly one valid solution exists, and the same element cannot be used twice.</p>
+<p>A simple, though professionally unacceptable, solution involves a <strong>brute-force approach</strong> using nested loops. The outer loop iterates over each element <span class="arithmatex">\(nums[i]\)</span>, and the inner loop checks every subsequent element <span class="arithmatex">\(nums[j]\)</span> to see if <span class="arithmatex">\(nums[i] + nums[j]\)</span> equals the target. While correct, this method results in a quadratic time complexity of <span class="arithmatex">\(O(n^2)\)</span>. This inefficiency means the execution time increases dramatically as the input array size grows, failing to meet the performance standards required in production systems.</p>
+<p>The definitive, industry-standard solution achieves linear time complexity, <span class="arithmatex">\(O(n)\)</span>, by utilizing a <strong>hash map</strong> (or dictionary). This method performs a single pass through the array. For each number <span class="arithmatex">\(nums[i]\)</span>, the algorithm calculates the <em>complement</em> needed to reach the target (<span class="arithmatex">\(complement = target - nums[i]\)</span>). Before inserting the current element into the hash map, the algorithm checks if the required <span class="arithmatex">\(complement\)</span> already exists as a key in the map.  If the complement is found, the current index <span class="arithmatex">\(i\)</span> and the index stored in the map (which belongs to the complement) are returned. If not found, the number <span class="arithmatex">\(nums[i]\)</span> and its index <span class="arithmatex">\(i\)</span> are added to the map. This leverages the <span class="arithmatex">\(O(1)\)</span> average-time complexity of hash map lookups to ensure maximum efficiency.</p>
 
 
 
