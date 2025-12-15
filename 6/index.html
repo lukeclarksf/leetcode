@@ -621,6 +621,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6.Solution.convert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        convert
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2007,6 +2040,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6.Solution.convert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        convert
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2167,7 +2233,150 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
 </code></pre></div>
 <p><a target="__blank" href="https://leetcode.com/problems/zigzag-conversion/"><input class="verify-button" type="button" value="Verify"/></a></p>
-<h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
+<h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_6.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python/_6.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">numRows</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">numRows</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">numRows</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">s</span>
+
+        <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">numRows</span>
+        <span class="n">current_row</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">going_down</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="n">rows</span><span class="p">[</span><span class="n">current_row</span><span class="p">]</span> <span class="o">+=</span> <span class="n">char</span>
+
+            <span class="k">if</span> <span class="n">current_row</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">current_row</span> <span class="o">==</span> <span class="n">numRows</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">going_down</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">going_down</span>
+
+            <span class="k">if</span> <span class="n">going_down</span><span class="p">:</span>
+                <span class="n">current_row</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">current_row</span> <span class="o">-=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_6.Solution.convert" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">convert</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">numRows</span><span class="p">)</span></code>
+
+<a href="#_6.Solution.convert" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python/_6.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">numRows</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">numRows</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">numRows</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">numRows</span>
+    <span class="n">current_row</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">going_down</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">rows</span><span class="p">[</span><span class="n">current_row</span><span class="p">]</span> <span class="o">+=</span> <span class="n">char</span>
+
+        <span class="k">if</span> <span class="n">current_row</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">current_row</span> <span class="o">==</span> <span class="n">numRows</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">going_down</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">going_down</span>
+
+        <span class="k">if</span> <span class="n">going_down</span><span class="p">:</span>
+            <span class="n">current_row</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current_row</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
 <p>The problem asks you to take a given string, <span class="arithmatex">\(s\)</span>, and convert it into a zigzag pattern (or Z-pattern) on a specified number of rows, <span class="arithmatex">\(numRows\)</span>. Once the string is written in this pattern, you must read it line by line from left to right, and return the resulting new string. For example, converting "PAYPALISHIRING" with <span class="arithmatex">\(numRows = 3\)</span> yields the pattern: P A H N, A P L S I I G, Y I R, which, when read row-by-row, becomes "PAHNAPLSIIGYIR". </p>
 <p>The core of the challenge is to determine the correct row index for each character in the input string without actually creating a 2D matrix, especially since the constraints on <span class="arithmatex">\(s\)</span> are up to 1000 characters. The pattern repeats in a cycle, where a full cycle covers <span class="arithmatex">\(numRows\)</span> down and then <span class="arithmatex">\(numRows - 2\)</span> up and diagonally. The length of one complete cycle is <span class="arithmatex">\(2 \times numRows - 2\)</span>. For <span class="arithmatex">\(numRows = 3\)</span>, the cycle length is <span class="arithmatex">\(2 \times 3 - 2 = 4\)</span>.</p>
 <p>An efficient <span class="arithmatex">\(O(n)\)</span> solution involves iterating through the input string <span class="arithmatex">\(s\)</span> once and placing each character directly into its final row in an array of strings (or a list of <code>StringBuilder</code> objects). You can track the current row index and a direction flag (down or up). When the current row hits the bottom (row <span class="arithmatex">\(numRows - 1\)</span>), the direction reverses to 'up'. When it hits the top (row 0), the direction reverses to 'down'. After iterating through all characters, simply concatenate the strings in the row array to produce the final zigzag-converted output.</p>

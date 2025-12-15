@@ -677,6 +677,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8.Solution.myAtoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        myAtoi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2007,6 +2040,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8.Solution.myAtoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        myAtoi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2201,7 +2267,202 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="k">return</span> <span class="n">result</span> <span class="o">*</span> <span class="n">sign</span>
 </code></pre></div>
 <p><a target="__blank" href="https://leetcode.com/problems/string-to-integer-atoi/"><input class="verify-button" type="button" value="Verify"/></a></p>
-<h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
+<h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_8.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python/_8.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">myAtoi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+
+        <span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;+&#39;</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+            <span class="n">sign</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">INT_MAX</span> <span class="o">=</span> <span class="mi">2147483647</span>
+        <span class="n">INT_MIN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2147483648</span>
+
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="n">digit</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="n">sign</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">or</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">digit</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">INT_MAX</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">or</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">digit</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">INT_MIN</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">digit</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">result</span> <span class="o">*</span> <span class="n">sign</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_8.Solution.myAtoi" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">myAtoi</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></code>
+
+<a href="#_8.Solution.myAtoi" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python/_8.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">myAtoi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;+&#39;</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+        <span class="n">sign</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">INT_MAX</span> <span class="o">=</span> <span class="mi">2147483647</span>
+    <span class="n">INT_MIN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2147483648</span>
+
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="n">digit</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">sign</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">or</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">digit</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">INT_MAX</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">or</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">digit</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">INT_MIN</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">digit</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">result</span> <span class="o">*</span> <span class="n">sign</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
 <p>The "String to Integer (atoi)" problem requires implementing the logic to convert a string into a 32-bit signed integer, adhering to specific rules. The function should first discard any leading whitespace characters until the first non-whitespace character is found. Next, this character may be an optional sign ('+' or '-'). Finally, the function must read in as many numerical digits as possible until a non-digit character is encountered or the end of the input string is reached. The resulting digits are then interpreted as an integer.</p>
 <p>A crucial part of the implementation is handling all possible edge cases and constraints. If the first non-whitespace character is not a sign or a digit, no valid conversion can be performed, and <span class="arithmatex">\(0\)</span> should be returned. The problem requires clamping the result to fit within the range of a 32-bit signed integer, which is <span class="arithmatex">\([-(2^{31}), 2^{31} - 1]\)</span>. If the numerical value exceeds the maximum limit, the function must return <span class="arithmatex">\(2^{31} - 1\)</span> (<code>INT_MAX</code>). If it falls below the minimum limit, it must return <span class="arithmatex">\(-(2^{31})\)</span> (<code>INT_MIN</code>).</p>
 <p>The conversion itself is best done by iterating through the numeric digits, similar to problem 7, and continuously building the result while simultaneously checking for overflow or underflow at each step. This process involves multiplying the current result by <span class="arithmatex">\(10\)</span> and adding the next digit. To ensure <span class="arithmatex">\(O(1)\)</span> space complexity, the use of auxiliary data structures should be avoided. The overall time complexity for this process is <span class="arithmatex">\(O(n)\)</span>, where <span class="arithmatex">\(n\)</span> is the length of the string, as we only perform a single pass over the string.</p>

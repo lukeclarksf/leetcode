@@ -649,6 +649,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7.Solution.reverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reverse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2007,6 +2040,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7.Solution.reverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reverse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2164,7 +2230,162 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="k">return</span> <span class="n">reversed_x</span>
 </code></pre></div>
 <p><a target="__blank" href="https://leetcode.com/problems/reverse-integer/"><input class="verify-button" type="button" value="Verify"/></a></p>
-<h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
+<h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_7.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python/_7.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="n">INT_MAX</span> <span class="o">=</span> <span class="mi">2147483647</span>
+        <span class="n">INT_MIN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2147483648</span>
+
+        <span class="n">reversed_x</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">digit</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">10</span>
+            <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">digit</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">digit</span> <span class="o">-=</span> <span class="mi">10</span>
+
+            <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">digit</span><span class="p">)</span> <span class="o">//</span> <span class="mi">10</span>
+
+            <span class="k">if</span> <span class="n">reversed_x</span> <span class="o">&gt;</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">or</span> <span class="p">(</span><span class="n">reversed_x</span> <span class="o">==</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">digit</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">):</span>
+                <span class="k">return</span> <span class="mi">0</span>
+
+            <span class="k">if</span> <span class="n">reversed_x</span> <span class="o">&lt;</span> <span class="n">INT_MIN</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">or</span> <span class="p">(</span><span class="n">reversed_x</span> <span class="o">==</span> <span class="n">INT_MIN</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">digit</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">8</span><span class="p">):</span>
+                <span class="k">return</span> <span class="mi">0</span>
+
+            <span class="n">reversed_x</span> <span class="o">=</span> <span class="n">reversed_x</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">digit</span>
+
+        <span class="k">return</span> <span class="n">reversed_x</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_7.Solution.reverse" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">reverse</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code>
+
+<a href="#_7.Solution.reverse" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python/_7.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+    <span class="n">INT_MAX</span> <span class="o">=</span> <span class="mi">2147483647</span>
+    <span class="n">INT_MIN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2147483648</span>
+
+    <span class="n">reversed_x</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">digit</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">10</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">digit</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">digit</span> <span class="o">-=</span> <span class="mi">10</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">digit</span><span class="p">)</span> <span class="o">//</span> <span class="mi">10</span>
+
+        <span class="k">if</span> <span class="n">reversed_x</span> <span class="o">&gt;</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">or</span> <span class="p">(</span><span class="n">reversed_x</span> <span class="o">==</span> <span class="n">INT_MAX</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">digit</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">reversed_x</span> <span class="o">&lt;</span> <span class="n">INT_MIN</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">or</span> <span class="p">(</span><span class="n">reversed_x</span> <span class="o">==</span> <span class="n">INT_MIN</span> <span class="o">//</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">digit</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">8</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mi">0</span>
+
+        <span class="n">reversed_x</span> <span class="o">=</span> <span class="n">reversed_x</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">digit</span>
+
+    <span class="k">return</span> <span class="n">reversed_x</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
 <p>Given a signed 32-bit integer, <span class="arithmatex">\(x\)</span>, the task is to return its digits reversed. For example, if <span class="arithmatex">\(x = 123\)</span>, the output should be <span class="arithmatex">\(321\)</span>. If <span class="arithmatex">\(x = -123\)</span>, the output should be <span class="arithmatex">\(-321\)</span>. The number's sign must be preserved in the reversed result. The input integer <span class="arithmatex">\(x\)</span> is within the range <span class="arithmatex">\([-(2^{31}), 2^{31} - 1]\)</span>, which defines the limits of a standard 32-bit signed integer.</p>
 <p>The primary difficulty in this problem is handling <strong>integer overflow</strong>. The reversed integer might exceed the maximum value of a 32-bit signed integer (<span class="arithmatex">\(2^{31} - 1\)</span>) or fall below its minimum value (<span class="arithmatex">\(-(2^{31})\)</span>), even if the original number <span class="arithmatex">\(x\)</span> was within range. For example, reversing <span class="arithmatex">\(1,534,236,469\)</span> results in <span class="arithmatex">\(9,646,324,351\)</span>, which is larger than <span class="arithmatex">\(2,147,483,647\)</span>. Therefore, before appending the next digit, a check must be performed to ensure the current reversed number, multiplied by 10 and added to the new digit, does not cause an overflow.</p>
 <p>The most robust approach involves iteratively extracting the last digit of <span class="arithmatex">\(x\)</span> using the modulo operator (<span class="arithmatex">\(x \pmod{10}\)</span>) and building the reversed number. In each iteration, we check for potential overflow <em>before</em> the multiplication step. Specifically, if <code>reversed &gt; INT_MAX / 10</code> (or <code>reversed &lt; INT_MIN / 10</code>), we know the next multiplication will definitely overflow. If it's on the edge (e.g., <code>reversed == INT_MAX / 10</code>), we then check the last digit itself to see if it causes the final overflow. If an overflow is detected at any point, the function must immediately return <span class="arithmatex">\(0\)</span>.</p>

@@ -705,6 +705,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9.Solution.isPalindrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        isPalindrome
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2018,6 +2051,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9.Solution.isPalindrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        isPalindrome
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2159,7 +2225,114 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="k">return</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="o">//</span> <span class="mi">10</span>
 </code></pre></div>
 <p><a target="__blank" href="https://leetcode.com/problems/palindrome-number/"><input class="verify-button" type="button" value="Verify"/></a></p>
-<h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
+<h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_9.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python/_9.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">isPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="n">reverted_number</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">reverted_number</span><span class="p">:</span>
+            <span class="n">reverted_number</span> <span class="o">=</span> <span class="n">reverted_number</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">10</span>
+            <span class="n">x</span> <span class="o">//=</span> <span class="mi">10</span>
+
+        <span class="k">return</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="o">//</span> <span class="mi">10</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_9.Solution.isPalindrome" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">isPalindrome</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code>
+
+<a href="#_9.Solution.isPalindrome" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python/_9.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">isPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="n">reverted_number</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">reverted_number</span><span class="p">:</span>
+        <span class="n">reverted_number</span> <span class="o">=</span> <span class="n">reverted_number</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">10</span>
+        <span class="n">x</span> <span class="o">//=</span> <span class="mi">10</span>
+
+    <span class="k">return</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="o">//</span> <span class="mi">10</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
 <h1 id="9-palindrome-number-easy">9. Palindrome Number (Easy)<a class="headerlink" href="#9-palindrome-number-easy" title="Permanent link">&para;</a></h1>
 <p>Given an integer <span class="arithmatex">\(x\)</span>, the task is to determine whether it is a <strong>palindrome</strong>. An integer is considered a palindrome if it reads the same forwards and backwards. This definition means that negative numbers, such as <span class="arithmatex">\(-121\)</span>, cannot be palindromes because the negative sign only appears at the front, so we can immediately return <code>false</code> for any <span class="arithmatex">\(x &lt; 0\)</span>. Additionally, any number ending in <span class="arithmatex">\(0\)</span> (except for <span class="arithmatex">\(0\)</span> itself) cannot be a palindrome, as the reversed number would start with <span class="arithmatex">\(0\)</span> (e.g., <span class="arithmatex">\(120\)</span> reversed is <span class="arithmatex">\(021\)</span>).</p>
 <p>The most straightforward method to check for a palindrome is to convert the integer into a string. Once in string format, the check is simple: compare the string with its reversed version. However, the problem often includes a <strong>"Follow up"</strong> to solve it <strong>without converting the integer to a string</strong>. This requires a numerical approach, typically by either reversing the entire number, as done in problem 7, or by reversing only half of the number to avoid potential overflow issues that can occur when reversing large integers entirely.</p>
