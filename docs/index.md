@@ -14,7 +14,7 @@ hide:
 
 <div class="content-paras">
 
-<p>Browse source code here (sidebar to the left) or visit <a href="https://github.com/lukeclarksf/leetcode" target="__blank">GitHub</a>. Run your code with Pyodide. Verify problems directly on <a href="https://leetcode.com/problems/add-two-numbers/" target="__blank">LeetCode</a>. Static site generation is done with Python Make Docs.</p>
+<p>Browse source code in the left sidebar or visit <a href="https://github.com/lukeclarksf/leetcode" target="__blank">GitHub</a>. Run your code with Pyodide. Verify problems directly on <a href="https://leetcode.com/problems/add-two-numbers/" target="__blank">LeetCode</a>. Static site generation is done with Make Docs.</p>
 
 <p>Luke Clark</p>
 

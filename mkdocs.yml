@@ -125,6 +125,5 @@ nav:
     - 50. Pow(x, n) (Medium): '50.md'
   
   - Pyodide: 'pyodide.md'
-  - LeetCode: 'https://leetcode.com/problems/add-two-numbers/'
   - Gemini: 'https://gemini.google.com/'
   - Vitae: 'https://lukeclarksf.com'
