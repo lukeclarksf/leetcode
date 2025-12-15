@@ -1,6 +1,6 @@
 import os
 
-def create_md_files(start_num, end_num, directory):
+def create_md_files(start_num, end_num):
     if start_num > end_num:
         print("Error: The starting number must be less than or equal to the ending number.")
         return
@@ -8,7 +8,7 @@ def create_md_files(start_num, end_num, directory):
     print(f"Starting to create files from {start_num}.md to {end_num}.md...")
     
     for i in range(start_num, end_num + 1):
-        filename = f"../{directory}/{i}.md"
+        filename = f"../docs/{i}.md"
         content = '## Pyodide\n\
 \n\
 ```pyodide height="10"\n\
@@ -59,7 +59,4 @@ def create_md_files(start_num, end_num, directory):
     print("File creation complete!")
 
 # Create the files.
-create_md_files(51, 1000, "/python1_mod/part1/")
-create_md_files(1001, 2000, "/python1_mod/part2/")
-create_md_files(2001, 3000, "/python1_mod/part3/")
-create_md_files(3001, 3778, "/python1_mod/part4/")
+create_md_files(51, 3778)

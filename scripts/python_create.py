@@ -27,3 +27,13 @@ create_python_files(51, 1000, "python1_mod/part1")
 create_python_files(1001, 2000, "python1_mod/part2")
 create_python_files(2001, 3000, "python1_mod/part3")
 create_python_files(3001, 3778, "python1_mod/part4")
+
+create_python_files(51, 1000, "python1_run/part1")
+create_python_files(1001, 2000, "python1_run/part2")
+create_python_files(2001, 3000, "python1_run/part3")
+create_python_files(3001, 3778, "python1_run/part4")
+
+create_python_files(51, 1000, "python1/part1")
+create_python_files(1001, 2000, "python1/part2")
+create_python_files(2001, 3000, "python1/part3")
+create_python_files(3001, 3778, "python1/part4")
