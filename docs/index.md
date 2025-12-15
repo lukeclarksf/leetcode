@@ -29,6 +29,6 @@ Send me an email at [lukeclarksf@gmail.com](mailto:lukeclarksf@gmail.com). See m
 
 <img src="images/Python.png" width="600" style="margin:10px 0 10px 0">
 
-## Submit on LeetCode
+## Submit to LeetCode
 
 <img src="images/Verify.png" width="600" style="margin:10px 0 10px 0">

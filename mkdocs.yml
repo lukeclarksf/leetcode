@@ -72,7 +72,7 @@ plugins:
 
 nav:
   - Python:
-    - About: 'index.md'
+    - Introduction: 'index.md'
     - Strings & Arrays (1-10):
         - 1. Two Sum (Easy): '1.md'
         - 2. Add Two Numbers (Medium): '2.md'
