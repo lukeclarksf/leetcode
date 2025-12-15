@@ -720,6 +720,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2083,6 +2105,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2466,6 +2510,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <p>The "String to Integer (atoi)" problem requires implementing the logic to convert a string into a 32-bit signed integer, adhering to specific rules. The function should first discard any leading whitespace characters until the first non-whitespace character is found. Next, this character may be an optional sign ('+' or '-'). Finally, the function must read in as many numerical digits as possible until a non-digit character is encountered or the end of the input string is reached. The resulting digits are then interpreted as an integer.</p>
 <p>A crucial part of the implementation is handling all possible edge cases and constraints. If the first non-whitespace character is not a sign or a digit, no valid conversion can be performed, and <span class="arithmatex">\(0\)</span> should be returned. The problem requires clamping the result to fit within the range of a 32-bit signed integer, which is <span class="arithmatex">\([-(2^{31}), 2^{31} - 1]\)</span>. If the numerical value exceeds the maximum limit, the function must return <span class="arithmatex">\(2^{31} - 1\)</span> (<code>INT_MAX</code>). If it falls below the minimum limit, it must return <span class="arithmatex">\(-(2^{31})\)</span> (<code>INT_MIN</code>).</p>
 <p>The conversion itself is best done by iterating through the numeric digits, similar to problem 7, and continuously building the result while simultaneously checking for overflow or underflow at each step. This process involves multiplying the current result by <span class="arithmatex">\(10\)</span> and adding the next digit. To ensure <span class="arithmatex">\(O(1)\)</span> space complexity, the use of auxiliary data structures should be avoided. The overall time complexity for this process is <span class="arithmatex">\(O(n)\)</span>, where <span class="arithmatex">\(n\)</span> is the length of the string, as we only perform a single pass over the string.</p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 
 
 

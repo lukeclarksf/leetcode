@@ -1152,6 +1152,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25.Solution.reverseKGroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reverseKGroup
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1995,6 +2028,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25.Solution.reverseKGroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reverseKGroup
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2187,6 +2253,186 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="k">return</span> <span class="n">dummy</span><span class="o">.</span><span class="n">next</span>
 </code></pre></div>
 <p><a target="__blank" href="https://leetcode.com/problems/reverse-nodes-in-k-group/"><input class="verify-button" type="button" value="Verify"/></a></p>
+<h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_25.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python/_25.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reverseKGroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="n">dummy</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">head</span><span class="p">)</span>
+        <span class="n">prev_group_tail</span> <span class="o">=</span> <span class="n">dummy</span>
+
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">kth</span> <span class="o">=</span> <span class="n">head</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">kth</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="n">kth</span> <span class="o">=</span> <span class="n">kth</span><span class="o">.</span><span class="n">next</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">kth</span><span class="p">:</span>
+                <span class="k">break</span>
+
+            <span class="n">next_group_head</span> <span class="o">=</span> <span class="n">kth</span><span class="o">.</span><span class="n">next</span>
+
+            <span class="n">curr</span><span class="p">,</span> <span class="n">prev</span> <span class="o">=</span> <span class="n">head</span><span class="p">,</span> <span class="n">next_group_head</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+                <span class="n">temp</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>
+                <span class="n">curr</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span>
+                <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span>
+                <span class="n">curr</span> <span class="o">=</span> <span class="n">temp</span>
+
+            <span class="n">prev_group_tail</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span>
+            <span class="n">prev_group_tail</span> <span class="o">=</span> <span class="n">head</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">next_group_head</span>
+
+        <span class="k">return</span> <span class="n">dummy</span><span class="o">.</span><span class="n">next</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_25.Solution.reverseKGroup" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">reverseKGroup</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span></code>
+
+<a href="#_25.Solution.reverseKGroup" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python/_25.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">reverseKGroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+
+    <span class="n">dummy</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">head</span><span class="p">)</span>
+    <span class="n">prev_group_tail</span> <span class="o">=</span> <span class="n">dummy</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">kth</span> <span class="o">=</span> <span class="n">head</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">kth</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">kth</span> <span class="o">=</span> <span class="n">kth</span><span class="o">.</span><span class="n">next</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">kth</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="n">next_group_head</span> <span class="o">=</span> <span class="n">kth</span><span class="o">.</span><span class="n">next</span>
+
+        <span class="n">curr</span><span class="p">,</span> <span class="n">prev</span> <span class="o">=</span> <span class="n">head</span><span class="p">,</span> <span class="n">next_group_head</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>
+            <span class="n">curr</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span>
+            <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">temp</span>
+
+        <span class="n">prev_group_tail</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span>
+        <span class="n">prev_group_tail</span> <span class="o">=</span> <span class="n">head</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">next_group_head</span>
+
+    <span class="k">return</span> <span class="n">dummy</span><span class="o">.</span><span class="n">next</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
 
 
 

@@ -901,6 +901,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16.Solution.threeSumClosest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        threeSumClosest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#16-3sum-closest" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2057,6 +2090,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16.Solution.threeSumClosest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        threeSumClosest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#16-3sum-closest" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,7 +2327,166 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="k">return</span> <span class="n">closest_sum</span>
 </code></pre></div>
 <p><a target="__blank" href="https://leetcode.com/problems/3sum-closest/"><input class="verify-button" type="button" value="Verify"/></a></p>
-<h2 id="16-3sum-closest">16. 3Sum Closest<a class="headerlink" href="#16-3sum-closest" title="Permanent link">&para;</a></h2>
+<h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_16.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python/_16.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">threeSumClosest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="n">nums</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="n">closest_sum</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="n">L</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+
+            <span class="k">while</span> <span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">:</span>
+                <span class="n">current_sum</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">R</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">current_sum</span> <span class="o">-</span> <span class="n">target</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">closest_sum</span> <span class="o">-</span> <span class="n">target</span><span class="p">):</span>
+                    <span class="n">closest_sum</span> <span class="o">=</span> <span class="n">current_sum</span>
+
+                <span class="k">if</span> <span class="n">current_sum</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
+                    <span class="n">L</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">elif</span> <span class="n">current_sum</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
+                    <span class="n">R</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">current_sum</span>
+
+        <span class="k">return</span> <span class="n">closest_sum</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_16.Solution.threeSumClosest" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">threeSumClosest</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span></code>
+
+<a href="#_16.Solution.threeSumClosest" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python/_16.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">threeSumClosest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+    <span class="n">nums</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">closest_sum</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="k">while</span> <span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">:</span>
+            <span class="n">current_sum</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">R</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">current_sum</span> <span class="o">-</span> <span class="n">target</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">closest_sum</span> <span class="o">-</span> <span class="n">target</span><span class="p">):</span>
+                <span class="n">closest_sum</span> <span class="o">=</span> <span class="n">current_sum</span>
+
+            <span class="k">if</span> <span class="n">current_sum</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
+                <span class="n">L</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">current_sum</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
+                <span class="n">R</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">current_sum</span>
+
+    <span class="k">return</span> <span class="n">closest_sum</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="16-3sum-closest">16. 3Sum Closest<a class="headerlink" href="#16-3sum-closest" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-target-definition">Problem Statement and Target Definition<a class="headerlink" href="#problem-statement-and-target-definition" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 16, "3Sum Closest," is a variation of the classic 3Sum problem (LeetCode 15). Given an array of <span class="arithmatex">\(n\)</span> integers, <span class="arithmatex">\(nums\)</span>, and a specific integer <strong>target</strong>, the objective is to find three integers in <span class="arithmatex">\(nums\)</span> such that their sum is the closest possible value to the target. It is generally guaranteed that there will be exactly one solution, simplifying the task of choosing between sums that are equally close.</p>
 <p>The core challenge is not to find a sum <em>equal</em> to the target, but to <strong>minimize the absolute difference</strong> between the triplet sum and the target: <span class="arithmatex">\(\min(|(\text{nums}[i] + \text{nums}[j] + \text{nums}[k]) - \text{target}|)\)</span>. Similar to the 3Sum problem, a brute force approach of checking all <span class="arithmatex">\(O(n^3)\)</span> combinations is prohibitively slow, demanding an optimized <span class="arithmatex">\(O(n^2)\)</span> solution.</p>

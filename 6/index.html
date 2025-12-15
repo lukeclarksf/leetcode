@@ -664,6 +664,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2083,6 +2105,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2380,6 +2424,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <p>The problem asks you to take a given string, <span class="arithmatex">\(s\)</span>, and convert it into a zigzag pattern (or Z-pattern) on a specified number of rows, <span class="arithmatex">\(numRows\)</span>. Once the string is written in this pattern, you must read it line by line from left to right, and return the resulting new string. For example, converting "PAYPALISHIRING" with <span class="arithmatex">\(numRows = 3\)</span> yields the pattern: P A H N, A P L S I I G, Y I R, which, when read row-by-row, becomes "PAHNAPLSIIGYIR". </p>
 <p>The core of the challenge is to determine the correct row index for each character in the input string without actually creating a 2D matrix, especially since the constraints on <span class="arithmatex">\(s\)</span> are up to 1000 characters. The pattern repeats in a cycle, where a full cycle covers <span class="arithmatex">\(numRows\)</span> down and then <span class="arithmatex">\(numRows - 2\)</span> up and diagonally. The length of one complete cycle is <span class="arithmatex">\(2 \times numRows - 2\)</span>. For <span class="arithmatex">\(numRows = 3\)</span>, the cycle length is <span class="arithmatex">\(2 \times 3 - 2 = 4\)</span>.</p>
 <p>An efficient <span class="arithmatex">\(O(n)\)</span> solution involves iterating through the input string <span class="arithmatex">\(s\)</span> once and placing each character directly into its final row in an array of strings (or a list of <code>StringBuilder</code> objects). You can track the current row index and a direction flag (down or up). When the current row hits the bottom (row <span class="arithmatex">\(numRows - 1\)</span>), the direction reverses to 'up'. When it hits the top (row 0), the direction reverses to 'down'. After iterating through all characters, simply concatenate the strings in the row array to produce the final zigzag-converted output.</p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 
 
 

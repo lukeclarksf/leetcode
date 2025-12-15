@@ -692,6 +692,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2083,6 +2105,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2389,6 +2433,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <p>Given a signed 32-bit integer, <span class="arithmatex">\(x\)</span>, the task is to return its digits reversed. For example, if <span class="arithmatex">\(x = 123\)</span>, the output should be <span class="arithmatex">\(321\)</span>. If <span class="arithmatex">\(x = -123\)</span>, the output should be <span class="arithmatex">\(-321\)</span>. The number's sign must be preserved in the reversed result. The input integer <span class="arithmatex">\(x\)</span> is within the range <span class="arithmatex">\([-(2^{31}), 2^{31} - 1]\)</span>, which defines the limits of a standard 32-bit signed integer.</p>
 <p>The primary difficulty in this problem is handling <strong>integer overflow</strong>. The reversed integer might exceed the maximum value of a 32-bit signed integer (<span class="arithmatex">\(2^{31} - 1\)</span>) or fall below its minimum value (<span class="arithmatex">\(-(2^{31})\)</span>), even if the original number <span class="arithmatex">\(x\)</span> was within range. For example, reversing <span class="arithmatex">\(1,534,236,469\)</span> results in <span class="arithmatex">\(9,646,324,351\)</span>, which is larger than <span class="arithmatex">\(2,147,483,647\)</span>. Therefore, before appending the next digit, a check must be performed to ensure the current reversed number, multiplied by 10 and added to the new digit, does not cause an overflow.</p>
 <p>The most robust approach involves iteratively extracting the last digit of <span class="arithmatex">\(x\)</span> using the modulo operator (<span class="arithmatex">\(x \pmod{10}\)</span>) and building the reversed number. In each iteration, we check for potential overflow <em>before</em> the multiplication step. Specifically, if <code>reversed &gt; INT_MAX / 10</code> (or <code>reversed &lt; INT_MIN / 10</code>), we know the next multiplication will definitely overflow. If it's on the edge (e.g., <code>reversed == INT_MAX / 10</code>), we then check the last digit itself to see if it causes the final overflow. If an overflow is detected at any point, the function must immediately return <span class="arithmatex">\(0\)</span>.</p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 
 
 

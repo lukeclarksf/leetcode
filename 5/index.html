@@ -636,6 +636,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2083,6 +2105,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2384,6 +2428,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <p>Given a string <span class="arithmatex">\(s\)</span>, the goal is to find the longest substring of <span class="arithmatex">\(s\)</span> that is a <strong>palindrome</strong>. A palindrome is a sequence of characters that reads the same forwards and backwards. You can assume that the maximum length of <span class="arithmatex">\(s\)</span> is 1000. If there are multiple palindromic substrings of the maximum length, any one of them can be returned as the correct answer. The challenge lies in efficiently identifying this longest substring.</p>
 <p>The most intuitive but less efficient approach is the <strong>Brute-Force method</strong>, which checks every possible substring for the palindrome property, leading to an <span class="arithmatex">\(O(n^3)\)</span> time complexity. A more optimized approach involves dynamic programming, where <span class="arithmatex">\(P(i, j)\)</span> is defined as true if the substring from index <span class="arithmatex">\(i\)</span> to <span class="arithmatex">\(j\)</span> is a palindrome, resulting in an <span class="arithmatex">\(O(n^2)\)</span> solution. </p>
 <p>However, the most commonly discussed optimal <span class="arithmatex">\(O(n^2)\)</span> solution is the <strong>Expand Around Center</strong> technique. In this method, we iterate through every possible character (and between every pair of characters) as the potential center of a palindrome. Since a palindrome can have an odd length (one center) or an even length (two centers), we check both cases and expand outwards from the center(s) as long as the characters match. This method effectively minimizes redundant checks and is often preferred for its conceptual simplicity. The most optimal solution is <strong>Manacher's Algorithm</strong>, which solves the problem in <span class="arithmatex">\(O(n)\)</span> time.</p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 
 
 

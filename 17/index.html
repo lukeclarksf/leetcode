@@ -929,6 +929,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17.Solution.letterCombinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        letterCombinations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#17-letter-combinations-of-a-phone-number" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2057,6 +2090,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17.Solution.letterCombinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        letterCombinations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#17-letter-combinations-of-a-phone-number" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2265,7 +2331,178 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="k">return</span> <span class="n">result</span>
 </code></pre></div>
 <p><a target="__blank" href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/"><input class="verify-button" type="button" value="Verify"/></a></p>
-<h2 id="17-letter-combinations-of-a-phone-number">17. Letter Combinations of a Phone Number<a class="headerlink" href="#17-letter-combinations-of-a-phone-number" title="Permanent link">&para;</a></h2>
+<h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_17.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python/_17.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">letterCombinations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">digits</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">digits</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+        <span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span> <span class="s1">&#39;def&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">:</span> <span class="s1">&#39;ghi&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">:</span> <span class="s1">&#39;jkl&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;6&#39;</span><span class="p">:</span> <span class="s1">&#39;mno&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">:</span> <span class="s1">&#39;pqrs&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">:</span> <span class="s1">&#39;tuv&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">:</span> <span class="s1">&#39;wxyz&#39;</span>
+        <span class="p">}</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">digits</span><span class="p">):</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+                <span class="k">return</span>
+
+            <span class="n">digit</span> <span class="o">=</span> <span class="n">digits</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+            <span class="n">letters</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">digit</span><span class="p">]</span>
+
+            <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">:</span>
+                <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+                <span class="n">backtrack</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+                <span class="n">path</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+        <span class="n">backtrack</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_17.Solution.letterCombinations" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">letterCombinations</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span></code>
+
+<a href="#_17.Solution.letterCombinations" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python/_17.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">letterCombinations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">digits</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">digits</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span> <span class="s1">&#39;def&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">:</span> <span class="s1">&#39;ghi&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">:</span> <span class="s1">&#39;jkl&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;6&#39;</span><span class="p">:</span> <span class="s1">&#39;mno&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">:</span> <span class="s1">&#39;pqrs&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">:</span> <span class="s1">&#39;tuv&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">:</span> <span class="s1">&#39;wxyz&#39;</span>
+    <span class="p">}</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">digits</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+            <span class="k">return</span>
+
+        <span class="n">digit</span> <span class="o">=</span> <span class="n">digits</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="n">letters</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">digit</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">:</span>
+            <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+            <span class="n">backtrack</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+            <span class="n">path</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="n">backtrack</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="17-letter-combinations-of-a-phone-number">17. Letter Combinations of a Phone Number<a class="headerlink" href="#17-letter-combinations-of-a-phone-number" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-the-mapping">Problem Statement and The Mapping<a class="headerlink" href="#problem-statement-and-the-mapping" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 17, "Letter Combinations of a Phone Number," requires generating all possible letter combinations that a given digit string can represent, based on the standard telephone keypad mapping. The input is a string of digits, and the output is a list of all possible letter sequences. For example, if the input is "23", the digit '2' maps to "abc" and '3' maps to "def". The resulting combinations are "ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf".</p>
 <p>The core challenge is the combinatorial nature of the problem: if the input has <span class="arithmatex">\(N\)</span> digits, and each digit maps to 3 or 4 letters, the total number of combinations grows exponentially. This type of problem, where we need to explore all possible paths to build a final result, is a classic application for <strong>Depth-First Search (DFS)</strong>, typically implemented using <strong>Recursion</strong> or <strong>Backtracking</strong>.</p>

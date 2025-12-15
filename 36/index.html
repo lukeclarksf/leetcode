@@ -1460,6 +1460,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36.Solution.isValidSudoku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        isValidSudoku
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1995,6 +2028,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36.Solution.isValidSudoku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        isValidSudoku
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2165,6 +2231,158 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div>
 <p><a target="__blank" href="https://leetcode.com/problems/valid-sudoku/"><input class="verify-button" type="button" value="Verify"/></a></p>
+<h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_36.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python/_36.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">isValidSudoku</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+        <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+        <span class="n">boxes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+                <span class="n">char</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="n">box_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="ow">or</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="ow">or</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">boxes</span><span class="p">[</span><span class="n">box_index</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="kc">False</span>
+
+                <span class="n">rows</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+                <span class="n">cols</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+                <span class="n">boxes</span><span class="p">[</span><span class="n">box_index</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_36.Solution.isValidSudoku" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">isValidSudoku</span><span class="p">(</span><span class="n">board</span><span class="p">)</span></code>
+
+<a href="#_36.Solution.isValidSudoku" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python/_36.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">isValidSudoku</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+    <span class="n">boxes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+            <span class="n">char</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">box_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="ow">or</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="ow">or</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">boxes</span><span class="p">[</span><span class="n">box_index</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+            <span class="n">rows</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+            <span class="n">cols</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+            <span class="n">boxes</span><span class="p">[</span><span class="n">box_index</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
 
 
 

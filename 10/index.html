@@ -776,6 +776,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2083,6 +2105,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2389,6 +2433,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <p>The problem asks you to implement a regular expression matching algorithm that supports two special characters: <code>.</code> (dot) and <code>*</code> (asterisk). The dot <code>.</code> matches any single character. The asterisk <code>*</code> matches zero or more occurrences of the <strong>preceding element</strong>. The matching must cover the <strong>entire</strong> input string <span class="arithmatex">\(s\)</span> (not partial). You are given an input string <span class="arithmatex">\(s\)</span> and a pattern <span class="arithmatex">\(p\)</span>. This problem is classified as <strong>Hard</strong> due to the complex state management required by the <code>*</code> operator.</p>
 <p>The two main approaches to solving this problem are <strong>Recursion with Memoization (Top-Down Dynamic Programming)</strong> and <strong>Tabulation (Bottom-Up Dynamic Programming)</strong>. The recursive approach checks if the current character in <span class="arithmatex">\(s\)</span> matches the current element in <span class="arithmatex">\(p\)</span>. If the next element in <span class="arithmatex">\(p\)</span> is <code>*</code>, this introduces two possibilities: either the <code>*</code> matches zero occurrences of the preceding element (so we move past both the element and <code>*</code> in <span class="arithmatex">\(p\)</span>), or it matches one or more occurrences (so we stay at the <code>*</code> and move to the next character in <span class="arithmatex">\(s\)</span>). Memoization is crucial to avoid re-calculating the same subproblems, which would otherwise lead to exponential time complexity.</p>
 <p>The preferred <span class="arithmatex">\(O(m \times n)\)</span> solution is the <strong>Bottom-Up Dynamic Programming</strong> approach, where <span class="arithmatex">\(m\)</span> is the length of <span class="arithmatex">\(s\)</span> and <span class="arithmatex">\(n\)</span> is the length of <span class="arithmatex">\(p\)</span>. A 2D boolean array, <span class="arithmatex">\(DP[i][j]\)</span>, is used to store whether the substring <span class="arithmatex">\(s[0...i-1]\)</span> matches the pattern <span class="arithmatex">\(p[0...j-1]\)</span>. The base cases involve empty strings. The recursive relations are built upon checking the current character match and the two conditions for the <code>*</code> operator. The final answer is found at <span class="arithmatex">\(DP[m][n]\)</span>. This approach systematically builds the solution from the smallest subproblems.</p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 
 
 

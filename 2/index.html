@@ -552,6 +552,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2083,6 +2105,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2368,6 +2412,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <p>The "Add Two Numbers" problem is a classic data structures challenge that requires adding two non-negative integers represented as <strong>linked lists</strong>. Crucially, the digits are stored in <strong>reverse order</strong>, with each node containing only a single digit. For instance, the number 342 would be represented as a list <span class="arithmatex">\(2 \to 4 \to 3\)</span>. The objective is to return a new linked list that represents the sum of the two input numbers. This problem assesses a developer's proficiency in handling pointer manipulation and basic arithmetic while traversing linked structures.</p>
 <p>The solution involves traversing both linked lists simultaneously, starting from the head (the least significant digit). A dummy head node is typically initialized to simplify the creation and return of the new resulting list.  A key component of the solution is tracking the <strong>carry-over</strong> value from one digit position to the next. In each step of the traversal, the algorithm sums the current digits from both lists (if they exist) along with the current carry-over. The new digit for the resulting list is the remainder of this sum when divided by 10, and the new carry-over is the quotient (sum divided by 10).</p>
 <p>The traversal continues as long as there are still digits left in either of the input lists, or if the carry-over value is greater than zero. This ensures that even if one list is shorter than the other, or if a final carry-over remains (e.g., adding <span class="arithmatex">\(99 + 1\)</span> results in <span class="arithmatex">\(100\)</span>), the resulting list is correctly extended. This approach effectively mimics manual addition, resulting in a single pass solution with a time complexity of <span class="arithmatex">\(O(\max(m, n))\)</span>, where <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(n\)</span> are the lengths of the two input linked lists, making it an efficient and industry-standard solution.</p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 
 
 

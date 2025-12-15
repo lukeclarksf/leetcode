@@ -757,6 +757,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="9. Palindrome Number (Easy)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2103,6 +2131,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="9. Palindrome Number (Easy)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2337,6 +2393,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <p>Given an integer <span class="arithmatex">\(x\)</span>, the task is to determine whether it is a <strong>palindrome</strong>. An integer is considered a palindrome if it reads the same forwards and backwards. This definition means that negative numbers, such as <span class="arithmatex">\(-121\)</span>, cannot be palindromes because the negative sign only appears at the front, so we can immediately return <code>false</code> for any <span class="arithmatex">\(x &lt; 0\)</span>. Additionally, any number ending in <span class="arithmatex">\(0\)</span> (except for <span class="arithmatex">\(0\)</span> itself) cannot be a palindrome, as the reversed number would start with <span class="arithmatex">\(0\)</span> (e.g., <span class="arithmatex">\(120\)</span> reversed is <span class="arithmatex">\(021\)</span>).</p>
 <p>The most straightforward method to check for a palindrome is to convert the integer into a string. Once in string format, the check is simple: compare the string with its reversed version. However, the problem often includes a <strong>"Follow up"</strong> to solve it <strong>without converting the integer to a string</strong>. This requires a numerical approach, typically by either reversing the entire number, as done in problem 7, or by reversing only half of the number to avoid potential overflow issues that can occur when reversing large integers entirely.</p>
 <p>The most optimized numerical solution is to <strong>reverse only the second half</strong> of the integer. We continuously pop the last digit of <span class="arithmatex">\(x\)</span> and push it onto a new number, <code>reversed_half</code>, until <code>reversed_half</code> is greater than or equal to <span class="arithmatex">\(x\)</span>. At this point, we have reversed approximately half of the digits. If the original number <span class="arithmatex">\(x\)</span> had an even number of digits, <span class="arithmatex">\(x\)</span> must equal <code>reversed_half</code>. If <span class="arithmatex">\(x\)</span> had an odd number of digits, the middle digit is naturally ignored, and we check if <span class="arithmatex">\(x\)</span> equals <code>reversed_half / 10</code>.</p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 
 
 

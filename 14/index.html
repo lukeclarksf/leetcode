@@ -845,6 +845,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14.Solution.longestCommonPrefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        longestCommonPrefix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#14-longest-common-prefix" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2068,6 +2101,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14.Solution.longestCommonPrefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        longestCommonPrefix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#14-longest-common-prefix" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2273,7 +2339,138 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="k">return</span> <span class="n">prefix</span>
 </code></pre></div>
 <p><a target="__blank" href="https://leetcode.com/problems/longest-common-prefix/"><input class="verify-button" type="button" value="Verify"/></a></p>
-<h2 id="14-longest-common-prefix">14. Longest Common Prefix<a class="headerlink" href="#14-longest-common-prefix" title="Permanent link">&para;</a></h2>
+<h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_14.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python/_14.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">longestCommonPrefix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">strs</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="n">prefix</span> <span class="o">=</span> <span class="n">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">strs</span><span class="p">)):</span>
+            <span class="n">current_string</span> <span class="o">=</span> <span class="n">strs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+            <span class="k">while</span> <span class="n">current_string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">prefix</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">prefix</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_14.Solution.longestCommonPrefix" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">longestCommonPrefix</span><span class="p">(</span><span class="n">strs</span><span class="p">)</span></code>
+
+<a href="#_14.Solution.longestCommonPrefix" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python/_14.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">longestCommonPrefix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">strs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="n">prefix</span> <span class="o">=</span> <span class="n">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">strs</span><span class="p">)):</span>
+        <span class="n">current_string</span> <span class="o">=</span> <span class="n">strs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="k">while</span> <span class="n">current_string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">prefix</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">prefix</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="14-longest-common-prefix">14. Longest Common Prefix<a class="headerlink" href="#14-longest-common-prefix" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-core-objective">Problem Statement and Core Objective<a class="headerlink" href="#problem-statement-and-core-objective" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 14, "Longest Common Prefix," is a fundamental string processing task. Given an array of strings, <span class="arithmatex">\(\text{strs}\)</span>, the objective is to find the longest string that is a prefix of <em>all</em> strings within the array. If no common prefix exists among the strings (i.e., they all start with different characters), the function must return an empty string, "".</p>
 <p>This problem highlights the need for efficient comparison across multiple string inputs. The resulting Longest Common Prefix (LCP) must adhere strictly to the definition of a prefix, meaning it must be a contiguous substring starting at the beginning of each string. For example, in the array ["flower", "flow", "flight"], the LCP is "fl".</p>

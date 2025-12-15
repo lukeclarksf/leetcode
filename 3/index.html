@@ -580,6 +580,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2083,6 +2105,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2299,6 +2343,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <p>The "Longest Substring Without Repeating Characters" problem is a foundational algorithmic challenge that requires finding the maximum length of a substring within a given input string <span class="arithmatex">\(s\)</span> that contains no repeated characters. This problem is an excellent measure of a developer's ability to identify and implement time-efficient solutions. While a simple brute-force check of all possible substrings yields a highly inefficient time complexity of <span class="arithmatex">\(O(n^3)\)</span> or a slightly better <span class="arithmatex">\(O(n^2)\)</span>, professional standards demand an optimized solution that can handle large inputs, specifically one that operates in linear time, <span class="arithmatex">\(O(n)\)</span>.</p>
 <p>The standard, most robust approach for solving this problem involves the <strong>Sliding Window technique</strong>. This method utilizes two pointers, <code>left</code> and <code>right</code>, to dynamically define the current substring window. To ensure rapid checks for character uniqueness, a hash set (or a map) is used to track the characters currently residing within the window, leveraging its <span class="arithmatex">\(O(1)\)</span> average-time lookup capability. The <code>right</code> pointer iterates through the string, expanding the window one character at a time. As the window expands, the current length is continuously compared against and updates the global maximum length found so far.</p>
 <p>The key to the <span class="arithmatex">\(O(n)\)</span> efficiency lies in how the algorithm handles duplicates. If the character at <span class="arithmatex">\(s[right]\)</span> is already present in the hash set, the uniqueness constraint is violated. Instead of discarding all previous work, the <code>left</code> pointer advances, removing characters from the left side of the window (and the hash set) until the duplicate character that caused the collision is finally removed. Once the window is again valid, the <code>right</code> pointer continues its forward movement. Because each character is visited by both the <code>left</code> and <code>right</code> pointers at most once, this single-pass, two-pointer strategy guarantees the sought-after <span class="arithmatex">\(O(n)\)</span> time complexity, making it the industry-standard solution.</p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 
 
 

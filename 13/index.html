@@ -817,6 +817,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13.Solution.romanToInt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        romanToInt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#13-roman-to-integer" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2057,6 +2090,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13.Solution.romanToInt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        romanToInt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#13-roman-to-integer" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2262,7 +2328,154 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="k">return</span> <span class="n">total</span>
 </code></pre></div>
 <a target="__blank" href="https://leetcode.com/problems/roman-to-integer/"><input class="verify-button" type="button" value="Verify"/></a></p>
-<h2 id="13-roman-to-integer">13. Roman to Integer<a class="headerlink" href="#13-roman-to-integer" title="Permanent link">&para;</a></h2>
+<h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_13.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python/_13.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">romanToInt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="n">value_map</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">1000</span>
+        <span class="p">}</span>
+
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">prev_value</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+            <span class="n">current_value</span> <span class="o">=</span> <span class="n">value_map</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">current_value</span> <span class="o">&lt;</span> <span class="n">prev_value</span><span class="p">:</span>
+                <span class="n">total</span> <span class="o">-=</span> <span class="n">current_value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">total</span> <span class="o">+=</span> <span class="n">current_value</span>
+
+            <span class="n">prev_value</span> <span class="o">=</span> <span class="n">current_value</span>
+
+        <span class="k">return</span> <span class="n">total</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_13.Solution.romanToInt" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">romanToInt</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></code>
+
+<a href="#_13.Solution.romanToInt" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python/_13.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">romanToInt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+    <span class="n">value_map</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">1000</span>
+    <span class="p">}</span>
+
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">prev_value</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+        <span class="n">current_value</span> <span class="o">=</span> <span class="n">value_map</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">current_value</span> <span class="o">&lt;</span> <span class="n">prev_value</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">-=</span> <span class="n">current_value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">current_value</span>
+
+        <span class="n">prev_value</span> <span class="o">=</span> <span class="n">current_value</span>
+
+    <span class="k">return</span> <span class="n">total</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="13-roman-to-integer">13. Roman to Integer<a class="headerlink" href="#13-roman-to-integer" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-the-subtraction-rule-challenge">Problem Statement and The Subtraction Rule Challenge<a class="headerlink" href="#problem-statement-and-the-subtraction-rule-challenge" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 13, "Roman to Integer," involves converting a given Roman numeral string, <span class="arithmatex">\(s\)</span>, into its corresponding integer value. The input is guaranteed to be a valid Roman numeral within the standard range of 1 to 3999. Unlike converting from an integer to a Roman numeral (which relies on a greedy build-up), converting <em>to</em> an integer requires a careful sequential interpretation of the Roman characters.</p>
 <p>The main complexity arises from the <strong>subtractive notation</strong>. Normally, symbols are additive (e.g., <span class="arithmatex">\(VI = 5 + 1 = 6\)</span>). However, a smaller value symbol placed <em>before</em> a larger value symbol indicates subtraction (e.g., <span class="arithmatex">\(IV = 5 - 1 = 4\)</span>, <span class="arithmatex">\(CM = 1000 - 100 = 900\)</span>). The algorithm must correctly identify these subtractive pairs and adjust the running total accordingly, which cannot be done by simply summing the values of the individual characters from left to right.</p>
