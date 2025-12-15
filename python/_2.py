@@ -8,14 +8,6 @@ class ListNode:
     to represent large numbers where digits are stored in reverse order.
     """
     def __init__(self, val=0, next=None):
-        """
-        Initializes a new ListNode.
-
-        :param val: The value (digit) stored in the node. Defaults to 0.
-        :type val: int
-        :param next: A reference to the next node in the list. Defaults to None for the tail node.
-        :type next: Optional[ListNode]
-        """
         self.val = val
         self.next = next
 
