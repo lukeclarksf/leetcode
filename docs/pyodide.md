@@ -6,7 +6,7 @@ hide:
 
 # Pyodide
 
-```pyodide height="23"
+```pyodide height="20"
 
 # Leetcode 2 Verbose
 
