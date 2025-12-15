@@ -12,12 +12,25 @@ def create_md_files(start_num, end_num, content=None):
     
     for i in range(start_num, end_num + 1):
         filename = f"../docs/{i}.md"
-        content = '```pyodide\n\
+        content = '## Pyodide\n\
+\n\
+```pyodide\n\
 {% \n\
-    include "../python/'+f"{i}"+'.py" \n\
+    include "../python_run/_'+f"{i}"+'.py" \n\
     preserve-includer-indent=false \n\
 %}\n\
-```\n'
+```\n\
+\n\
+## Solution\n\
+\n\
+<a target="__blank" href="https://leetcode.com/problems/combination-sum-ii/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a>\n\
+\n\
+```python\n\
+{% \n\
+    include "../python_mod/_'+f"{i}"+'.py" \n\
+    preserve-includer-indent=false \n\
+%}\n\
+```'
         file_content = content if content is not None else default_content + str(i)
 
         if not os.path.exists(filename):
@@ -33,7 +46,7 @@ def create_md_files(start_num, end_num, content=None):
     print("File creation complete!")
 
 START_NUMBER = 1
-END_NUMBER = 100 #1000 #3772
+END_NUMBER = 50 #1000 #3772
 FILE_CONTENT = None
 
 create_md_files(START_NUMBER, END_NUMBER, FILE_CONTENT)
