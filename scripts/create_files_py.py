@@ -8,8 +8,9 @@ def create_python_files(start_num, end_num):
     print(f"Starting to create files from {start_num}.md to {end_num}.md...")
 
     for i in range(start_num, end_num + 1):
-        filename = f"../python/_{i}.py"
-        filename2 = f"../python_mod/_{i}.py"
+        filename = f"../python_mod/_{i}.py"
+        filename2 = f"../python/_{i}.py"
+        filename3 = f"../python_run/_{i}.py"
 
         if not os.path.exists(filename):
             try:
@@ -29,6 +30,17 @@ def create_python_files(start_num, end_num):
                 pass
             except IOError as e:
                 print(f"Error creating file {filename2}: {e}")
+                break
+        else:
+            print(f"File {i}.py exists!")
+
+        if not os.path.exists(filename3):
+            try:
+                with open(filename3, 'w') as f:
+                    f.write(f"")
+                pass
+            except IOError as e:
+                print(f"Error creating file {filename3}: {e}")
                 break
         else:
             print(f"File {i}.py exists!")
