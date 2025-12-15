@@ -1,19 +1,19 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        """Finds two numbers in the input list that add up to the target value.
-
-        This method uses a hash map (dictionary) to efficiently store numbers encountered 
-        and their indices, allowing for an $O(n)$ time complexity solution by checking 
-        if the required complement ($target - current\ number$) already exists in the map 
-        during a single pass through the list.
+        """
+        Finds two unique numbers in the input list that sum up to a specific target 
+        value and returns the 0-based indices of those two numbers. The function 
+        uses a hash map to achieve a time complexity of $O(n)$ by storing each 
+        number and its index as it iterates through the list, then checking if 
+        the required complement (target - current number) already exists in the map.
 
         Args:
-            nums: A list of integers to search through.
-            target: The integer target sum.
+            nums: A list of integers where exactly one valid solution exists.
+            target: The target integer sum.
 
         Returns:
-            A list containing the indices of the two numbers that sum up to the target. 
-            Returns an empty list if no such pair is found.
+            A list containing the indices of the two numbers that sum up to the target, 
+            e.g., [index1, index2].
         """
         num_map = {}
         for i, num in enumerate(nums):
