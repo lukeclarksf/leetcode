@@ -1,18 +1,23 @@
 import os
 
-def create_md_files(start_num, end_num, content=None):
+def create_md_files(start_num, end_num):
     if start_num > end_num:
         print("Error: The starting number must be less than or equal to the ending number.")
         return
 
-    if content is None:
-        default_content = ""
-
     print(f"Starting to create files from {start_num}.md to {end_num}.md...")
     
     for i in range(start_num, end_num + 1):
-        filename = f"../docs/{i}.md"
+        filename = f"../parts/{i}.md"
         content = '## Pyodide\n\
+\n\
+```pyodide height="10"\n\
+# Type here\n\
+\n\
+\n\
+```\n\
+\n\
+## Run\n\
 \n\
 ```pyodide\n\
 {% \n\
@@ -23,21 +28,29 @@ def create_md_files(start_num, end_num, content=None):
 \n\
 ## Solution\n\
 \n\
-<a target="__blank" href="https://leetcode.com/problems/combination-sum-ii/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a>\n\
-\n\
 ```python\n\
 {% \n\
     include "../python_mod/_'+f"{i}"+'.py" \n\
     preserve-includer-indent=false \n\
 %}\n\
-```'
-        file_content = content if content is not None else default_content + str(i)
+```\n\
+\n\
+<a target="__blank" href="https://leetcode.com/problems/powx-n/"><input class="verify-button" type="button" value="Verify"/></a>\n\
+\n\
+## Function Description\n\
+\n\
+::: _'+f"{i}"+'.Solution\n\
+    handler: python\n\
+    options:\n\
+        #show_root_heading: true\n\
+        members: true\n\
+\n\
+## Explanation'
 
         if not os.path.exists(filename):
             try:
                 with open(filename, 'w') as f:
-                    f.write(file_content + "\n")
-
+                    f.write(content + "\n")
             except IOError as e:
                 print(f"An error occurred while creating {filename}: {e}")
         else:
@@ -45,8 +58,7 @@ def create_md_files(start_num, end_num, content=None):
 
     print("File creation complete!")
 
+# Create the files.
 START_NUMBER = 1
-END_NUMBER = 50 #1000 #3772
-FILE_CONTENT = None
-
-create_md_files(START_NUMBER, END_NUMBER, FILE_CONTENT)
+END_NUMBER = 4000     #1000 #3772
+create_md_files(START_NUMBER, END_NUMBER)

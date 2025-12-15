@@ -45,9 +45,7 @@ def create_python_files(start_num, end_num):
         else:
             print(f"File {i}.py exists!")
 
-    print("---")
-    print(f"✅ Finished! Created {end_num - start_num + 1} files.")
-    print("Files were created in the current working directory.")
+    print("File creation complete!")
 
 START_NUMBER = 1
 END_NUMBER = 50 #1000 #3772
