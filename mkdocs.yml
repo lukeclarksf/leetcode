@@ -64,7 +64,7 @@ plugins:
   - mkdocstrings:
      handlers:
       python:
-        paths: ['python']
+        paths: ['python','python1/part1','python1/part2','python1/part3','python1/part4']
 
 # Inside mkdocs.yml
 
@@ -124,7 +124,6 @@ nav:
       - 48. Rotate Image (Medium): '48.md'
       - 49. Group Anagrams (Medium): '49.md'
       - 50. Pow(x, n) (Medium): '50.md'
-      - Problem 100: '100.md'
     - Part 1:
       - Problem 101: '101.md'
       - Problem 1000: '1001.md'

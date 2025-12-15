@@ -1,6 +1,6 @@
 import os
 
-def create_md_files(start_num, end_num, directory):
+def create_md_files(start_num, end_num, directory, part):
     if start_num > end_num:
         print("Error: The starting number must be less than or equal to the ending number.")
         return
@@ -21,7 +21,7 @@ def create_md_files(start_num, end_num, directory):
 \n\
 ```pyodide\n\
 {% \n\
-    include "../python_run/_'+f"{i}"+'.py" \n\
+    include "../../python1_run/'+f"{part}"+'/_'+f"{i}"+'.py" \n\
     preserve-includer-indent=false \n\
 %}\n\
 ```\n\
@@ -30,7 +30,7 @@ def create_md_files(start_num, end_num, directory):
 \n\
 ```python\n\
 {% \n\
-    include "../python_mod/_'+f"{i}"+'.py" \n\
+    include "../../python1_mod/'+f"{part}"+'/_'+f"{i}"+'.py" \n\
     preserve-includer-indent=false \n\
 %}\n\
 ```\n\
@@ -45,7 +45,12 @@ def create_md_files(start_num, end_num, directory):
         #show_root_heading: true\n\
         members: true\n\
 \n\
-## Explanation'
+## Explanation\n\
+\n\
+\n\
+\n\
+##\n\
+##'
 
         if not os.path.exists(filename):
             try:
@@ -58,8 +63,8 @@ def create_md_files(start_num, end_num, directory):
 
     print("File creation complete!")
 
-# Create the files.
-create_md_files(51, 1000, "docs/part1")
-create_md_files(1001, 2000, "docs/part2")
-create_md_files(2001, 3000, "docs/part3")
-create_md_files(3001, 3778, "docs/part4")
+# Create the markdown files.
+create_md_files(51, 1000, "docs/part1", "part1")
+create_md_files(1001, 2000, "docs/part2", "part2")
+create_md_files(2001, 3000, "docs/part3", "part3")
+create_md_files(3001, 3778, "docs/part4", "part4")
