@@ -65,7 +65,7 @@ plugins:
   - mkdocstrings:
      handlers:
       python:
-        paths: ['python','python1/part1','python1/part2','python1/part3','python1/part4']
+        paths: ['python','part1/python']
 
 # Inside mkdocs.yml
 
