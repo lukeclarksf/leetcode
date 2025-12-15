@@ -613,6 +613,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#problem-statement" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2474,6 +2485,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#problem-statement" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2826,7 +2848,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     </div>
 
-</div><h2 id="problem-statement">Problem Statement<a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h2>
+</div><h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
+<h2 id="problem-statement">Problem Statement<a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h2>
 <p>The goal is to sum two non-negative integers that are represented by two separate singly linked lists. The digits of each integer are stored in reverse order, with each node in the linked list containing a single digit. You must add the two numbers and return the result as a new singly linked list, also with its digits in reverse order. It can be assumed that the numbers do not contain any leading zeros, except for the number 0 itself.</p>
 <h2 id="concepts-used">Concepts used<a class="headerlink" href="#concepts-used" title="Permanent link">&para;</a></h2>
 <p>The core concept of LeetCode Problem 2, "Add Two Numbers," is to simulate the elementary school arithmetic addition process using the Singly Linked List data structure. Since the digits are stored in reverse order (least significant digit first), we can iterate through both lists simultaneously from the head. In each step of the iteration, we sum the corresponding digits from the two lists, along with any existing carry value from the previous step. We then determine the new digit for the result list using the modulo operator (<span class="arithmatex">\(sum \pmod{10}\)</span>) and calculate the new carry for the next step using integer division (<span class="arithmatex">\(sum // 10\)</span>). This continuous process of calculating the sum and propagating the carry is repeated until both input lists are fully traversed and the final carry value is zero. The use of a Dummy Head Node is a standard practice to streamline the construction of the result list without needing a special case for the very first node.</p>

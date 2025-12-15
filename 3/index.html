@@ -641,63 +641,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-longest-substring-without-repeating-characters" class="md-nav__link">
+  <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Longest Substring Without Repeating Characters
+        Explanation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3. Longest Substring Without Repeating Characters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-statement-and-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem Statement and Definition
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-inefficient-brute-force-approach" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Inefficient Brute Force Approach
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-optimized-sliding-window-technique" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Optimized Sliding Window Technique
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mechanism-of-the-sliding-window" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mechanism of the Sliding Window
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2469,63 +2419,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-longest-substring-without-repeating-characters" class="md-nav__link">
+  <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Longest Substring Without Repeating Characters
+        Explanation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3. Longest Substring Without Repeating Characters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-statement-and-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem Statement and Definition
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-inefficient-brute-force-approach" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Inefficient Brute Force Approach
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-optimized-sliding-window-technique" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Optimized Sliding Window Technique
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mechanism-of-the-sliding-window" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mechanism of the Sliding Window
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2741,21 +2641,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     </div>
 
-</div><h2 id="3-longest-substring-without-repeating-characters">3. Longest Substring Without Repeating Characters<a class="headerlink" href="#3-longest-substring-without-repeating-characters" title="Permanent link">&para;</a></h2>
-<h3 id="problem-statement-and-definition">Problem Statement and Definition<a class="headerlink" href="#problem-statement-and-definition" title="Permanent link">&para;</a></h3>
-<p>LeetCode problem 3, "Longest Substring Without Repeating Characters," is a classic string manipulation challenge. The objective is to determine the length of the longest substring within a given string <span class="arithmatex">\(s\)</span> that does not contain any repeating characters. A <strong>substring</strong> must be a contiguous sequence of characters, meaning the characters must appear consecutively in the original string. The challenge is to find the maximum possible length of such a unique sequence.</p>
-<p>For instance, if the input string is "abcabcbb", the substrings without repeating characters are "abc", "bca", "cab", and "cbb". The longest among these is "abc", with a length of 3. If the input is "pwwkew", the longest substring is "wke" or "kew" (not "pwke" as 'w' repeats, and not "pwwkew" as 'w' repeats), which has a length of 3. The distinction between a <em>substring</em> and a <em>subsequence</em> is crucial: "pwke" is a subsequence but not a substring because the 'w's are separated in the original string by 'k' and 'e', thus violating the contiguity rule.</p>
-<h3 id="the-inefficient-brute-force-approach">The Inefficient Brute Force Approach<a class="headerlink" href="#the-inefficient-brute-force-approach" title="Permanent link">&para;</a></h3>
-<p>A naive <strong>Brute Force</strong> solution would be to generate every possible substring of the input string <span class="arithmatex">\(s\)</span> and, for each substring, check if all of its characters are unique. Generating all substrings takes <span class="arithmatex">\(O(n^2)\)</span> time, where <span class="arithmatex">\(n\)</span> is the length of <span class="arithmatex">\(s\)</span>, as there are <span class="arithmatex">\(\frac{n(n+1)}{2}\)</span> total substrings. For each generated substring, checking for uniqueness typically involves using a Set data structure or comparing every character against every other character within that substring, which can take up to <span class="arithmatex">\(O(n)\)</span> time.</p>
-<p>Combining these steps leads to an overall time complexity of <span class="arithmatex">\(O(n^3)\)</span>. While this approach is correct, its cubic time complexity makes it highly impractical for strings of significant length. The need for a faster solution drives us toward a more sophisticated, linear-time algorithm.</p>
-<h3 id="the-optimized-sliding-window-technique">The Optimized Sliding Window Technique<a class="headerlink" href="#the-optimized-sliding-window-technique" title="Permanent link">&para;</a></h3>
-<p>The problem is best solved using the <strong>Sliding Window</strong> pattern, which optimizes the search process to achieve <span class="arithmatex">\(O(n)\)</span> time complexity. This technique involves maintaining a "window," which is a contiguous range of elements (a substring) in the input string. The window dynamically expands or shrinks as we iterate through the input.</p>
-<p>In this specific application, the window is defined by two pointers, a left pointer <span class="arithmatex">\(i\)</span> and a right pointer <span class="arithmatex">\(j\)</span>, representing the current substring <span class="arithmatex">\([i, j)\)</span>. We use a Hash Set (or a Map) to efficiently store the characters currently present within the window. The set allows us to check for the existence of a character in <span class="arithmatex">\(O(1)\)</span> time on average. </p>
-<h3 id="mechanism-of-the-sliding-window">Mechanism of the Sliding Window<a class="headerlink" href="#mechanism-of-the-sliding-window" title="Permanent link">&para;</a></h3>
-<p>The process begins by expanding the window using the right pointer <span class="arithmatex">\(j\)</span>. We examine the character <span class="arithmatex">\(s[j]\)</span>.
-1.  <strong>Expansion:</strong> If the character <span class="arithmatex">\(s[j]\)</span> is <strong>not</strong> currently present in our Hash Set, it means the current window <span class="arithmatex">\([i, j]\)</span> is still valid (contains only unique characters). We add <span class="arithmatex">\(s[j]\)</span> to the set, increment the right pointer <span class="arithmatex">\(j\)</span>, and update our record of the maximum length found so far: <span class="arithmatex">\(\text{max\_len} = \max(\text{max\_len}, j - i)\)</span>.
-2.  <strong>Contraction (Sliding):</strong> If the character <span class="arithmatex">\(s[j]\)</span> <strong>is</strong> already present in the Hash Set, we have found a repeating character. The window <span class="arithmatex">\([i, j]\)</span> is now invalid. We must shrink the window from the left by incrementing the left pointer <span class="arithmatex">\(i\)</span>. As we move <span class="arithmatex">\(i\)</span> forward, we remove the character <span class="arithmatex">\(s[i]\)</span> from the Hash Set. We continue this shrinking process until the repeating character is no longer inside the window, at which point the character <span class="arithmatex">\(s[j]\)</span> can be safely added, and the expansion resumes.</p>
-<p>This single-pass, two-pointer approach is extremely efficient. The key insight is that both the left pointer <span class="arithmatex">\(i\)</span> and the right pointer <span class="arithmatex">\(j\)</span> traverse the string <span class="arithmatex">\(s\)</span> at most once. Therefore, each character is visited, added to the set, and removed from the set at most once, leading to an overall <strong>linear time complexity of <span class="arithmatex">\(O(n)\)</span></strong>. The space complexity is <span class="arithmatex">\(O(k)\)</span>, where <span class="arithmatex">\(k\)</span> is the size of the character set (e.g., <span class="arithmatex">\(k=26\)</span> for lowercase English letters, or <span class="arithmatex">\(k=128\)</span> for ASCII characters), which is often considered <span class="arithmatex">\(O(1)\)</span> since <span class="arithmatex">\(k\)</span> is constant.</p>
+</div><h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
+<p>The "Longest Substring Without Repeating Characters" problem is a foundational algorithmic challenge that requires finding the maximum length of a substring within a given input string <span class="arithmatex">\(s\)</span> that contains no repeated characters. This problem is an excellent measure of a developer's ability to identify and implement time-efficient solutions. While a simple brute-force check of all possible substrings yields a highly inefficient time complexity of <span class="arithmatex">\(O(n^3)\)</span> or a slightly better <span class="arithmatex">\(O(n^2)\)</span>, professional standards demand an optimized solution that can handle large inputs, specifically one that operates in linear time, <span class="arithmatex">\(O(n)\)</span>.</p>
+<p>The standard, most robust approach for solving this problem involves the <strong>Sliding Window technique</strong>. This method utilizes two pointers, <code>left</code> and <code>right</code>, to dynamically define the current substring window. To ensure rapid checks for character uniqueness, a hash set (or a map) is used to track the characters currently residing within the window, leveraging its <span class="arithmatex">\(O(1)\)</span> average-time lookup capability. The <code>right</code> pointer iterates through the string, expanding the window one character at a time. As the window expands, the current length is continuously compared against and updates the global maximum length found so far.</p>
+<p>The key to the <span class="arithmatex">\(O(n)\)</span> efficiency lies in how the algorithm handles duplicates. If the character at <span class="arithmatex">\(s[right]\)</span> is already present in the hash set, the uniqueness constraint is violated. Instead of discarding all previous work, the <code>left</code> pointer advances, removing characters from the left side of the window (and the hash set) until the duplicate character that caused the collision is finally removed. Once the window is again valid, the <code>right</code> pointer continues its forward movement. Because each character is visited by both the <code>left</code> and <code>right</code> pointers at most once, this single-pass, two-pointer strategy guarantees the sought-after <span class="arithmatex">\(O(n)\)</span> time complexity, making it the industry-standard solution.</p>
 
 
 
