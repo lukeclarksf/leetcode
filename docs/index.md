@@ -8,4 +8,4 @@ hide:
 
 You will find my Python solutions for LeetCode problems, typically developed within the Visual Studio Code environment. LeetCode includes Data Structures and Algorithms. Solve LeetCode problems very efficiently.
 
-<iframe class="intro-video" width="704" height="396" src="https://www.youtube.com/embed/bKbqjK6mM5o?si=QXTlZpOsunCKfQpl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="intro-video" width="704" height="396" src="https://www.youtube.com/embed/Bg-vTwW4IoM?si=51f0I6BaG4zJHrnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
