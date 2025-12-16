@@ -20,7 +20,7 @@ def create_files(start,end,part,ext) -> None:
     print(f"Check your current directory for the new files (e.g., file_0001.py, file_1000.py).")
 
 # --- Execution ---
-create_python_files(1,1000,"part1",'.md')
-create_python_files(1001,2000,"part2",'.md')
-create_python_files(2001,3000,"part3",'.md')
-create_python_files(3001,3778,"part4",'.md')
+#create_files(1,1000,"part1",'md')
+#create_files(1001,2000,"part2",'md')
+#create_files(2001,3000,"part3",'md')
+create_files(3001,3778,"part4",'md')
