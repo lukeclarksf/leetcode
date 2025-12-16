@@ -14,10 +14,6 @@ plugins:
   - search
   - include-markdown
   - markdown-exec
-  - mkdocstrings:
-      handlers:
-      python:
-        paths: ['python/part1/python','python/part2/python','python/part3/python','python/part4/python']
 
 markdown_extensions:
   - pymdownx.superfences
