@@ -43,3 +43,4 @@ nav:
     - Problems 3001 - 3778: '!include python/part4/mkdocs.yml'
   - Gemini: 'https://gemini.google.com'
   - Pyodide: 'pyodide.md'
+  - Vitae: 'https://lukeclarksf.com'
