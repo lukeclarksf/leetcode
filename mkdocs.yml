@@ -1,4 +1,6 @@
 site_name: Python
+site_url: https://lukeclarkca.com
+repo_url: https://github.com/lukeclarksf/leetcode
 
 theme:
   name: material
